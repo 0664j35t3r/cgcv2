@@ -1,0 +1,42 @@
+<model>data/models/box_base.iqm</model>
+
+<animations>
+  <animation repeat="0">data/models/box_rotation.iqm</animation>
+</animations>
+
+<camera>
+  <position>0.0 1.0 20.0</position>
+  <fov>1.047</fov>
+  <orientation>0.0 0.0</orientation>
+</camera>
+
+<!-- Rendermode can be a bitcombination of the MODE_* constants defined in main.cpp -->
+<rendermode>30</rendermode>
+
+<!-- If 1, the renderer will export the joint transformations to a file.
+     CAUTION: This overrides the file specified in the
+     joint_tranformations_file tag. --> 
+<export_joint_transformations>0</export_joint_transformations>
+<joint_transformations_file>data/joint_transformations/spline</joint_transformations_file>
+
+<!-- If 1, the transformations of the file specified in the
+     joint_transformations_file tag are imported and the calculation of joint
+     transformations is skipped. -->
+<use_transformations_file>0</use_transformations_file>
+
+<!-- This spline controls the movement of the loaded model. -->
+<movement_spline>
+  <!-- Every point is given as a time/point pair. The first value is the time 
+       and the following three values specify the position. -->
+  <point>-1 0 0 -1</point>
+  <point>0 0 0 0</point>
+  <point>5 5 0 5</point>
+  <point>10 5 2 10</point>
+  <point>15 0 0 15</point>
+  <point>17 0 0 17</point>
+  <point>18 0 0 18</point>
+</movement_spline>
+
+
+<screenshots>1 50 100 150 200 250 300 350 400 450 500 550</screenshots>
+<screenshots_folder>output/spline/</screenshots_folder>

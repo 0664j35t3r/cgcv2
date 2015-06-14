@@ -1,0 +1,31 @@
+<model>data/models/Justin_base.iqm</model>
+<bone_size>0.8</bone_size>
+<joint_size>2</joint_size>
+
+<animations>
+  <animation repeat="1.5">data/models/Justin_jump.iqm</animation>
+</animations>
+
+<camera>
+  <position>0.0 100.0 200.0</position>
+  <fov>1.047</fov>
+  <orientation>0.0 0.0</orientation>
+  <speed>100</speed>
+</camera>
+
+<!-- Rendermode can be a bitcombination of the MODE_* constants defined in main.cpp -->
+<rendermode>17</rendermode>
+
+<!-- If 1, the renderer will export the joint transformations to a file.
+     CAUTION: This overrides the file specified in the
+     joint_tranformations_file tag. --> 
+<export_joint_transformations>0</export_joint_transformations>
+<joint_transformations_file>data/joint_transformations/justin_jump</joint_transformations_file>
+
+<!-- If 1, the transformations of the file specified in the
+     joint_transformations_file tag are imported and the calculation of joint
+     transformations is skipped. -->
+<use_transformations_file>0</use_transformations_file>
+
+<screenshots>1 15 30 43</screenshots>
+<screenshots_folder>output/justin_jump/</screenshots_folder>

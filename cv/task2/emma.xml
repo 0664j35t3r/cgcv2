@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<!-- config file for the 'emma' dataset -->
+<config>
+
+	<test_svm>0</test_svm>
+	<test_hog>0</test_hog>
+	<test_bonus>0</test_bonus>
+	<output_dir>./output/emma/</output_dir>
+	<test_svm_out>./output/emma/svm.png</test_svm_out>
+	<test_hog_out>./output/emma/hog.png</test_hog_out>
+	<test_bonus_out>./output/emma/dt.png</test_bonus_out>
+
+  <!------------------------
+          Input data
+    ----------------------->
+  
+	<in_face_filename>./data/emma/emma1.jpg</in_face_filename>
+	<in_face_filename>./data/emma/emma2.jpg</in_face_filename>
+	<in_face_filename>./data/emma/emma3.jpg</in_face_filename>
+	
+   <!-------------------------------
+          SVM parameters
+    ------------------------------>
+    <svm_training>
+		<dir>data/training_data/</dir>
+		<img>
+			<scale>0.75f</scale>
+			<number>60</number>
+		</img>
+    </svm_training>
+
+	<!-------------------------------
+          Detection parameters
+    ------------------------------>
+    <best_score_num>30</best_score_num>
+
+  <!-------------------------------
+          Algorithm parameters
+    ------------------------------>
+
+  <s1>1.8f</s1>
+  <s2>1.4f</s2>
+  <transform_time>5000</transform_time>
+  <fps>30</fps>
+
+  <!------------------------
+          Output data
+    -----------------------> 
+	<out_face_dedect_filename>./output/emma/face_detect_emma1.png</out_face_dedect_filename>
+        <out_face_dedect_filename>./output/emma/face_detect_emma2.png</out_face_dedect_filename>
+        <out_face_dedect_filename>./output/emma/face_detect_emma3.png</out_face_dedect_filename>
+        
+	<out_face_mask_filename>./output/emma/face_mask_emma1.png</out_face_mask_filename>
+        <out_face_mask_filename>./output/emma/face_mask_emma2.png</out_face_mask_filename>
+        <out_face_mask_filename>./output/emma/face_mask_emma3.png</out_face_mask_filename>
+        	
+	<out_face_trans_filename>./output/emma/face_trans_emma1.png</out_face_trans_filename>
+        <out_face_trans_filename>./output/emma/face_trans_emma2.png</out_face_trans_filename>
+        <out_face_trans_filename>./output/emma/face_trans_emma3.png</out_face_trans_filename>
+        
+	<out_face_trimmed_filename>./output/emma/face_trimmed_emma1.png</out_face_trimmed_filename>
+        <out_face_trimmed_filename>./output/emma/face_trimmed_emma2.png</out_face_trimmed_filename>
+        <out_face_trimmed_filename>./output/emma/face_trimmed_emma3.png</out_face_trimmed_filename>
+        
+        <detect_face>./output/emma/emma_detect_face.png</detect_face>
+	<face_sequence_filename>./output/emma/emma_face_sequence.png</face_sequence_filename>
+        <outliers>./output/emma/emma_outliers.png</outliers>
+        <video_out>./output/emma/emma.avi</video_out>
+</config>

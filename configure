@@ -1,0 +1,24 @@
+#!/bin/sh
+
+
+str1="offscreen"
+OFFSCREENONLY=0
+for item in "$*"
+do
+  str2="$item"
+  if [ "$str1" = "$str2" ]
+  then
+  OFFSCREENONLY=1
+  fi
+done
+
+export QTDIR=/usr/lib/qt4
+export PATH=$QTDIR/bin:$PATH
+
+if [ $OFFSCREENONLY -eq 1 ]
+then
+echo activating offscreen renderer only
+cmake -DCMAKE_BUILD_TYPE:STRING=Release -DOffscreenOnly:bool=1 -DCMAKE_MODULE_PATH=/usr/share/cmake/Modules:/software/cmake/cmake/share/cmake-2.4/Modules:./cg/task2 .
+else
+cmake -DCMAKE_MODULE_PATH=/usr/share/cmake/Modules:/software/cmake/cmake/share/cmake-2.4/Modules:./cg/task2 .
+fi

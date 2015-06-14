@@ -1,0 +1,31 @@
+<model>data/models/box_base.iqm</model>
+
+<animations>
+  <animation relative="1">data/models/box_translation.iqm</animation>
+  <animation>data/models/box_rotation.iqm</animation>
+  <modulate>0 1</modulate>
+</animations>
+
+<camera>
+  <position>0.0 0.0 7.0</position>
+  <fov>1.047</fov>
+  <orientation>0.0 0.0</orientation>
+  <speed>10</speed>
+</camera>
+
+<!-- Rendermode can be a bitcombination of the MODE_* constants defined in main.cpp -->
+<rendermode>17</rendermode>
+
+<!-- If 1, the renderer will export the joint transformations to a file.
+     CAUTION: This overrides the file specified in the
+     joint_tranformations_file tag. --> 
+<export_joint_transformations>0</export_joint_transformations>
+<joint_transformations_file>data/joint_transformations/box_modulation</joint_transformations_file>
+
+<!-- If 1, the transformations of the file specified in the
+     joint_transformations_file tag are imported and the calculation of joint
+     transformations is skipped. -->
+<use_transformations_file>0</use_transformations_file>
+
+<screenshots>1 30 60 90 120 150 180 210 250</screenshots>
+<screenshots_folder>output/box_modulation/</screenshots_folder>
