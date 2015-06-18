@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 # Include any dependencies generated for this target.
 include cgcvcommon/CMakeFiles/cgcvcommon.dir/depend.make
@@ -51,17 +51,17 @@ include cgcvcommon/CMakeFiles/cgcvcommon.dir/flags.make
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o: cgcvcommon/CMakeFiles/cgcvcommon.dir/flags.make
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o: cgcvcommon/cfg_config.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o -c /home/jester/ClionProjects/cgcv/cgcvcommon/cfg_config.cpp
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o -c /home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_config.cpp
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgcvcommon.dir/cfg_config.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cgcvcommon/cfg_config.cpp > CMakeFiles/cgcvcommon.dir/cfg_config.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_config.cpp > CMakeFiles/cgcvcommon.dir/cfg_config.cpp.i
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgcvcommon.dir/cfg_config.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cgcvcommon/cfg_config.cpp -o CMakeFiles/cgcvcommon.dir/cfg_config.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_config.cpp -o CMakeFiles/cgcvcommon.dir/cfg_config.cpp.s
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o.requires:
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o.requires
@@ -74,17 +74,17 @@ cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o.provides.build: cgcvcommon
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o: cgcvcommon/CMakeFiles/cgcvcommon.dir/flags.make
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o: cgcvcommon/cfg_container.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o -c /home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.cpp
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o -c /home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.cpp
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgcvcommon.dir/cfg_container.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.cpp > CMakeFiles/cgcvcommon.dir/cfg_container.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.cpp > CMakeFiles/cgcvcommon.dir/cfg_container.cpp.i
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgcvcommon.dir/cfg_container.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.cpp -o CMakeFiles/cgcvcommon.dir/cfg_container.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.cpp -o CMakeFiles/cgcvcommon.dir/cfg_container.cpp.s
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o.requires:
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o.requires
@@ -108,8 +108,8 @@ cgcvcommon/libcgcvcommon.a: cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.c
 cgcvcommon/libcgcvcommon.a: cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make
 cgcvcommon/libcgcvcommon.a: cgcvcommon/CMakeFiles/cgcvcommon.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libcgcvcommon.a"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && $(CMAKE_COMMAND) -P CMakeFiles/cgcvcommon.dir/cmake_clean_target.cmake
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cgcvcommon.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && $(CMAKE_COMMAND) -P CMakeFiles/cgcvcommon.dir/cmake_clean_target.cmake
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cgcvcommon.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 cgcvcommon/CMakeFiles/cgcvcommon.dir/build: cgcvcommon/libcgcvcommon.a
@@ -120,10 +120,10 @@ cgcvcommon/CMakeFiles/cgcvcommon.dir/requires: cgcvcommon/CMakeFiles/cgcvcommon.
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/requires
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/clean:
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon && $(CMAKE_COMMAND) -P CMakeFiles/cgcvcommon.dir/cmake_clean.cmake
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon && $(CMAKE_COMMAND) -P CMakeFiles/cgcvcommon.dir/cmake_clean.cmake
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/clean
 
 cgcvcommon/CMakeFiles/cgcvcommon.dir/depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cgcvcommon /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cgcvcommon /home/jester/ClionProjects/cgcv/cgcvcommon/CMakeFiles/cgcvcommon.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cgcvcommon /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cgcvcommon /home/jester/ClionProjects/cgcv3/cgcvcommon/CMakeFiles/cgcvcommon.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/depend
 

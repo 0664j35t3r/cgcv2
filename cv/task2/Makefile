@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles /home/jester/ClionProjects/cgcv/cv/task2/CMakeFiles/progress.marks
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles /home/jester/ClionProjects/cgcv3/cv/task2/CMakeFiles/progress.marks
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/clean
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,22 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 cv/task2/CMakeFiles/cvtask2.dir/rule:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/CMakeFiles/cvtask2.dir/rule
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/CMakeFiles/cvtask2.dir/rule
 .PHONY : cv/task2/CMakeFiles/cvtask2.dir/rule
 
 # Convenience name for target.
@@ -112,12 +112,12 @@ cvtask2: cv/task2/CMakeFiles/cvtask2.dir/rule
 
 # fast build rule for target.
 cvtask2/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/build
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/build
 .PHONY : cvtask2/fast
 
 # Convenience name for target.
 cv/task2/CMakeFiles/submit.dir/rule:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/CMakeFiles/submit.dir/rule
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cv/task2/CMakeFiles/submit.dir/rule
 .PHONY : cv/task2/CMakeFiles/submit.dir/rule
 
 # Convenience name for target.
@@ -126,7 +126,7 @@ submit: cv/task2/CMakeFiles/submit.dir/rule
 
 # fast build rule for target.
 submit/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cv/task2/CMakeFiles/submit.dir/build.make cv/task2/CMakeFiles/submit.dir/build
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cv/task2/CMakeFiles/submit.dir/build.make cv/task2/CMakeFiles/submit.dir/build
 .PHONY : submit/fast
 
 main.o: main.cpp.o
@@ -134,7 +134,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/main.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +142,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/main.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +150,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/main.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

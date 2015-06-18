@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_config.cpp" "/home/jester/ClionProjects/cgcv/cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o"
-  "/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.cpp" "/home/jester/ClionProjects/cgcv/cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o"
+  "/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_config.cpp" "/home/jester/ClionProjects/cgcv3/cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o"
+  "/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.cpp" "/home/jester/ClionProjects/cgcv3/cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

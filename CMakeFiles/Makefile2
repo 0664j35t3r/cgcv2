@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 #=============================================================================
 # Target rules for target CMakeFiles/clean-all.dir
@@ -59,15 +59,15 @@ CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
 CMakeFiles/clean-all.dir/all:
 	$(MAKE) -f CMakeFiles/clean-all.dir/build.make CMakeFiles/clean-all.dir/depend
 	$(MAKE) -f CMakeFiles/clean-all.dir/build.make CMakeFiles/clean-all.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles 
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles 
 	@echo "Built target clean-all"
 .PHONY : CMakeFiles/clean-all.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/clean-all.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/clean-all.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : CMakeFiles/clean-all.dir/rule
 
 # Convenience name for target.
@@ -107,7 +107,7 @@ cgcvcommon/preinstall: cgcvcommon/tinyxml/preinstall
 cgcvcommon/CMakeFiles/cgcvcommon.dir/all:
 	$(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/depend
 	$(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles  1 2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles  1 2
 	@echo "Built target cgcvcommon"
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/all
 
@@ -117,9 +117,9 @@ all: cgcvcommon/CMakeFiles/cgcvcommon.dir/all
 
 # Build rule for subdir invocation for target.
 cgcvcommon/CMakeFiles/cgcvcommon.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/CMakeFiles/cgcvcommon.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/rule
 
 # Convenience name for target.
@@ -157,7 +157,7 @@ cgcvcommon/tinyxml/preinstall:
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/all:
 	$(MAKE) -f cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/build.make cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/depend
 	$(MAKE) -f cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/build.make cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles  42 43 44 45
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles  42 43 44 45
 	@echo "Built target tinyxml"
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/all
 
@@ -167,9 +167,9 @@ all: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/all
 
 # Build rule for subdir invocation for target.
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/rule
 
 # Convenience name for target.
@@ -225,7 +225,7 @@ cg/task2/preinstall: cg/task2/dep/preinstall
 cg/task2/CMakeFiles/cgtask2.dir/all: cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/depend
 	$(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles  3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles  3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
 	@echo "Built target cgtask2"
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/all
 
@@ -235,9 +235,9 @@ all: cg/task2/CMakeFiles/cgtask2.dir/all
 
 # Build rule for subdir invocation for target.
 cg/task2/CMakeFiles/cgtask2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 38
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 38
 	$(MAKE) -f CMakeFiles/Makefile2 cg/task2/CMakeFiles/cgtask2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/rule
 
 # Convenience name for target.
@@ -260,15 +260,15 @@ clean: cg/task2/CMakeFiles/cgtask2.dir/clean
 cg/task2/CMakeFiles/submit.dir/all:
 	$(MAKE) -f cg/task2/CMakeFiles/submit.dir/build.make cg/task2/CMakeFiles/submit.dir/depend
 	$(MAKE) -f cg/task2/CMakeFiles/submit.dir/build.make cg/task2/CMakeFiles/submit.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles 
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles 
 	@echo "Built target submit"
 .PHONY : cg/task2/CMakeFiles/submit.dir/all
 
 # Build rule for subdir invocation for target.
 cg/task2/CMakeFiles/submit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 cg/task2/CMakeFiles/submit.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : cg/task2/CMakeFiles/submit.dir/rule
 
 # Convenience name for target.
@@ -336,7 +336,7 @@ cg/task2/dep/glfw/src/preinstall:
 cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/build.make cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/build.make cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles  29 30 31 32 33 34 35 36 37 38 39 40 41
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles  29 30 31 32 33 34 35 36 37 38 39 40 41
 	@echo "Built target glfw"
 .PHONY : cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/all
 
@@ -346,9 +346,9 @@ all: cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : cg/task2/dep/glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
@@ -403,7 +403,7 @@ cv/task2/CMakeFiles/cvtask2.dir/all: cgcvcommon/CMakeFiles/cgcvcommon.dir/all
 cv/task2/CMakeFiles/cvtask2.dir/all: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/all
 	$(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/depend
 	$(MAKE) -f cv/task2/CMakeFiles/cvtask2.dir/build.make cv/task2/CMakeFiles/cvtask2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles  28
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles  28
 	@echo "Built target cvtask2"
 .PHONY : cv/task2/CMakeFiles/cvtask2.dir/all
 
@@ -413,9 +413,9 @@ all: cv/task2/CMakeFiles/cvtask2.dir/all
 
 # Build rule for subdir invocation for target.
 cv/task2/CMakeFiles/cvtask2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 cv/task2/CMakeFiles/cvtask2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : cv/task2/CMakeFiles/cvtask2.dir/rule
 
 # Convenience name for target.
@@ -438,15 +438,15 @@ clean: cv/task2/CMakeFiles/cvtask2.dir/clean
 cv/task2/CMakeFiles/submit.dir/all:
 	$(MAKE) -f cv/task2/CMakeFiles/submit.dir/build.make cv/task2/CMakeFiles/submit.dir/depend
 	$(MAKE) -f cv/task2/CMakeFiles/submit.dir/build.make cv/task2/CMakeFiles/submit.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles 
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles 
 	@echo "Built target submit"
 .PHONY : cv/task2/CMakeFiles/submit.dir/all
 
 # Build rule for subdir invocation for target.
 cv/task2/CMakeFiles/submit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 cv/task2/CMakeFiles/submit.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : cv/task2/CMakeFiles/submit.dir/rule
 
 # Convenience name for target.

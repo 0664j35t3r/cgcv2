@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 # Utility rule file for submit.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
 include cv/task2/CMakeFiles/submit.dir/progress.make
 
 cv/task2/CMakeFiles/submit:
-	cd /home/jester/ClionProjects/cgcv/cv/task2 && tar cfj submission.tar.bz2 CMakeLists.txt FaceInfo.h main.cpp
+	cd /home/jester/ClionProjects/cgcv3/cv/task2 && tar cfj submission.tar.bz2 CMakeLists.txt FaceInfo.h main.cpp
 
 submit: cv/task2/CMakeFiles/submit
 submit: cv/task2/CMakeFiles/submit.dir/build.make
@@ -57,10 +57,10 @@ cv/task2/CMakeFiles/submit.dir/build: submit
 .PHONY : cv/task2/CMakeFiles/submit.dir/build
 
 cv/task2/CMakeFiles/submit.dir/clean:
-	cd /home/jester/ClionProjects/cgcv/cv/task2 && $(CMAKE_COMMAND) -P CMakeFiles/submit.dir/cmake_clean.cmake
+	cd /home/jester/ClionProjects/cgcv3/cv/task2 && $(CMAKE_COMMAND) -P CMakeFiles/submit.dir/cmake_clean.cmake
 .PHONY : cv/task2/CMakeFiles/submit.dir/clean
 
 cv/task2/CMakeFiles/submit.dir/depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cv/task2 /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cv/task2 /home/jester/ClionProjects/cgcv/cv/task2/CMakeFiles/submit.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cv/task2 /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cv/task2 /home/jester/ClionProjects/cgcv3/cv/task2/CMakeFiles/submit.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : cv/task2/CMakeFiles/submit.dir/depend
 

@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 # Include any dependencies generated for this target.
 include cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/depend.make
@@ -51,17 +51,17 @@ include cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/flags.make
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/flags.make
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o: cgcvcommon/tinyxml/tinyxml.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinyxml.cpp.o -c /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxml.cpp
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinyxml.cpp.o -c /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxml.cpp
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyxml.dir/tinyxml.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxml.cpp > CMakeFiles/tinyxml.dir/tinyxml.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxml.cpp > CMakeFiles/tinyxml.dir/tinyxml.cpp.i
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyxml.dir/tinyxml.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxml.cpp -o CMakeFiles/tinyxml.dir/tinyxml.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxml.cpp -o CMakeFiles/tinyxml.dir/tinyxml.cpp.s
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o.requires:
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o.requires
@@ -74,17 +74,17 @@ cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o.provides.build: cgcvcomm
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/flags.make
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o: cgcvcommon/tinyxml/tinyxmlerror.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o -c /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlerror.cpp
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o -c /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlerror.cpp
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlerror.cpp > CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlerror.cpp > CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.i
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlerror.cpp -o CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlerror.cpp -o CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.s
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o.requires:
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o.requires
@@ -97,17 +97,17 @@ cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o.provides.build: cgc
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/flags.make
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o: cgcvcommon/tinyxml/tinyxmlparser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o -c /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlparser.cpp
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o -c /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlparser.cpp
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlparser.cpp > CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlparser.cpp > CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.i
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlparser.cpp -o CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlparser.cpp -o CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.s
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o.requires:
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o.requires
@@ -120,17 +120,17 @@ cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o.provides.build: cg
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.o: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/flags.make
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.o: cgcvcommon/tinyxml/tinystr.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinystr.cpp.o -c /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinystr.cpp
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/tinyxml.dir/tinystr.cpp.o -c /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinystr.cpp
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tinyxml.dir/tinystr.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinystr.cpp > CMakeFiles/tinyxml.dir/tinystr.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinystr.cpp > CMakeFiles/tinyxml.dir/tinystr.cpp.i
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tinyxml.dir/tinystr.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinystr.cpp -o CMakeFiles/tinyxml.dir/tinystr.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinystr.cpp -o CMakeFiles/tinyxml.dir/tinystr.cpp.s
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.o.requires:
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.o.requires
@@ -158,8 +158,8 @@ cgcvcommon/tinyxml/libtinyxml.a: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinys
 cgcvcommon/tinyxml/libtinyxml.a: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/build.make
 cgcvcommon/tinyxml/libtinyxml.a: cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libtinyxml.a"
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && $(CMAKE_COMMAND) -P CMakeFiles/tinyxml.dir/cmake_clean_target.cmake
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tinyxml.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && $(CMAKE_COMMAND) -P CMakeFiles/tinyxml.dir/cmake_clean_target.cmake
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tinyxml.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/build: cgcvcommon/tinyxml/libtinyxml.a
@@ -172,10 +172,10 @@ cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/requires: cgcvcommon/tinyxml/CMakeFile
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/requires
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/clean:
-	cd /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml && $(CMAKE_COMMAND) -P CMakeFiles/tinyxml.dir/cmake_clean.cmake
+	cd /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml && $(CMAKE_COMMAND) -P CMakeFiles/tinyxml.dir/cmake_clean.cmake
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/clean
 
 cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/depend
 

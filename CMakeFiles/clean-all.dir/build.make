@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 # Utility rule file for clean-all.
 
@@ -61,6 +61,6 @@ CMakeFiles/clean-all.dir/clean:
 .PHONY : CMakeFiles/clean-all.dir/clean
 
 CMakeFiles/clean-all.dir/depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/CMakeFiles/clean-all.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/CMakeFiles/clean-all.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean-all.dir/depend
 

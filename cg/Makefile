@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles /home/jester/ClionProjects/cgcv/cg/CMakeFiles/progress.marks
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles /home/jester/ClionProjects/cgcv3/cg/CMakeFiles/progress.marks
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/clean
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,17 +88,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -120,6 +120,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

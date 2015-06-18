@@ -3,11 +3,11 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_FLAGS = -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework   
+C_FLAGS = -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework   
 
 C_DEFINES = -DFULL_VERSION=1 -DTIXML_USE_STL
 
-CXX_FLAGS =  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework   
+CXX_FLAGS =  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework   
 
 CXX_DEFINES = -DFULL_VERSION=1 -DTIXML_USE_STL
 

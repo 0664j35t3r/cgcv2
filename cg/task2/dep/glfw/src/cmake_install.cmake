@@ -1,4 +1,4 @@
-# Install script for directory: /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src
+# Install script for directory: /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

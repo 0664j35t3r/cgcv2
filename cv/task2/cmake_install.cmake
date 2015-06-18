@@ -1,4 +1,4 @@
-# Install script for directory: /home/jester/ClionProjects/cgcv/cv/task2
+# Install script for directory: /home/jester/ClionProjects/cgcv3/cv/task2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

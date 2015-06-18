@@ -24,10 +24,10 @@ using namespace cv;
 
 typedef struct DetectorParam
 {
-    float scaleFactor;
-    int neighbours;
-    int flag;
-    Size minSize;
+  float scaleFactor;
+  int neighbours;
+  int flag;
+  Size minSize;
 } DetectorParam;
 
 typedef struct TrainingData
@@ -45,11 +45,11 @@ typedef struct TrainingData
 typedef struct SvmParameter {
 	CvSVMParams cvParams;
 	float scale;
-	int sizeOfSet;
+	int   sizeOfSet;
 } SvmParameter;
 
 typedef struct Detection {
-	int scoreNum;
+	int  scoreNum;
 	Size scale;
 	Size patch;
 	string svmModelFile;
@@ -250,7 +250,7 @@ void detectFace(const Mat& frame, Rect& faceROI)
   cv::cvtColor(frame, frame_gray, CV_RGB2GRAY);
   cv::equalizeHist(frame_gray, frame_gray);
 
-  face_cascade.detectMultiScale(frame_gray, faces, face_params.scaleFactor, face_params.neighbours, 0|face_params.flag, face_params.minSize); // todo refactor
+  face_cascade.detectMultiScale(frame_gray, faces, face_params.scaleFactor, face_params.neighbours, face_params.flag, face_params.minSize); // todo refactor
 
   for(ulong iter = 0; iter < faces.size(); iter++)
   {
@@ -262,7 +262,7 @@ void detectFace(const Mat& frame, Rect& faceROI)
 
 void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point& right_eye, Point& mouth, const Detection& eyes_data, const Detection& mouth_data) {
 
-    Mat frameClone = frame.clone();
+  Mat frameClone = frame.clone();
 	            
 	Point2f eye1, eye2, mouth1;
 	detect(frame(face), eye2, 2, eyes_data); // right eye
@@ -273,16 +273,13 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 	right_eye = Point(face.x + floor(eye2.x), face.y + floor(eye2.y));
 	mouth = Point(face.x + floor(mouth1.x),  face.y + floor(mouth1.y));
 	
-	/*
+
 	circle(frameClone, left_eye, 3, Scalar(0, 0, 255), 2, 1);
 	circle(frameClone, right_eye, 3, Scalar(0, 255, 0), 2, 1);
 	circle(frameClone, mouth, 3, Scalar(255, 0, 0), 2, 1);
 	imwrite("detect2.png", frameClone);
 	imshow("", frameClone);
 	waitKey(0);
-	*/
-
-
 
 }
 
@@ -307,6 +304,24 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
 void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
 {
+  Point mean;
+  mean.x = (left_eye.x + right_eye.x) / 2;
+  mean.y = (left_eye.y + right_eye.y) / 2;
+
+  float dist_eyes = sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
+
+  // hessesche normalform
+  Vec2f vec_eye;
+  vec_eye[0] = (left_eye.x - right_eye.x) / 2;
+  vec_eye[1] = (left_eye.y + right_eye.y) / 2;
+
+  float dist_mouth_eyes = sqrt( pow(vec_eye[0] - mouth_center.x, 2) + pow(vec_eye[1] - mouth_center.y,2));
+
+
+
+
+
+
 }
 
 
@@ -400,8 +415,6 @@ void distTransform(const Mat& src, Mat& dest) {
 	// comment out or delete the next line if you want to do the bonus:
 	cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
 	// --- your BONUS code here:
-
-	
 }
 
 //================================================================================
@@ -429,8 +442,8 @@ void distTransform(const Mat& src, Mat& dest) {
 //================================================================================
 vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int fps)
 {
-    vector<Mat> r;
-    return r;
+  vector<Mat> r;
+  return r;
 }
 
 //================================================================================
@@ -452,7 +465,6 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
 void createVideo(vector<Mat> frames, int fps, string video_dir, Size size)
 {
 
-    
 }
 
 
@@ -473,8 +485,8 @@ int main(int argc, char *argv[])
 
     if (argc != 2)
     {
-        cout << "Usage: ./cvtask2 <config-file>\n" << endl;
-        return -1;
+      cout << "Usage: ./cvtask2 <config-file>\n" << endl;
+      return -1;
     }
 
     try

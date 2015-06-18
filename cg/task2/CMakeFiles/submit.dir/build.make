@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 # Utility rule file for submit.
 
@@ -46,7 +46,7 @@ CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
 include cg/task2/CMakeFiles/submit.dir/progress.make
 
 cg/task2/CMakeFiles/submit:
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && tar cfj submission.tar.bz2 CMakeLists.txt main.cpp task2.h task2.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && tar cfj submission.tar.bz2 CMakeLists.txt main.cpp task2.h task2.cpp
 
 submit: cg/task2/CMakeFiles/submit
 submit: cg/task2/CMakeFiles/submit.dir/build.make
@@ -57,10 +57,10 @@ cg/task2/CMakeFiles/submit.dir/build: submit
 .PHONY : cg/task2/CMakeFiles/submit.dir/build
 
 cg/task2/CMakeFiles/submit.dir/clean:
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && $(CMAKE_COMMAND) -P CMakeFiles/submit.dir/cmake_clean.cmake
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && $(CMAKE_COMMAND) -P CMakeFiles/submit.dir/cmake_clean.cmake
 .PHONY : cg/task2/CMakeFiles/submit.dir/clean
 
 cg/task2/CMakeFiles/submit.dir/depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cg/task2 /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cg/task2 /home/jester/ClionProjects/cgcv/cg/task2/CMakeFiles/submit.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cg/task2 /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cg/task2 /home/jester/ClionProjects/cgcv3/cg/task2/CMakeFiles/submit.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : cg/task2/CMakeFiles/submit.dir/depend
 

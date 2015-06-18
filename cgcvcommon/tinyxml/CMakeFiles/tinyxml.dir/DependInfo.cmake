@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinystr.cpp" "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.o"
-  "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxml.cpp" "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o"
-  "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlerror.cpp" "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o"
-  "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxmlparser.cpp" "/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o"
+  "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinystr.cpp" "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinystr.cpp.o"
+  "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxml.cpp" "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o"
+  "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlerror.cpp" "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o"
+  "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxmlparser.cpp" "/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

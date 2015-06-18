@@ -1,4 +1,4 @@
-# Install script for directory: /home/jester/ClionProjects/cgcv/cg
+# Install script for directory: /home/jester/ClionProjects/cgcv3/cg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jester/ClionProjects/cgcv/cg/task2/cmake_install.cmake")
+  include("/home/jester/ClionProjects/cgcv3/cg/task2/cmake_install.cmake")
 
 endif()
 

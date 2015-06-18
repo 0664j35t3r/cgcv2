@@ -1,4 +1,4 @@
-# Install script for directory: /home/jester/ClionProjects/cgcv
+# Install script for directory: /home/jester/ClionProjects/cgcv3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,9 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/jester/ClionProjects/cgcv/cgcvcommon/cmake_install.cmake")
-  include("/home/jester/ClionProjects/cgcv/cg/cmake_install.cmake")
-  include("/home/jester/ClionProjects/cgcv/cv/cmake_install.cmake")
+  include("/home/jester/ClionProjects/cgcv3/cgcvcommon/cmake_install.cmake")
+  include("/home/jester/ClionProjects/cgcv3/cg/cmake_install.cmake")
+  include("/home/jester/ClionProjects/cgcv3/cv/cmake_install.cmake")
 
 endif()
 
@@ -48,5 +48,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jester/ClionProjects/cgcv/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jester/ClionProjects/cgcv3/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

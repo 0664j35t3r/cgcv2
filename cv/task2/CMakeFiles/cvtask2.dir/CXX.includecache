@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jester/ClionProjects/cgcv/cv/task2/FaceInfo.h
+/home/jester/ClionProjects/cgcv3/cv/task2/FaceInfo.h
 iostream
 -
 stdio.h
@@ -14,19 +14,19 @@ stdio.h
 stdlib.h
 -
 cfg_config.h
-/home/jester/ClionProjects/cgcv/cv/task2/cfg_config.h
+/home/jester/ClionProjects/cgcv3/cv/task2/cfg_config.h
 opencv2/opencv.hpp
-/home/jester/ClionProjects/cgcv/cv/task2/opencv2/opencv.hpp
+/home/jester/ClionProjects/cgcv3/cv/task2/opencv2/opencv.hpp
 opencv2/highgui/highgui.hpp
-/home/jester/ClionProjects/cgcv/cv/task2/opencv2/highgui/highgui.hpp
+/home/jester/ClionProjects/cgcv3/cv/task2/opencv2/highgui/highgui.hpp
 opencv2/objdetect/objdetect.hpp
-/home/jester/ClionProjects/cgcv/cv/task2/opencv2/objdetect/objdetect.hpp
+/home/jester/ClionProjects/cgcv3/cv/task2/opencv2/objdetect/objdetect.hpp
 iostream
 -
 iomanip
 -
 
-/home/jester/ClionProjects/cgcv/cv/task2/main.cpp
+/home/jester/ClionProjects/cgcv3/cv/task2/main.cpp
 iostream
 -
 stdio.h
@@ -34,15 +34,15 @@ stdio.h
 stdlib.h
 -
 FaceInfo.h
-/home/jester/ClionProjects/cgcv/cv/task2/FaceInfo.h
+/home/jester/ClionProjects/cgcv3/cv/task2/FaceInfo.h
 cfg_config.h
-/home/jester/ClionProjects/cgcv/cv/task2/cfg_config.h
+/home/jester/ClionProjects/cgcv3/cv/task2/cfg_config.h
 opencv2/opencv.hpp
-/home/jester/ClionProjects/cgcv/cv/task2/opencv2/opencv.hpp
+/home/jester/ClionProjects/cgcv3/cv/task2/opencv2/opencv.hpp
 opencv2/highgui/highgui.hpp
-/home/jester/ClionProjects/cgcv/cv/task2/opencv2/highgui/highgui.hpp
+/home/jester/ClionProjects/cgcv3/cv/task2/opencv2/highgui/highgui.hpp
 opencv2/objdetect/objdetect.hpp
-/home/jester/ClionProjects/cgcv/cv/task2/opencv2/objdetect/objdetect.hpp
+/home/jester/ClionProjects/cgcv3/cv/task2/opencv2/objdetect/objdetect.hpp
 iostream
 -
 fstream

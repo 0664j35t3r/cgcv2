@@ -1,7 +1,7 @@
-/home/jester/ClionProjects/cgcv/cg/task2/CMakeFiles/cgtask2.dir
-/home/jester/ClionProjects/cgcv/cgcvcommon/CMakeFiles/cgcvcommon.dir
-/home/jester/ClionProjects/cgcv/CMakeFiles/clean-all.dir
-/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir
-/home/jester/ClionProjects/cgcv/cv/task2/CMakeFiles/submit.dir
-/home/jester/ClionProjects/cgcv/cv/task2/CMakeFiles/cvtask2.dir
-/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/CMakeFiles/glfw.dir
+/home/jester/ClionProjects/cgcv3/cg/task2/CMakeFiles/cgtask2.dir
+/home/jester/ClionProjects/cgcv3/cgcvcommon/CMakeFiles/cgcvcommon.dir
+/home/jester/ClionProjects/cgcv3/CMakeFiles/clean-all.dir
+/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/CMakeFiles/tinyxml.dir
+/home/jester/ClionProjects/cgcv3/cv/task2/CMakeFiles/submit.dir
+/home/jester/ClionProjects/cgcv3/cv/task2/CMakeFiles/cvtask2.dir
+/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/CMakeFiles/glfw.dir

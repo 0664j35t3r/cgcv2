@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 # Include any dependencies generated for this target.
 include cg/task2/CMakeFiles/cgtask2.dir/depend.make
@@ -51,17 +51,17 @@ include cg/task2/CMakeFiles/cgtask2.dir/flags.make
 
 cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o: cg/task2/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/main.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/main.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/main.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/main.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/main.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/main.cpp > CMakeFiles/cgtask2.dir/main.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/main.cpp > CMakeFiles/cgtask2.dir/main.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/main.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/main.cpp -o CMakeFiles/cgtask2.dir/main.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/main.cpp -o CMakeFiles/cgtask2.dir/main.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o.requires
@@ -74,17 +74,17 @@ cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o.provides.build: cg/task2/CMakeFiles/c
 
 cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o: cg/task2/task2.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/task2.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/task2.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/task2.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/task2.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/task2.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/task2.cpp > CMakeFiles/cgtask2.dir/task2.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/task2.cpp > CMakeFiles/cgtask2.dir/task2.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/task2.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/task2.cpp -o CMakeFiles/cgtask2.dir/task2.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/task2.cpp -o CMakeFiles/cgtask2.dir/task2.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o.requires
@@ -97,17 +97,17 @@ cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o.provides.build: cg/task2/CMakeFiles/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o: cg/task2/framework/Model.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Model.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Model.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Model.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Model.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Model.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Model.cpp > CMakeFiles/cgtask2.dir/framework/Model.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Model.cpp > CMakeFiles/cgtask2.dir/framework/Model.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Model.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Model.cpp -o CMakeFiles/cgtask2.dir/framework/Model.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Model.cpp -o CMakeFiles/cgtask2.dir/framework/Model.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o.requires
@@ -120,17 +120,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o.provides.build: cg/task2/C
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o: cg/task2/framework/Mesh.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Mesh.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Mesh.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Mesh.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Mesh.cpp > CMakeFiles/cgtask2.dir/framework/Mesh.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Mesh.cpp > CMakeFiles/cgtask2.dir/framework/Mesh.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Mesh.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Mesh.cpp -o CMakeFiles/cgtask2.dir/framework/Mesh.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Mesh.cpp -o CMakeFiles/cgtask2.dir/framework/Mesh.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o.requires
@@ -143,17 +143,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o.provides.build: cg/task2/CM
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o: cg/task2/framework/Material.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Material.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Material.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Material.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Material.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Material.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Material.cpp > CMakeFiles/cgtask2.dir/framework/Material.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Material.cpp > CMakeFiles/cgtask2.dir/framework/Material.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Material.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Material.cpp -o CMakeFiles/cgtask2.dir/framework/Material.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Material.cpp -o CMakeFiles/cgtask2.dir/framework/Material.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o.requires
@@ -166,17 +166,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o.provides.build: cg/task
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o: cg/task2/framework/Joint.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Joint.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Joint.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Joint.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Joint.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Joint.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Joint.cpp > CMakeFiles/cgtask2.dir/framework/Joint.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Joint.cpp > CMakeFiles/cgtask2.dir/framework/Joint.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Joint.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Joint.cpp -o CMakeFiles/cgtask2.dir/framework/Joint.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Joint.cpp -o CMakeFiles/cgtask2.dir/framework/Joint.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o.requires
@@ -189,17 +189,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o.provides.build: cg/task2/C
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o: cg/task2/framework/Shader.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Shader.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Shader.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Shader.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Shader.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Shader.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Shader.cpp > CMakeFiles/cgtask2.dir/framework/Shader.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Shader.cpp > CMakeFiles/cgtask2.dir/framework/Shader.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Shader.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Shader.cpp -o CMakeFiles/cgtask2.dir/framework/Shader.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Shader.cpp -o CMakeFiles/cgtask2.dir/framework/Shader.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o.requires
@@ -212,17 +212,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o.provides.build: cg/task2/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o: cg/task2/framework/InFile.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/InFile.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/InFile.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/InFile.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/InFile.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/InFile.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/InFile.cpp > CMakeFiles/cgtask2.dir/framework/InFile.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/InFile.cpp > CMakeFiles/cgtask2.dir/framework/InFile.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/InFile.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/InFile.cpp -o CMakeFiles/cgtask2.dir/framework/InFile.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/InFile.cpp -o CMakeFiles/cgtask2.dir/framework/InFile.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o.requires
@@ -235,17 +235,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o.provides.build: cg/task2/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o: cg/task2/framework/Window.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Window.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Window.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Window.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Window.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Window.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Window.cpp > CMakeFiles/cgtask2.dir/framework/Window.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Window.cpp > CMakeFiles/cgtask2.dir/framework/Window.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Window.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Window.cpp -o CMakeFiles/cgtask2.dir/framework/Window.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Window.cpp -o CMakeFiles/cgtask2.dir/framework/Window.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o.requires
@@ -258,17 +258,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o.provides.build: cg/task2/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o: cg/task2/framework/IQMImporter.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/IQMImporter.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/IQMImporter.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/IQMImporter.cpp > CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/IQMImporter.cpp > CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/IQMImporter.cpp -o CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/IQMImporter.cpp -o CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o.requires
@@ -281,17 +281,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o.provides.build: cg/t
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o: cg/task2/framework/IModelDrawer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/IModelDrawer.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/IModelDrawer.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/IModelDrawer.cpp > CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/IModelDrawer.cpp > CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/IModelDrawer.cpp -o CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/IModelDrawer.cpp -o CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o.requires
@@ -304,17 +304,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o.provides.build: cg/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o: cg/task2/framework/ModelDrawer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/ModelDrawer.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/ModelDrawer.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/ModelDrawer.cpp > CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/ModelDrawer.cpp > CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/ModelDrawer.cpp -o CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/ModelDrawer.cpp -o CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o.requires
@@ -327,17 +327,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o.provides.build: cg/t
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o: cg/task2/framework/GLBuffer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/GLBuffer.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/GLBuffer.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/GLBuffer.cpp > CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/GLBuffer.cpp > CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/GLBuffer.cpp -o CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/GLBuffer.cpp -o CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o.requires
@@ -350,17 +350,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o.provides.build: cg/task
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o: cg/task2/framework/Camera.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Camera.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Camera.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Camera.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Camera.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Camera.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Camera.cpp > CMakeFiles/cgtask2.dir/framework/Camera.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Camera.cpp > CMakeFiles/cgtask2.dir/framework/Camera.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Camera.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Camera.cpp -o CMakeFiles/cgtask2.dir/framework/Camera.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Camera.cpp -o CMakeFiles/cgtask2.dir/framework/Camera.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o.requires
@@ -373,17 +373,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o.provides.build: cg/task2/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o: cg/task2/framework/Animation.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Animation.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Animation.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Animation.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Animation.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Animation.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Animation.cpp > CMakeFiles/cgtask2.dir/framework/Animation.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Animation.cpp > CMakeFiles/cgtask2.dir/framework/Animation.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Animation.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Animation.cpp -o CMakeFiles/cgtask2.dir/framework/Animation.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Animation.cpp -o CMakeFiles/cgtask2.dir/framework/Animation.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o.requires
@@ -396,17 +396,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o.provides.build: cg/tas
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o: cg/task2/framework/Keyframe.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_16)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Keyframe.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Keyframe.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Keyframe.cpp > CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Keyframe.cpp > CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Keyframe.cpp -o CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Keyframe.cpp -o CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o.requires
@@ -419,17 +419,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o.provides.build: cg/task
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o: cg/task2/framework/Light.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_17)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Light.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Light.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Light.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Light.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Light.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Light.cpp > CMakeFiles/cgtask2.dir/framework/Light.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Light.cpp > CMakeFiles/cgtask2.dir/framework/Light.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Light.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Light.cpp -o CMakeFiles/cgtask2.dir/framework/Light.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Light.cpp -o CMakeFiles/cgtask2.dir/framework/Light.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o.requires
@@ -442,17 +442,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o.provides.build: cg/task2/C
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o: cg/task2/framework/PointLight.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_18)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/PointLight.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/PointLight.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/PointLight.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/PointLight.cpp > CMakeFiles/cgtask2.dir/framework/PointLight.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/PointLight.cpp > CMakeFiles/cgtask2.dir/framework/PointLight.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/PointLight.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/PointLight.cpp -o CMakeFiles/cgtask2.dir/framework/PointLight.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/PointLight.cpp -o CMakeFiles/cgtask2.dir/framework/PointLight.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o.requires
@@ -465,17 +465,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o.provides.build: cg/ta
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o: cg/task2/framework/Image.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_19)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Image.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Image.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Image.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Image.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Image.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Image.cpp > CMakeFiles/cgtask2.dir/framework/Image.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Image.cpp > CMakeFiles/cgtask2.dir/framework/Image.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Image.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Image.cpp -o CMakeFiles/cgtask2.dir/framework/Image.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Image.cpp -o CMakeFiles/cgtask2.dir/framework/Image.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o.requires
@@ -488,17 +488,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o.provides.build: cg/task2/C
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o: cg/task2/framework/Config.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_20)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Config.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Config.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Config.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Config.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Config.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Config.cpp > CMakeFiles/cgtask2.dir/framework/Config.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Config.cpp > CMakeFiles/cgtask2.dir/framework/Config.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Config.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Config.cpp -o CMakeFiles/cgtask2.dir/framework/Config.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Config.cpp -o CMakeFiles/cgtask2.dir/framework/Config.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o.requires
@@ -511,17 +511,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o.provides.build: cg/task2/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o: cg/task2/framework/Spline.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_21)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Spline.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Spline.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/Spline.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Spline.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/Spline.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/Spline.cpp > CMakeFiles/cgtask2.dir/framework/Spline.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/Spline.cpp > CMakeFiles/cgtask2.dir/framework/Spline.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/Spline.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/Spline.cpp -o CMakeFiles/cgtask2.dir/framework/Spline.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/Spline.cpp -o CMakeFiles/cgtask2.dir/framework/Spline.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o.requires
@@ -534,17 +534,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o.provides.build: cg/task2/
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o: cg/task2/framework/SplineDrawer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_22)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/SplineDrawer.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/SplineDrawer.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/framework/SplineDrawer.cpp > CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/framework/SplineDrawer.cpp > CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/framework/SplineDrawer.cpp -o CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/framework/SplineDrawer.cpp -o CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o.requires
@@ -557,17 +557,17 @@ cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o.provides.build: cg/
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o: cg/task2/dep/src/gl3w.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_23)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/src/gl3w.c
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/gl3w.c
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cgtask2.dir/dep/src/gl3w.c.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/dep/src/gl3w.c > CMakeFiles/cgtask2.dir/dep/src/gl3w.c.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/gl3w.c > CMakeFiles/cgtask2.dir/dep/src/gl3w.c.i
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cgtask2.dir/dep/src/gl3w.c.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/dep/src/gl3w.c -o CMakeFiles/cgtask2.dir/dep/src/gl3w.c.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/gl3w.c -o CMakeFiles/cgtask2.dir/dep/src/gl3w.c.s
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o.requires
@@ -580,17 +580,17 @@ cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o.provides.build: cg/task2/CMakeF
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o: cg/task2/dep/src/tinyxml2.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_24)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/dep/src/tinyxml2.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/tinyxml2.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/dep/src/tinyxml2.cpp > CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/tinyxml2.cpp > CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/dep/src/tinyxml2.cpp -o CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/tinyxml2.cpp -o CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o.requires
@@ -603,17 +603,17 @@ cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o.provides.build: cg/task2/
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o: cg/task2/CMakeFiles/cgtask2.dir/flags.make
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o: cg/task2/dep/src/lodepng.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles $(CMAKE_PROGRESS_25)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/dep/src/lodepng.cpp
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/lodepng.cpp
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.i"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv/cg/task2/dep/src/lodepng.cpp > CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.i
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/lodepng.cpp > CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.i
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.s"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv/cg/task2/dep/src/lodepng.cpp -o CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.s
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/lodepng.cpp -o CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.s
 
 cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o.requires:
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o.requires
@@ -693,7 +693,7 @@ cg/task2/cgtask2: /usr/lib/x86_64-linux-gnu/libXcursor.so
 cg/task2/cgtask2: /usr/lib/x86_64-linux-gnu/libGL.so
 cg/task2/cgtask2: cg/task2/CMakeFiles/cgtask2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable cgtask2"
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cgtask2.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cgtask2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 cg/task2/CMakeFiles/cgtask2.dir/build: cg/task2/cgtask2
@@ -727,10 +727,10 @@ cg/task2/CMakeFiles/cgtask2.dir/requires: cg/task2/CMakeFiles/cgtask2.dir/dep/sr
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/requires
 
 cg/task2/CMakeFiles/cgtask2.dir/clean:
-	cd /home/jester/ClionProjects/cgcv/cg/task2 && $(CMAKE_COMMAND) -P CMakeFiles/cgtask2.dir/cmake_clean.cmake
+	cd /home/jester/ClionProjects/cgcv3/cg/task2 && $(CMAKE_COMMAND) -P CMakeFiles/cgtask2.dir/cmake_clean.cmake
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/clean
 
 cg/task2/CMakeFiles/cgtask2.dir/depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cg/task2 /home/jester/ClionProjects/cgcv /home/jester/ClionProjects/cgcv/cg/task2 /home/jester/ClionProjects/cgcv/cg/task2/CMakeFiles/cgtask2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cg/task2 /home/jester/ClionProjects/cgcv3 /home/jester/ClionProjects/cgcv3/cg/task2 /home/jester/ClionProjects/cgcv3/cg/task2/CMakeFiles/cgtask2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/depend
 

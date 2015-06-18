@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_config.cpp
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_config.cpp
 cfg_config.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_config.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_config.h
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_config.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_config.h
 cfg_testcase.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_testcase.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_testcase.h
 cfg_container.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.h
 limits
 -
 string
@@ -28,11 +28,11 @@ map
 vector
 -
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.cpp
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.cpp
 cfg_container.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.h
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.h
 string
 -
 sstream
@@ -42,27 +42,27 @@ vector
 map
 -
 tinyxml/tinyxml.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxml.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxml.h
 cfg_conversion.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_conversion.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_conversion.h
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_conversion.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_conversion.h
 cfg_container.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.h
 vector
 -
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_testcase.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_testcase.h
 cfg_container.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/cfg_container.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/cfg_container.h
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinystr.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinystr.h
 assert.h
 -
 string.h
 -
 
-/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinyxml.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinyxml.h
 ctype.h
 -
 stdio.h
@@ -80,5 +80,5 @@ iostream
 sstream
 -
 tinystr.h
-/home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml/tinystr.h
+/home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml/tinystr.h
 

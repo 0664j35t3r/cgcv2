@@ -1,192 +1,192 @@
 [
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/main.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/main.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/main.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/main.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/main.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/main.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/task2.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/task2.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/task2.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/task2.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/task2.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/task2.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Model.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Model.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Model.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Model.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Model.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Model.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Mesh.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Mesh.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Mesh.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Mesh.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Material.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Material.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Material.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Material.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Material.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Material.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Joint.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Joint.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Joint.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Joint.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Joint.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Joint.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Shader.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Shader.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Shader.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Shader.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Shader.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Shader.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/InFile.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/InFile.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/InFile.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/InFile.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/InFile.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/InFile.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Window.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Window.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Window.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Window.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Window.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Window.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/IQMImporter.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/IQMImporter.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/IQMImporter.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/IQMImporter.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/IModelDrawer.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/IModelDrawer.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/IModelDrawer.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/IModelDrawer.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/ModelDrawer.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/ModelDrawer.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/ModelDrawer.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/ModelDrawer.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/GLBuffer.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/GLBuffer.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/GLBuffer.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/GLBuffer.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Camera.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Camera.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Camera.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Camera.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Camera.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Camera.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Animation.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Animation.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Animation.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Animation.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Animation.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Animation.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Keyframe.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Keyframe.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Keyframe.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Keyframe.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Light.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Light.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Light.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Light.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Light.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Light.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/PointLight.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/PointLight.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/PointLight.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/PointLight.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Image.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Image.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Image.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Image.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Image.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Image.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Config.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Config.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Config.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Config.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Config.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Config.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Spline.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/Spline.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/Spline.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/Spline.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/Spline.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/Spline.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/framework/SplineDrawer.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/framework/SplineDrawer.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/framework/SplineDrawer.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/framework/SplineDrawer.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/src/gl3w.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/src/gl3w.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/gl3w.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/src/gl3w.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/dep/src/tinyxml2.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/src/tinyxml2.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/tinyxml2.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/src/tinyxml2.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2",
-  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv/cg/task2/framework    -o CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o -c /home/jester/ClionProjects/cgcv/cg/task2/dep/src/lodepng.cpp",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/src/lodepng.cpp"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2",
+  "command": "/usr/bin/c++   -DFULL_VERSION=1 -DTIXML_USE_STL  -std=c++11 -std=c++11 -g -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/include -I/home/jester/ClionProjects/cgcv3/cg/task2/framework    -o CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/src/lodepng.cpp",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/src/lodepng.cpp"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/context.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/context.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/context.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/context.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/context.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/context.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/init.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/init.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/init.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/init.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/init.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/init.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/input.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/input.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/input.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/input.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/input.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/input.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/monitor.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/monitor.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/monitor.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/monitor.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/monitor.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/monitor.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/window.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/window.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/window.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/window.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/window.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/window.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/x11_init.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/x11_init.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/x11_init.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/x11_init.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/x11_init.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/x11_init.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/x11_monitor.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/x11_monitor.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/x11_monitor.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/x11_monitor.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/x11_monitor.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/x11_monitor.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/x11_window.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/x11_window.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/x11_window.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/x11_window.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/x11_window.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/x11_window.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/xkb_unicode.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/xkb_unicode.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/xkb_unicode.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/xkb_unicode.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/xkb_unicode.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/xkb_unicode.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/linux_joystick.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/linux_joystick.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/linux_joystick.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/linux_joystick.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/linux_joystick.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/linux_joystick.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/posix_time.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/posix_time.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/posix_time.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/posix_time.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/posix_time.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/posix_time.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/posix_tls.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/posix_tls.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/posix_tls.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/posix_tls.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/posix_tls.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/posix_tls.c"
 },
 {
-  "directory": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src",
-  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/glx_context.c.o   -c /home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/glx_context.c",
-  "file": "/home/jester/ClionProjects/cgcv/cg/task2/dep/glfw/src/glx_context.c"
+  "directory": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src",
+  "command": "/usr/bin/cc  -DFULL_VERSION=1 -DTIXML_USE_STL -D_GLFW_USE_CONFIG_H -g -fPIC -I/software/opencv/include -I/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src    -Wall -o CMakeFiles/glfw.dir/glx_context.c.o   -c /home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/glx_context.c",
+  "file": "/home/jester/ClionProjects/cgcv3/cg/task2/dep/glfw/src/glx_context.c"
 }
 ]

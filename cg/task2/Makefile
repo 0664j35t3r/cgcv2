@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles /home/jester/ClionProjects/cgcv/cg/task2/CMakeFiles/progress.marks
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles /home/jester/ClionProjects/cgcv3/cg/task2/CMakeFiles/progress.marks
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/clean
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,22 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 cg/task2/CMakeFiles/cgtask2.dir/rule:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/CMakeFiles/cgtask2.dir/rule
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/CMakeFiles/cgtask2.dir/rule
 .PHONY : cg/task2/CMakeFiles/cgtask2.dir/rule
 
 # Convenience name for target.
@@ -112,12 +112,12 @@ cgtask2: cg/task2/CMakeFiles/cgtask2.dir/rule
 
 # fast build rule for target.
 cgtask2/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/build
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/build
 .PHONY : cgtask2/fast
 
 # Convenience name for target.
 cg/task2/CMakeFiles/submit.dir/rule:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/CMakeFiles/submit.dir/rule
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cg/task2/CMakeFiles/submit.dir/rule
 .PHONY : cg/task2/CMakeFiles/submit.dir/rule
 
 # Convenience name for target.
@@ -126,7 +126,7 @@ submit: cg/task2/CMakeFiles/submit.dir/rule
 
 # fast build rule for target.
 submit/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/submit.dir/build.make cg/task2/CMakeFiles/submit.dir/build
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/submit.dir/build.make cg/task2/CMakeFiles/submit.dir/build
 .PHONY : submit/fast
 
 dep/src/gl3w.o: dep/src/gl3w.c.o
@@ -134,7 +134,7 @@ dep/src/gl3w.o: dep/src/gl3w.c.o
 
 # target to build an object file
 dep/src/gl3w.c.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.o
 .PHONY : dep/src/gl3w.c.o
 
 dep/src/gl3w.i: dep/src/gl3w.c.i
@@ -142,7 +142,7 @@ dep/src/gl3w.i: dep/src/gl3w.c.i
 
 # target to preprocess a source file
 dep/src/gl3w.c.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.i
 .PHONY : dep/src/gl3w.c.i
 
 dep/src/gl3w.s: dep/src/gl3w.c.s
@@ -150,7 +150,7 @@ dep/src/gl3w.s: dep/src/gl3w.c.s
 
 # target to generate assembly for a file
 dep/src/gl3w.c.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/gl3w.c.s
 .PHONY : dep/src/gl3w.c.s
 
 dep/src/lodepng.o: dep/src/lodepng.cpp.o
@@ -158,7 +158,7 @@ dep/src/lodepng.o: dep/src/lodepng.cpp.o
 
 # target to build an object file
 dep/src/lodepng.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.o
 .PHONY : dep/src/lodepng.cpp.o
 
 dep/src/lodepng.i: dep/src/lodepng.cpp.i
@@ -166,7 +166,7 @@ dep/src/lodepng.i: dep/src/lodepng.cpp.i
 
 # target to preprocess a source file
 dep/src/lodepng.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.i
 .PHONY : dep/src/lodepng.cpp.i
 
 dep/src/lodepng.s: dep/src/lodepng.cpp.s
@@ -174,7 +174,7 @@ dep/src/lodepng.s: dep/src/lodepng.cpp.s
 
 # target to generate assembly for a file
 dep/src/lodepng.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/lodepng.cpp.s
 .PHONY : dep/src/lodepng.cpp.s
 
 dep/src/tinyxml2.o: dep/src/tinyxml2.cpp.o
@@ -182,7 +182,7 @@ dep/src/tinyxml2.o: dep/src/tinyxml2.cpp.o
 
 # target to build an object file
 dep/src/tinyxml2.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.o
 .PHONY : dep/src/tinyxml2.cpp.o
 
 dep/src/tinyxml2.i: dep/src/tinyxml2.cpp.i
@@ -190,7 +190,7 @@ dep/src/tinyxml2.i: dep/src/tinyxml2.cpp.i
 
 # target to preprocess a source file
 dep/src/tinyxml2.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.i
 .PHONY : dep/src/tinyxml2.cpp.i
 
 dep/src/tinyxml2.s: dep/src/tinyxml2.cpp.s
@@ -198,7 +198,7 @@ dep/src/tinyxml2.s: dep/src/tinyxml2.cpp.s
 
 # target to generate assembly for a file
 dep/src/tinyxml2.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/dep/src/tinyxml2.cpp.s
 .PHONY : dep/src/tinyxml2.cpp.s
 
 framework/Animation.o: framework/Animation.cpp.o
@@ -206,7 +206,7 @@ framework/Animation.o: framework/Animation.cpp.o
 
 # target to build an object file
 framework/Animation.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.o
 .PHONY : framework/Animation.cpp.o
 
 framework/Animation.i: framework/Animation.cpp.i
@@ -214,7 +214,7 @@ framework/Animation.i: framework/Animation.cpp.i
 
 # target to preprocess a source file
 framework/Animation.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.i
 .PHONY : framework/Animation.cpp.i
 
 framework/Animation.s: framework/Animation.cpp.s
@@ -222,7 +222,7 @@ framework/Animation.s: framework/Animation.cpp.s
 
 # target to generate assembly for a file
 framework/Animation.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Animation.cpp.s
 .PHONY : framework/Animation.cpp.s
 
 framework/Camera.o: framework/Camera.cpp.o
@@ -230,7 +230,7 @@ framework/Camera.o: framework/Camera.cpp.o
 
 # target to build an object file
 framework/Camera.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.o
 .PHONY : framework/Camera.cpp.o
 
 framework/Camera.i: framework/Camera.cpp.i
@@ -238,7 +238,7 @@ framework/Camera.i: framework/Camera.cpp.i
 
 # target to preprocess a source file
 framework/Camera.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.i
 .PHONY : framework/Camera.cpp.i
 
 framework/Camera.s: framework/Camera.cpp.s
@@ -246,7 +246,7 @@ framework/Camera.s: framework/Camera.cpp.s
 
 # target to generate assembly for a file
 framework/Camera.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Camera.cpp.s
 .PHONY : framework/Camera.cpp.s
 
 framework/Config.o: framework/Config.cpp.o
@@ -254,7 +254,7 @@ framework/Config.o: framework/Config.cpp.o
 
 # target to build an object file
 framework/Config.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.o
 .PHONY : framework/Config.cpp.o
 
 framework/Config.i: framework/Config.cpp.i
@@ -262,7 +262,7 @@ framework/Config.i: framework/Config.cpp.i
 
 # target to preprocess a source file
 framework/Config.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.i
 .PHONY : framework/Config.cpp.i
 
 framework/Config.s: framework/Config.cpp.s
@@ -270,7 +270,7 @@ framework/Config.s: framework/Config.cpp.s
 
 # target to generate assembly for a file
 framework/Config.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Config.cpp.s
 .PHONY : framework/Config.cpp.s
 
 framework/GLBuffer.o: framework/GLBuffer.cpp.o
@@ -278,7 +278,7 @@ framework/GLBuffer.o: framework/GLBuffer.cpp.o
 
 # target to build an object file
 framework/GLBuffer.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.o
 .PHONY : framework/GLBuffer.cpp.o
 
 framework/GLBuffer.i: framework/GLBuffer.cpp.i
@@ -286,7 +286,7 @@ framework/GLBuffer.i: framework/GLBuffer.cpp.i
 
 # target to preprocess a source file
 framework/GLBuffer.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.i
 .PHONY : framework/GLBuffer.cpp.i
 
 framework/GLBuffer.s: framework/GLBuffer.cpp.s
@@ -294,7 +294,7 @@ framework/GLBuffer.s: framework/GLBuffer.cpp.s
 
 # target to generate assembly for a file
 framework/GLBuffer.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/GLBuffer.cpp.s
 .PHONY : framework/GLBuffer.cpp.s
 
 framework/IModelDrawer.o: framework/IModelDrawer.cpp.o
@@ -302,7 +302,7 @@ framework/IModelDrawer.o: framework/IModelDrawer.cpp.o
 
 # target to build an object file
 framework/IModelDrawer.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.o
 .PHONY : framework/IModelDrawer.cpp.o
 
 framework/IModelDrawer.i: framework/IModelDrawer.cpp.i
@@ -310,7 +310,7 @@ framework/IModelDrawer.i: framework/IModelDrawer.cpp.i
 
 # target to preprocess a source file
 framework/IModelDrawer.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.i
 .PHONY : framework/IModelDrawer.cpp.i
 
 framework/IModelDrawer.s: framework/IModelDrawer.cpp.s
@@ -318,7 +318,7 @@ framework/IModelDrawer.s: framework/IModelDrawer.cpp.s
 
 # target to generate assembly for a file
 framework/IModelDrawer.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IModelDrawer.cpp.s
 .PHONY : framework/IModelDrawer.cpp.s
 
 framework/IQMImporter.o: framework/IQMImporter.cpp.o
@@ -326,7 +326,7 @@ framework/IQMImporter.o: framework/IQMImporter.cpp.o
 
 # target to build an object file
 framework/IQMImporter.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.o
 .PHONY : framework/IQMImporter.cpp.o
 
 framework/IQMImporter.i: framework/IQMImporter.cpp.i
@@ -334,7 +334,7 @@ framework/IQMImporter.i: framework/IQMImporter.cpp.i
 
 # target to preprocess a source file
 framework/IQMImporter.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.i
 .PHONY : framework/IQMImporter.cpp.i
 
 framework/IQMImporter.s: framework/IQMImporter.cpp.s
@@ -342,7 +342,7 @@ framework/IQMImporter.s: framework/IQMImporter.cpp.s
 
 # target to generate assembly for a file
 framework/IQMImporter.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/IQMImporter.cpp.s
 .PHONY : framework/IQMImporter.cpp.s
 
 framework/Image.o: framework/Image.cpp.o
@@ -350,7 +350,7 @@ framework/Image.o: framework/Image.cpp.o
 
 # target to build an object file
 framework/Image.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.o
 .PHONY : framework/Image.cpp.o
 
 framework/Image.i: framework/Image.cpp.i
@@ -358,7 +358,7 @@ framework/Image.i: framework/Image.cpp.i
 
 # target to preprocess a source file
 framework/Image.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.i
 .PHONY : framework/Image.cpp.i
 
 framework/Image.s: framework/Image.cpp.s
@@ -366,7 +366,7 @@ framework/Image.s: framework/Image.cpp.s
 
 # target to generate assembly for a file
 framework/Image.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Image.cpp.s
 .PHONY : framework/Image.cpp.s
 
 framework/InFile.o: framework/InFile.cpp.o
@@ -374,7 +374,7 @@ framework/InFile.o: framework/InFile.cpp.o
 
 # target to build an object file
 framework/InFile.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.o
 .PHONY : framework/InFile.cpp.o
 
 framework/InFile.i: framework/InFile.cpp.i
@@ -382,7 +382,7 @@ framework/InFile.i: framework/InFile.cpp.i
 
 # target to preprocess a source file
 framework/InFile.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.i
 .PHONY : framework/InFile.cpp.i
 
 framework/InFile.s: framework/InFile.cpp.s
@@ -390,7 +390,7 @@ framework/InFile.s: framework/InFile.cpp.s
 
 # target to generate assembly for a file
 framework/InFile.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/InFile.cpp.s
 .PHONY : framework/InFile.cpp.s
 
 framework/Joint.o: framework/Joint.cpp.o
@@ -398,7 +398,7 @@ framework/Joint.o: framework/Joint.cpp.o
 
 # target to build an object file
 framework/Joint.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.o
 .PHONY : framework/Joint.cpp.o
 
 framework/Joint.i: framework/Joint.cpp.i
@@ -406,7 +406,7 @@ framework/Joint.i: framework/Joint.cpp.i
 
 # target to preprocess a source file
 framework/Joint.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.i
 .PHONY : framework/Joint.cpp.i
 
 framework/Joint.s: framework/Joint.cpp.s
@@ -414,7 +414,7 @@ framework/Joint.s: framework/Joint.cpp.s
 
 # target to generate assembly for a file
 framework/Joint.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Joint.cpp.s
 .PHONY : framework/Joint.cpp.s
 
 framework/Keyframe.o: framework/Keyframe.cpp.o
@@ -422,7 +422,7 @@ framework/Keyframe.o: framework/Keyframe.cpp.o
 
 # target to build an object file
 framework/Keyframe.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.o
 .PHONY : framework/Keyframe.cpp.o
 
 framework/Keyframe.i: framework/Keyframe.cpp.i
@@ -430,7 +430,7 @@ framework/Keyframe.i: framework/Keyframe.cpp.i
 
 # target to preprocess a source file
 framework/Keyframe.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.i
 .PHONY : framework/Keyframe.cpp.i
 
 framework/Keyframe.s: framework/Keyframe.cpp.s
@@ -438,7 +438,7 @@ framework/Keyframe.s: framework/Keyframe.cpp.s
 
 # target to generate assembly for a file
 framework/Keyframe.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Keyframe.cpp.s
 .PHONY : framework/Keyframe.cpp.s
 
 framework/Light.o: framework/Light.cpp.o
@@ -446,7 +446,7 @@ framework/Light.o: framework/Light.cpp.o
 
 # target to build an object file
 framework/Light.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.o
 .PHONY : framework/Light.cpp.o
 
 framework/Light.i: framework/Light.cpp.i
@@ -454,7 +454,7 @@ framework/Light.i: framework/Light.cpp.i
 
 # target to preprocess a source file
 framework/Light.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.i
 .PHONY : framework/Light.cpp.i
 
 framework/Light.s: framework/Light.cpp.s
@@ -462,7 +462,7 @@ framework/Light.s: framework/Light.cpp.s
 
 # target to generate assembly for a file
 framework/Light.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Light.cpp.s
 .PHONY : framework/Light.cpp.s
 
 framework/Material.o: framework/Material.cpp.o
@@ -470,7 +470,7 @@ framework/Material.o: framework/Material.cpp.o
 
 # target to build an object file
 framework/Material.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.o
 .PHONY : framework/Material.cpp.o
 
 framework/Material.i: framework/Material.cpp.i
@@ -478,7 +478,7 @@ framework/Material.i: framework/Material.cpp.i
 
 # target to preprocess a source file
 framework/Material.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.i
 .PHONY : framework/Material.cpp.i
 
 framework/Material.s: framework/Material.cpp.s
@@ -486,7 +486,7 @@ framework/Material.s: framework/Material.cpp.s
 
 # target to generate assembly for a file
 framework/Material.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Material.cpp.s
 .PHONY : framework/Material.cpp.s
 
 framework/Mesh.o: framework/Mesh.cpp.o
@@ -494,7 +494,7 @@ framework/Mesh.o: framework/Mesh.cpp.o
 
 # target to build an object file
 framework/Mesh.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.o
 .PHONY : framework/Mesh.cpp.o
 
 framework/Mesh.i: framework/Mesh.cpp.i
@@ -502,7 +502,7 @@ framework/Mesh.i: framework/Mesh.cpp.i
 
 # target to preprocess a source file
 framework/Mesh.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.i
 .PHONY : framework/Mesh.cpp.i
 
 framework/Mesh.s: framework/Mesh.cpp.s
@@ -510,7 +510,7 @@ framework/Mesh.s: framework/Mesh.cpp.s
 
 # target to generate assembly for a file
 framework/Mesh.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Mesh.cpp.s
 .PHONY : framework/Mesh.cpp.s
 
 framework/Model.o: framework/Model.cpp.o
@@ -518,7 +518,7 @@ framework/Model.o: framework/Model.cpp.o
 
 # target to build an object file
 framework/Model.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.o
 .PHONY : framework/Model.cpp.o
 
 framework/Model.i: framework/Model.cpp.i
@@ -526,7 +526,7 @@ framework/Model.i: framework/Model.cpp.i
 
 # target to preprocess a source file
 framework/Model.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.i
 .PHONY : framework/Model.cpp.i
 
 framework/Model.s: framework/Model.cpp.s
@@ -534,7 +534,7 @@ framework/Model.s: framework/Model.cpp.s
 
 # target to generate assembly for a file
 framework/Model.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Model.cpp.s
 .PHONY : framework/Model.cpp.s
 
 framework/ModelDrawer.o: framework/ModelDrawer.cpp.o
@@ -542,7 +542,7 @@ framework/ModelDrawer.o: framework/ModelDrawer.cpp.o
 
 # target to build an object file
 framework/ModelDrawer.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.o
 .PHONY : framework/ModelDrawer.cpp.o
 
 framework/ModelDrawer.i: framework/ModelDrawer.cpp.i
@@ -550,7 +550,7 @@ framework/ModelDrawer.i: framework/ModelDrawer.cpp.i
 
 # target to preprocess a source file
 framework/ModelDrawer.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.i
 .PHONY : framework/ModelDrawer.cpp.i
 
 framework/ModelDrawer.s: framework/ModelDrawer.cpp.s
@@ -558,7 +558,7 @@ framework/ModelDrawer.s: framework/ModelDrawer.cpp.s
 
 # target to generate assembly for a file
 framework/ModelDrawer.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/ModelDrawer.cpp.s
 .PHONY : framework/ModelDrawer.cpp.s
 
 framework/PointLight.o: framework/PointLight.cpp.o
@@ -566,7 +566,7 @@ framework/PointLight.o: framework/PointLight.cpp.o
 
 # target to build an object file
 framework/PointLight.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.o
 .PHONY : framework/PointLight.cpp.o
 
 framework/PointLight.i: framework/PointLight.cpp.i
@@ -574,7 +574,7 @@ framework/PointLight.i: framework/PointLight.cpp.i
 
 # target to preprocess a source file
 framework/PointLight.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.i
 .PHONY : framework/PointLight.cpp.i
 
 framework/PointLight.s: framework/PointLight.cpp.s
@@ -582,7 +582,7 @@ framework/PointLight.s: framework/PointLight.cpp.s
 
 # target to generate assembly for a file
 framework/PointLight.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/PointLight.cpp.s
 .PHONY : framework/PointLight.cpp.s
 
 framework/Shader.o: framework/Shader.cpp.o
@@ -590,7 +590,7 @@ framework/Shader.o: framework/Shader.cpp.o
 
 # target to build an object file
 framework/Shader.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.o
 .PHONY : framework/Shader.cpp.o
 
 framework/Shader.i: framework/Shader.cpp.i
@@ -598,7 +598,7 @@ framework/Shader.i: framework/Shader.cpp.i
 
 # target to preprocess a source file
 framework/Shader.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.i
 .PHONY : framework/Shader.cpp.i
 
 framework/Shader.s: framework/Shader.cpp.s
@@ -606,7 +606,7 @@ framework/Shader.s: framework/Shader.cpp.s
 
 # target to generate assembly for a file
 framework/Shader.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Shader.cpp.s
 .PHONY : framework/Shader.cpp.s
 
 framework/Spline.o: framework/Spline.cpp.o
@@ -614,7 +614,7 @@ framework/Spline.o: framework/Spline.cpp.o
 
 # target to build an object file
 framework/Spline.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.o
 .PHONY : framework/Spline.cpp.o
 
 framework/Spline.i: framework/Spline.cpp.i
@@ -622,7 +622,7 @@ framework/Spline.i: framework/Spline.cpp.i
 
 # target to preprocess a source file
 framework/Spline.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.i
 .PHONY : framework/Spline.cpp.i
 
 framework/Spline.s: framework/Spline.cpp.s
@@ -630,7 +630,7 @@ framework/Spline.s: framework/Spline.cpp.s
 
 # target to generate assembly for a file
 framework/Spline.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Spline.cpp.s
 .PHONY : framework/Spline.cpp.s
 
 framework/SplineDrawer.o: framework/SplineDrawer.cpp.o
@@ -638,7 +638,7 @@ framework/SplineDrawer.o: framework/SplineDrawer.cpp.o
 
 # target to build an object file
 framework/SplineDrawer.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.o
 .PHONY : framework/SplineDrawer.cpp.o
 
 framework/SplineDrawer.i: framework/SplineDrawer.cpp.i
@@ -646,7 +646,7 @@ framework/SplineDrawer.i: framework/SplineDrawer.cpp.i
 
 # target to preprocess a source file
 framework/SplineDrawer.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.i
 .PHONY : framework/SplineDrawer.cpp.i
 
 framework/SplineDrawer.s: framework/SplineDrawer.cpp.s
@@ -654,7 +654,7 @@ framework/SplineDrawer.s: framework/SplineDrawer.cpp.s
 
 # target to generate assembly for a file
 framework/SplineDrawer.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/SplineDrawer.cpp.s
 .PHONY : framework/SplineDrawer.cpp.s
 
 framework/Window.o: framework/Window.cpp.o
@@ -662,7 +662,7 @@ framework/Window.o: framework/Window.cpp.o
 
 # target to build an object file
 framework/Window.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.o
 .PHONY : framework/Window.cpp.o
 
 framework/Window.i: framework/Window.cpp.i
@@ -670,7 +670,7 @@ framework/Window.i: framework/Window.cpp.i
 
 # target to preprocess a source file
 framework/Window.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.i
 .PHONY : framework/Window.cpp.i
 
 framework/Window.s: framework/Window.cpp.s
@@ -678,7 +678,7 @@ framework/Window.s: framework/Window.cpp.s
 
 # target to generate assembly for a file
 framework/Window.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/framework/Window.cpp.s
 .PHONY : framework/Window.cpp.s
 
 main.o: main.cpp.o
@@ -686,7 +686,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -694,7 +694,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/main.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -702,7 +702,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/main.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 task2.o: task2.cpp.o
@@ -710,7 +710,7 @@ task2.o: task2.cpp.o
 
 # target to build an object file
 task2.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.o
 .PHONY : task2.cpp.o
 
 task2.i: task2.cpp.i
@@ -718,7 +718,7 @@ task2.i: task2.cpp.i
 
 # target to preprocess a source file
 task2.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.i
 .PHONY : task2.cpp.i
 
 task2.s: task2.cpp.s
@@ -726,7 +726,7 @@ task2.s: task2.cpp.s
 
 # target to generate assembly for a file
 task2.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cg/task2/CMakeFiles/cgtask2.dir/build.make cg/task2/CMakeFiles/cgtask2.dir/task2.cpp.s
 .PHONY : task2.cpp.s
 
 # Help Target
@@ -825,6 +825,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

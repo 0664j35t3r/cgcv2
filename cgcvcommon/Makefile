@@ -42,10 +42,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_SOURCE_DIR = /home/jester/ClionProjects/cgcv3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv
+CMAKE_BINARY_DIR = /home/jester/ClionProjects/cgcv3
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles /home/jester/ClionProjects/cgcv/cgcvcommon/CMakeFiles/progress.marks
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv/CMakeFiles 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles /home/jester/ClionProjects/cgcv3/cgcvcommon/CMakeFiles/progress.marks
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jester/ClionProjects/cgcv3/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/clean
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,22 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/preinstall
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 cgcvcommon/CMakeFiles/cgcvcommon.dir/rule:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/CMakeFiles/cgcvcommon.dir/rule
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f CMakeFiles/Makefile2 cgcvcommon/CMakeFiles/cgcvcommon.dir/rule
 .PHONY : cgcvcommon/CMakeFiles/cgcvcommon.dir/rule
 
 # Convenience name for target.
@@ -112,7 +112,7 @@ cgcvcommon: cgcvcommon/CMakeFiles/cgcvcommon.dir/rule
 
 # fast build rule for target.
 cgcvcommon/fast:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/build
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/build
 .PHONY : cgcvcommon/fast
 
 cfg_config.o: cfg_config.cpp.o
@@ -120,7 +120,7 @@ cfg_config.o: cfg_config.cpp.o
 
 # target to build an object file
 cfg_config.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.o
 .PHONY : cfg_config.cpp.o
 
 cfg_config.i: cfg_config.cpp.i
@@ -128,7 +128,7 @@ cfg_config.i: cfg_config.cpp.i
 
 # target to preprocess a source file
 cfg_config.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.i
 .PHONY : cfg_config.cpp.i
 
 cfg_config.s: cfg_config.cpp.s
@@ -136,7 +136,7 @@ cfg_config.s: cfg_config.cpp.s
 
 # target to generate assembly for a file
 cfg_config.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_config.cpp.s
 .PHONY : cfg_config.cpp.s
 
 cfg_container.o: cfg_container.cpp.o
@@ -144,7 +144,7 @@ cfg_container.o: cfg_container.cpp.o
 
 # target to build an object file
 cfg_container.cpp.o:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.o
 .PHONY : cfg_container.cpp.o
 
 cfg_container.i: cfg_container.cpp.i
@@ -152,7 +152,7 @@ cfg_container.i: cfg_container.cpp.i
 
 # target to preprocess a source file
 cfg_container.cpp.i:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.i
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.i
 .PHONY : cfg_container.cpp.i
 
 cfg_container.s: cfg_container.cpp.s
@@ -160,7 +160,7 @@ cfg_container.s: cfg_container.cpp.s
 
 # target to generate assembly for a file
 cfg_container.cpp.s:
-	cd /home/jester/ClionProjects/cgcv && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.s
+	cd /home/jester/ClionProjects/cgcv3 && $(MAKE) -f cgcvcommon/CMakeFiles/cgcvcommon.dir/build.make cgcvcommon/CMakeFiles/cgcvcommon.dir/cfg_container.cpp.s
 .PHONY : cfg_container.cpp.s
 
 # Help Target
@@ -189,6 +189,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/jester/ClionProjects/cgcv && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jester/ClionProjects/cgcv3 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

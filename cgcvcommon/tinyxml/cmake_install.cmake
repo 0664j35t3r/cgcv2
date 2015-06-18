@@ -1,4 +1,4 @@
-# Install script for directory: /home/jester/ClionProjects/cgcv/cgcvcommon/tinyxml
+# Install script for directory: /home/jester/ClionProjects/cgcv3/cgcvcommon/tinyxml
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

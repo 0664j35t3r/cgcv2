@@ -1,5 +1,4 @@
 // ============================================================================
-//
 //       Filename:  task2.cpp
 //
 //    Description:  Tasks implemented by students.
@@ -7,8 +6,9 @@
 //        Created:  02/04/15 15:32:02
 //
 //         Author:  Peter Oberrauner
-//
 // ============================================================================
+
+#include <iostream>
 
 #include <algorithm>
 #include <iterator>
@@ -18,6 +18,19 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include "task2.h"
+
+
+using std::endl;
+using std::cout;
+
+
+float global_time = 0;
+
+
+void printMatrix()
+{
+
+}
 
 
 void interpolateJoints(float time,
@@ -32,24 +45,65 @@ void interpolateJoints(float time,
   //  the joint_transformations array, as matrices that transform
   //  from the local joint coordinate system into the object 
   //  coordinate system.
+
   //  Note that the first joint in the joints array is the root joint
   //  and you can access the parent of each joint using the index
+
   //  provided by the Joint::getParent method. Also note that the
   //  joints array is sorted in such a way, that all children of a
   //  joint have greater indices than the joint itself.
-  //
+
   //  The rotation and translation of a joint can be accessed using
   //  the Keyframe class: Keyframe::getTranslation(joint) and
   //  Keyframe::getRotation(joint)
+
   //  Further useful functions are glm::slerp to perform a spherical
   //  linear interpolation of two quaternions, glm::translate to
   //  construct a translation matrix from a vector, and glm::mat4_cast
   //  to cast a quaternion into a transformation matrix.
-  //
+
+  //  std::cout << joints.at(5).getBasePoseMatrix()<< std::endl;
+
+  //  Keyframe::getTranslation(joint)
+  //  Keyframe::getRotation(joint)
+  //  glm::slerp
+  //  glm::translate
+  //  glm::mat4_cast
+
+  //  std::cout << "joints " << joints.size() << std::endl;
+  //  std::cout << "keyfra " << keyframes.size() << std::endl;
+  //  std::cout << "keyfra " << keyframes[3].getTime() << std::endl;
+
+  //  if(global_time < time)
+  //    global_time = time;
+
+  //  std::cout << global_time << std::endl;
+
+  glm::mat4 relative_trans;
+  glm::mat4 relative_rot;
+
+  for (int i = 0; i < keyframes.size() - 1; i++)
+  {
+    if(i <  keyframes.size() - 2)
+      if(keyframes[i].getTime() >= time && keyframes[i+1].getTime() < time)
+      {
+        glm::translate(relative_trans, keyframes[i].relativeTo(keyframes[i+1]).getTranslation(joints[i].getID()));
+        relative_rot = glm::mat4_cast(glm::slerp(keyframes[i].getRotation(joints[i].getID()), keyframes[i+1].getRotation(joints[i].getID()), (time - keyframes[i].getTime()) / (keyframes[i+1].getTime() - keyframes[i].getTime())));
+        if (joints[i].getParent() < 0) // root
+          joint_transformations[i] = relative_rot * relative_trans;
+        else // childs
+          joint_transformations[i] = joint_transformations[joints[i].getParent()] * relative_rot * relative_trans;
+
+        for (auto joint : joints)
+        {
+          cout << "joints " << joint.getParent() << endl;
+        }
+      }
+  }
+
 
 
 }
-
 
 void calculateVertices(const std::vector<glm::vec3>& bindpose_vertices,
     const std::vector<Joint>& joints,
@@ -77,8 +131,6 @@ void calculateVertices(const std::vector<glm::vec3>& bindpose_vertices,
   //    joint member function Joint::getInverseBindPoseMatrix().
   //    Store the transformed vertices in animated_vertices.
   //
-
-
 }
 
 void calculateNormals(const std::vector<glm::vec3>& vertices,
@@ -94,8 +146,6 @@ void calculateNormals(const std::vector<glm::vec3>& vertices,
 
   std::fill(normals.begin(), normals.begin() + vertices.size(),
       glm::vec3(0.0f));
-
-
 }
 
 

@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/jester/ClionProjects/cgcv/CMakeFiles/3.2.1/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/jester/ClionProjects/cgcv3/CMakeFiles/3.2.1/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,35 +23,35 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/jester/ClionProjects/cgcv/CMakeFiles/3.2.1/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/jester/ClionProjects/cgcv3/CMakeFiles/3.2.1/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1386594868/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1386594868.dir/build.make CMakeFiles/cmTryCompileExec1386594868.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1386594868.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1386594868.dir/testCCompiler.c.o   -c /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTryCompileExec1386594868
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1386594868.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1386594868.dir/testCCompiler.c.o  -o cmTryCompileExec1386594868 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3193416582/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3193416582.dir/build.make CMakeFiles/cmTryCompileExec3193416582.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3193416582.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3193416582.dir/testCCompiler.c.o   -c /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec3193416582
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3193416582.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3193416582.dir/testCCompiler.c.o  -o cmTryCompileExec3193416582 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3134588067/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3134588067.dir/build.make CMakeFiles/cmTryCompileExec3134588067.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.2/Modules/CMakeCCompilerABI.c
-Linking C executable cmTryCompileExec3134588067
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3134588067.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3134588067 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1197372718/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1197372718.dir/build.make CMakeFiles/cmTryCompileExec1197372718.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.2/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec1197372718
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1197372718.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1197372718 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3134588067' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3134588067 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1197372718' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec1197372718 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec3134588067/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec3134588067.dir/build.make CMakeFiles/cmTryCompileExec3134588067.dir/build]
-  ignore line: [make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building C object CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.2/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTryCompileExec3134588067]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3134588067.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec3134588067 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec1197372718/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1197372718.dir/build.make CMakeFiles/cmTryCompileExec1197372718.dir/build]
+  ignore line: [make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.2/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec1197372718]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1197372718.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec1197372718 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -88,8 +88,8 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec3134588067' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec3134588067 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1197372718' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec1197372718 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -103,7 +103,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec3134588067] ==> ignore
+    arg [cmTryCompileExec1197372718] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -115,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTryCompileExec3134588067.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec1197372718.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -147,18 +147,18 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1077154253/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1077154253.dir/build.make CMakeFiles/cmTryCompileExec1077154253.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1077154253.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTryCompileExec1077154253.dir/feature_tests.c.o   -c /home/jester/ClionProjects/cgcv/CMakeFiles/feature_tests.c
-Linking C executable cmTryCompileExec1077154253
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1077154253.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec1077154253.dir/feature_tests.c.o  -o cmTryCompileExec1077154253 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1593654990/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1593654990.dir/build.make CMakeFiles/cmTryCompileExec1593654990.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1593654990.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTryCompileExec1593654990.dir/feature_tests.c.o   -c /home/jester/ClionProjects/cgcv3/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec1593654990
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1593654990.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec1593654990.dir/feature_tests.c.o  -o cmTryCompileExec1593654990 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -168,18 +168,18 @@ make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2607622943/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2607622943.dir/build.make CMakeFiles/cmTryCompileExec2607622943.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2607622943.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTryCompileExec2607622943.dir/feature_tests.c.o   -c /home/jester/ClionProjects/cgcv/CMakeFiles/feature_tests.c
-Linking C executable cmTryCompileExec2607622943
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2607622943.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec2607622943.dir/feature_tests.c.o  -o cmTryCompileExec2607622943 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3428198134/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3428198134.dir/build.make CMakeFiles/cmTryCompileExec3428198134.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3428198134.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTryCompileExec3428198134.dir/feature_tests.c.o   -c /home/jester/ClionProjects/cgcv3/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec3428198134
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3428198134.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3428198134.dir/feature_tests.c.o  -o cmTryCompileExec3428198134 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -189,18 +189,18 @@ make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec997853545/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec997853545.dir/build.make CMakeFiles/cmTryCompileExec997853545.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec997853545.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTryCompileExec997853545.dir/feature_tests.c.o   -c /home/jester/ClionProjects/cgcv/CMakeFiles/feature_tests.c
-Linking C executable cmTryCompileExec997853545
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec997853545.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec997853545.dir/feature_tests.c.o  -o cmTryCompileExec997853545 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3356585424/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3356585424.dir/build.make CMakeFiles/cmTryCompileExec3356585424.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3356585424.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTryCompileExec3356585424.dir/feature_tests.c.o   -c /home/jester/ClionProjects/cgcv3/CMakeFiles/feature_tests.c
+Linking C executable cmTryCompileExec3356585424
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3356585424.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3356585424.dir/feature_tests.c.o  -o cmTryCompileExec3356585424 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -208,32 +208,32 @@ make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3802345907/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3802345907.dir/build.make CMakeFiles/cmTryCompileExec3802345907.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3802345907.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec3802345907.dir/testCXXCompiler.cxx.o -c /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTryCompileExec3802345907
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3802345907.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec3802345907.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec3802345907 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec4219316882/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4219316882.dir/build.make CMakeFiles/cmTryCompileExec4219316882.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec4219316882.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec4219316882.dir/testCXXCompiler.cxx.o -c /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec4219316882
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4219316882.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec4219316882.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec4219316882 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec589118891/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec589118891.dir/build.make CMakeFiles/cmTryCompileExec589118891.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTryCompileExec589118891
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec589118891.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec589118891 -rdynamic  
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1138233064/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1138233064.dir/build.make CMakeFiles/cmTryCompileExec1138233064.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1138233064
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1138233064.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1138233064 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper
@@ -243,24 +243,24 @@ Thread model: posix
 gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec589118891' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec589118891 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1138233064' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec1138233064 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec589118891/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec589118891.dir/build.make CMakeFiles/cmTryCompileExec589118891.dir/build]
-  ignore line: [make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp']
-  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1]
-  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTryCompileExec589118891]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec589118891.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec589118891 -rdynamic  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTryCompileExec1138233064/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1138233064.dir/build.make CMakeFiles/cmTryCompileExec1138233064.dir/build]
+  ignore line: [make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec1138233064]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1138233064.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1138233064 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/4.8/lto-wrapper]
@@ -270,8 +270,8 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.8/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec589118891' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec589118891 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTryCompileExec1138233064' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/4.8/collect2 --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTryCompileExec1138233064 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../.. CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/4.8/crtend.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/collect2] ==> ignore
     arg [--sysroot=/] ==> ignore
     arg [--build-id] ==> ignore
@@ -285,7 +285,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTryCompileExec589118891] ==> ignore
+    arg [cmTryCompileExec1138233064] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/4.8/crtbegin.o] ==> ignore
@@ -297,7 +297,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..]
-    arg [CMakeFiles/cmTryCompileExec589118891.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTryCompileExec1138233064.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -327,18 +327,18 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1y] compiler features compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1628423193/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1628423193.dir/build.make CMakeFiles/cmTryCompileExec1628423193.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec1628423193.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1y -o CMakeFiles/cmTryCompileExec1628423193.dir/feature_tests.cxx.o -c /home/jester/ClionProjects/cgcv/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTryCompileExec1628423193
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1628423193.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec1628423193.dir/feature_tests.cxx.o  -o cmTryCompileExec1628423193 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1739382072/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1739382072.dir/build.make CMakeFiles/cmTryCompileExec1739382072.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1739382072.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1y -o CMakeFiles/cmTryCompileExec1739382072.dir/feature_tests.cxx.o -c /home/jester/ClionProjects/cgcv3/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec1739382072
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1739382072.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec1739382072.dir/feature_tests.cxx.o  -o cmTryCompileExec1739382072 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -401,18 +401,18 @@ make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec4112698603/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec4112698603.dir/build.make CMakeFiles/cmTryCompileExec4112698603.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec4112698603.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTryCompileExec4112698603.dir/feature_tests.cxx.o -c /home/jester/ClionProjects/cgcv/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTryCompileExec4112698603
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4112698603.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec4112698603.dir/feature_tests.cxx.o  -o cmTryCompileExec4112698603 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2328753409/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2328753409.dir/build.make CMakeFiles/cmTryCompileExec2328753409.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2328753409.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTryCompileExec2328753409.dir/feature_tests.cxx.o -c /home/jester/ClionProjects/cgcv3/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec2328753409
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2328753409.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec2328753409.dir/feature_tests.cxx.o  -o cmTryCompileExec2328753409 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -475,18 +475,18 @@ make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2839084578/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2839084578.dir/build.make CMakeFiles/cmTryCompileExec2839084578.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2839084578.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTryCompileExec2839084578.dir/feature_tests.cxx.o -c /home/jester/ClionProjects/cgcv/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTryCompileExec2839084578
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2839084578.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTryCompileExec2839084578.dir/feature_tests.cxx.o  -o cmTryCompileExec2839084578 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec830597649/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec830597649.dir/build.make CMakeFiles/cmTryCompileExec830597649.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec830597649.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTryCompileExec830597649.dir/feature_tests.cxx.o -c /home/jester/ClionProjects/cgcv3/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTryCompileExec830597649
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec830597649.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTryCompileExec830597649.dir/feature_tests.cxx.o  -o cmTryCompileExec830597649 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -547,152 +547,152 @@ make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if files pthread.h exist passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec214889386/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec214889386.dir/build.make CMakeFiles/cmTryCompileExec214889386.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec214889386.dir/CheckIncludeFiles.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec214889386.dir/CheckIncludeFiles.c.o   -c /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
-Linking C executable cmTryCompileExec214889386
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec214889386.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec214889386.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec214889386 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3343609317/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3343609317.dir/build.make CMakeFiles/cmTryCompileExec3343609317.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3343609317.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec3343609317.dir/CheckIncludeFiles.c.o   -c /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec3343609317
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3343609317.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec3343609317.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec3343609317 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2160350885/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2160350885.dir/build.make CMakeFiles/cmTryCompileExec2160350885.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2160350885.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2160350885.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2160350885
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2160350885.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2160350885.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2160350885 -rdynamic -lpthread 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3077492630/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3077492630.dir/build.make CMakeFiles/cmTryCompileExec3077492630.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3077492630.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3077492630.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3077492630
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3077492630.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3077492630.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3077492630 -rdynamic -lpthread 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3884322303/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3884322303.dir/build.make CMakeFiles/cmTryCompileExec3884322303.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3884322303.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec3884322303.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec3884322303
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3884322303.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec3884322303.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3884322303 -rdynamic -lX11 -lXext 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec45545184/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec45545184.dir/build.make CMakeFiles/cmTryCompileExec45545184.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec45545184.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec45545184.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec45545184
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec45545184.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec45545184.dir/CheckFunctionExists.c.o  -o cmTryCompileExec45545184 -rdynamic -lX11 -lXext 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function gethostbyname exists passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2171283802/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2171283802.dir/build.make CMakeFiles/cmTryCompileExec2171283802.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2171283802.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec2171283802.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2171283802
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2171283802.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec2171283802.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2171283802 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec3738099375/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3738099375.dir/build.make CMakeFiles/cmTryCompileExec3738099375.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3738099375.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec3738099375.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3738099375
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3738099375.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec3738099375.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3738099375 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function connect exists passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1298909458/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1298909458.dir/build.make CMakeFiles/cmTryCompileExec1298909458.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1298909458.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec1298909458.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1298909458
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1298909458.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec1298909458.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1298909458 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1473719897/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1473719897.dir/build.make CMakeFiles/cmTryCompileExec1473719897.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1473719897.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec1473719897.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1473719897
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1473719897.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec1473719897.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1473719897 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function remove exists passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2098298630/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2098298630.dir/build.make CMakeFiles/cmTryCompileExec2098298630.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2098298630.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2098298630.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2098298630
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2098298630.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2098298630.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2098298630 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2016546109/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2016546109.dir/build.make CMakeFiles/cmTryCompileExec2016546109.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2016546109.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec2016546109.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2016546109
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2016546109.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec2016546109.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2016546109 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function shmat exists passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2371022328/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2371022328.dir/build.make CMakeFiles/cmTryCompileExec2371022328.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2371022328.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec2371022328.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2371022328
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2371022328.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec2371022328.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2371022328 -rdynamic 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2077712625/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2077712625.dir/build.make CMakeFiles/cmTryCompileExec2077712625.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2077712625.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec2077712625.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2077712625
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2077712625.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec2077712625.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2077712625 -rdynamic 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec3495777309/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3495777309.dir/build.make CMakeFiles/cmTryCompileExec3495777309.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec3495777309.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec3495777309.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec3495777309
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3495777309.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec3495777309.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3495777309 -rdynamic -lICE 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec1591078190/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1591078190.dir/build.make CMakeFiles/cmTryCompileExec1591078190.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1591078190.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec1591078190.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1591078190
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1591078190.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec1591078190.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1591078190 -rdynamic -lICE 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function glXGetProcAddress exists passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1489635144/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1489635144.dir/build.make CMakeFiles/cmTryCompileExec1489635144.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1489635144.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddress   -o CMakeFiles/cmTryCompileExec1489635144.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1489635144
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1489635144.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddress    CMakeFiles/cmTryCompileExec1489635144.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1489635144 -rdynamic -lGL 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec2867326432/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2867326432.dir/build.make CMakeFiles/cmTryCompileExec2867326432.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2867326432.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddress   -o CMakeFiles/cmTryCompileExec2867326432.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2867326432
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2867326432.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddress    CMakeFiles/cmTryCompileExec2867326432.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2867326432 -rdynamic -lGL 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
 Determining if the function glXGetProcAddressARB exists passed with the following output:
-Change Dir: /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp
+Change Dir: /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec1743716960/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec1743716960.dir/build.make CMakeFiles/cmTryCompileExec1743716960.dir/build
-make[1]: Entering directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec1743716960.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddressARB   -o CMakeFiles/cmTryCompileExec1743716960.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec1743716960
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1743716960.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddressARB    CMakeFiles/cmTryCompileExec1743716960.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1743716960 -rdynamic -lGL 
-make[1]: Leaving directory `/home/jester/ClionProjects/cgcv/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTryCompileExec84759979/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec84759979.dir/build.make CMakeFiles/cmTryCompileExec84759979.dir/build
+make[1]: Entering directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec84759979.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddressARB   -o CMakeFiles/cmTryCompileExec84759979.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec84759979
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec84759979.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=glXGetProcAddressARB    CMakeFiles/cmTryCompileExec84759979.dir/CheckFunctionExists.c.o  -o cmTryCompileExec84759979 -rdynamic -lGL 
+make[1]: Leaving directory `/home/jester/ClionProjects/cgcv3/CMakeFiles/CMakeTmp'
 
 
