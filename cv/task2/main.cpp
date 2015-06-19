@@ -75,9 +75,24 @@ DetectorParam mouth_params;
 // Size win: hog descriptor window size
 //================================================================================
 
-void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win) {
+void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win)
+{
+  cv::HOGDescriptor hog;
+  hog.winSize = win;
+  hog.blockSize.height = 16;
+  hog.blockSize.width  = 16;
+  hog.cellSize.height  =  8;
+  hog.cellSize.width   =  8;
+  hog.blockStride = Size(8,8);
 
-
+  vector<float> a;
+  for (const auto& patch : patches)
+  {
+    hog.compute(patch, a);
+    Mat matrix(a, true);
+    transpose(matrix, matrix);
+    features.push_back(matrix);
+  }
 }
 
 //================================================================================
@@ -86,6 +101,7 @@ void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win) {
 // TODO:
 // - create SVM object using cv::CvSVM and load svm model (params.svmModelFile)
 // - resize grayscaled face image to size given by params.scale
+
 // - distinguish 3 cases according to search value:
 // - if 0: search in mouth region, if 1: left eye, if 2: right eye
 // - search through whole image using a sliding window with window size params.patch
@@ -108,9 +124,49 @@ void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win) {
 // Detection& params: detection parameter
 //================================================================================
 
-void detect(const Mat& face, Point2f& detected, char search, const Detection& params) {
+void detect(const Mat& face, Point2f& detected, char search, const Detection& params)
+{
+  cout << "beeeeeeeeeeer" << endl;
+  detected = Point2f(0.0f, 0.0f);
+  Mat imag = face;
+  CvSVM cvsvm;
+  cout << "beeeeeeeeeeer2" << endl;
+  cvsvm.load(params.svmModelFile.c_str());
 
-	detected = Point2f(0.0f, 0.0f);
+  cout << "beeeeeeeeeeer3" << endl;
+  //  resize grayscaled face image to size given by params.scale
+  cvtColor(imag, imag, CV_BGR2GRAY);
+  cout << params.scale << endl;
+  imag.resize(params.scale.height);
+
+// - if 0: search in mouth region, if 1: left eye, if 2: right eye
+  switch(search) {
+    case 1:
+
+      break;
+    case 2:
+      break;
+    default:
+      break;
+  }
+
+// - search through whole image using a sliding window with window size params.patch
+// - extract hog features of each ROI using getHogFeatures()
+// - use SVM object for getting distance to SVM hyperplane (cv::CvSVM::predict())
+// - apply sigmoid function to returned distance
+// - collect a certain number of your best scored ROIs (params.scoreNum)
+// - that list of should be sorted starting with highest score
+// - apply post processing by intersecting ROIs
+//   - start with first and second, keep resulting ROI
+//   - intersect that ROI with next one and so on
+//   - neglect resulting ROIs having less than 80% area of the previous
+// - scale back that ROI to fit with original image size
+// - center of last ROI is your detected object's position
+// - HINT: use of cv::Rect::operator &() could be useful
+//
+
+
+
 }
 
 bool fExists(const std::string& filename) {
@@ -177,7 +233,8 @@ void readImageList(string fileName, vector<string>& fileList, vector<string>& ma
 //   - resize (factor svmParams.scale) grayscaled image and mask
 //   - extract landmarks: indices for needed marks stored in TrainingData::landmarks (see below)
 //   - calculate eye centers and mouth center scaled according to image scale
-//   - use centers to define ROIs around according to size TrainingData::patch 
+//   - use centers to define ROIs around according to size TrainingData::patch
+
 // - collect all negative and positive training features for both mouth and eyes:
 //   - positive: eye and mouth ROIs using getHogFeatures()
 //   - negative: TrainingData::patch sized ROIs
@@ -196,7 +253,6 @@ void readImageList(string fileName, vector<string>& fileList, vector<string>& ma
 // landmarks[2]; Index for right eye left corner
 // landmarks[3]; Index for right eye right corner
 //
-//
 // parameters:
 // TrainingData Eyes: parameters for eye training
 // TrainingData Mouth: parameters for mouth training
@@ -208,7 +264,109 @@ void readImageList(string fileName, vector<string>& fileList, vector<string>& ma
 //================================================================================
 
 void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, vector<string>& maskList, const SvmParameter svmParams) {
-	
+  cout << "trainSVM" << endl;
+  for (int i = 0; i < svmParams.sizeOfSet; i++) {
+//    Mat imag_list = imread(imageList.at(i));
+//    cv::cvtColor(imag_list, imag_list, CV_BGR2GRAY); // todo gray
+//    imag_list.resize(svmParams.scale);
+//
+//    //  readLandmarks()
+//    Mat mask_list = imread(maskList.at(i));
+//    cv::cvtColor(mask_list, mask_list, CV_BGR2GRAY); // todo gray
+//    imag_list.resize(svmParams.scale);
+//
+//    vector<Point2f> landmarks;
+//    readLandmarks(imageList.at(i), landmarks);
+//
+//    Point center_mouth           = landmarks.at(Mouth.landmarks.at(0));
+//    Point left_eye_left_corner   = landmarks.at(Eyes.landmarks.at(0));
+//    Point left_eye_right_corner  = landmarks.at(Eyes.landmarks.at(1));
+//    Point right_eye_left_corner  = landmarks.at(Eyes.landmarks.at(2));
+//    Point right_eye_right_corner = landmarks.at(Eyes.landmarks.at(3));
+//
+//    Point center_left_eye  = (left_eye_left_corner + left_eye_right_corner) * 0.5;
+//    Point center_right_eye = (right_eye_left_corner + right_eye_right_corner) * 0.5;
+//
+//    // left corner and size
+//    Rect ROI_eyes_left (left_eye_left_corner, Eyes.patch); // todo rect
+//    Rect ROI_mouth (center_mouth, Mouth.patch);
+
+//    ROIs sind Rects, die Bereiche deines Bildes definieren sollen das eine Mat ist. Die HOG-Features
+//    sind aus den ROIs der Bilder zu berechnen, also wie du sagst: Bilausschnitte herauskopieren und getHOGFeatures füttern.
+//
+//    Die positiven Trainingsdaten sind die HOG-Features jener Bereiche von denen du weißt das sie
+//    die gewünschten Informationen enthalten. Beim Auge also beispielsweise jene Bereiche die Augen enthalten
+//    (welche das sind kannst du ja aus dem text file auslesen). Selbes gilt für den Mund.
+//    Damit kannst du zwei separate SVM
+//    's trainieren die zwischen Auge und nicht Auge, bzw. Mund und nicht Mund unterscheiden können (basierend auf den
+//    HOG-Features).
+//    Zu den wenigen positiven Beispielen generierst du noch viele Negativbeispiele, die ALLE übrigen sich überlappenden
+//    Bereiche des Bildes darstellen. Dabei sind Bereiche in jeweils step_size Abstand (sowohl vertikal, als auch horizontal)
+//    zu nehmen. Also einfach mit einem Fenster über das gesamte Bild sweepen (wobei sich der Bereich immer nur um
+//    step_size in eine Richtung weiterbewegt), und nimmst alle Bereiche DIE WEDER DAS GESUCHTE OBJEKT beinhalten
+//    NOCH AUSSERHALB DES BILDBEREICHES liegen (definiert durch die Maske). ZUSAETZLICH ist noch der Bereich um die
+//    Augen um padding erweitert, sowie um den Mund um padding vermindert Tabu. Wenn dein Fenster beim sweepen
+//    irgendwie in so einen Bereich kommt, ist er zu ignorieren. Von den damit übrigen negativen Beispielen berechnest
+//    du dir ebenfalls die HOG-Features um deine negativen Beispiele zu erhalten.
+//    Damit die SVM beim trainieren weiß was positiv und was negativ ist, gibst du ihre diese Information
+//    noch mit den Labels mit. Das ist einfach ein Vektor der 1 für positive und 2 für negative Beispiele enthaltet.
+//    Habe auch ewig und drei Tage gebraucht um zu verstehen was genau zu tun ist...
+
+
+            //  - positive: eye and mouth ROIs using getHogFeatures()
+//    getHogFeatures(imag_list, Eyes.features, Eyes.patch);
+//    Eyes.labels.push_back(1);
+//    getHogFeatures(imag_list, Mouth.features, Mouth.patch);
+//    Mouth.labels.push_back(1);
+
+    //  - negative: TrainingData::patch sized ROIs
+
+
+    // - negative: extract hog features of patch with step size TrainingData::steps
+//    for(char i; i < (char)imag_list.cols; Eyes.step++)
+//    {
+//      for (char j = 0; j < (char)imag_list.rows; Eyes.step++)
+//      {
+//
+//      }
+//    }
+    //  - negative: use mask to only extract features of patches in totally valid areas
+    //   - HINT: use of cv::countNonZero could be very useful
+
+    // - make matrix of training features for both eyes and mouth including all collected data
+//    Mat train_feat_eyes;
+//    Mat train_feat_mouth;
+
+    // - make label matrix with value 1 for positive and 2 for negative features
+//    Eyes.features = 1;
+//    Mouth.features = 1;
+
+    // - create two SVM objects using cv::CvSVM
+//    CvSVM eye;
+//    CvSVM mouth;
+
+    // - train both SVMs
+//    eye.train(imag_list, Eyes.features);
+//    mouth.train(imag_list, Mouth.features);
+
+    // - store both trained models - use TrainingData::svmModelFile as file names
+//    eye.save(Eyes.svmModelFile.c_str());
+//    mouth.save(Mouth.svmModelFile.c_str());
+
+
+
+
+    // da es 2 voneinander getrennte SVMs geben soll, speichen Sie die Featurevektoren
+    // demnach in getrennte Matrizen.  + 2 vektoren für die klassenlabes  1 für positiv und 2 für negative
+    vector<Point2f> positive;
+    vector<Point2f> negative;
+
+//    if(countNonZero(train_feat_eyes))
+//      cout << "count non zero eyes" << endl;
+//    if(countNonZero(train_feat_mouth))
+//      cout << "count non zero mouth" << endl;
+   }
+  cout << " end of svn " << endl;
 }
 
 //================================================================================
@@ -263,8 +421,8 @@ void detectFace(const Mat& frame, Rect& faceROI)
 void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point& right_eye, Point& mouth, const Detection& eyes_data, const Detection& mouth_data) {
 
   Mat frameClone = frame.clone();
-	            
-	Point2f eye1, eye2, mouth1;
+
+  Point2f eye1, eye2, mouth1;
 	detect(frame(face), eye2, 2, eyes_data); // right eye
 	detect(frame(face), mouth1, 0, mouth_data); // mouth
 	detect(frame(face), eye1, 1, eyes_data); // left eye
@@ -274,12 +432,12 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 	mouth = Point(face.x + floor(mouth1.x),  face.y + floor(mouth1.y));
 	
 
-	circle(frameClone, left_eye, 3, Scalar(0, 0, 255), 2, 1);
-	circle(frameClone, right_eye, 3, Scalar(0, 255, 0), 2, 1);
-	circle(frameClone, mouth, 3, Scalar(255, 0, 0), 2, 1);
-	imwrite("detect2.png", frameClone);
-	imshow("", frameClone);
-	waitKey(0);
+//	circle(frameClone, left_eye, 3, Scalar(0, 0, 255), 2, 1);
+//	circle(frameClone, right_eye, 3, Scalar(0, 255, 0), 2, 1);
+//	circle(frameClone, mouth, 3, Scalar(255, 0, 0), 2, 1);
+//	imwrite("detect2.png", frameClone);
+//	imshow("", frameClone);
+//	waitKey(0);
 
 }
 
@@ -464,7 +622,12 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
 //================================================================================
 void createVideo(vector<Mat> frames, int fps, string video_dir, Size size)
 {
-
+  VideoWriter videoWriter(video_dir, CV_FOURCC('P', 'I','M', '1'), fps, size);
+  for(const auto& frame : frames)
+  {
+    videoWriter.write(frame);
+  }
+  videoWriter.release();
 }
 
 
@@ -491,9 +654,8 @@ int main(int argc, char *argv[])
 
     try
     {
-
         cout << "reading config..." << endl;
-		cout << "OpenCV " << CV_MAJOR_VERSION << "." << CV_MINOR_VERSION << endl;
+        cout << "OpenCV " << CV_MAJOR_VERSION << "." << CV_MINOR_VERSION << endl;
 		
         // load config
         Config* cfg = Config::open(argv[1]);
@@ -572,7 +734,7 @@ int main(int argc, char *argv[])
         cout << "===================================" << endl;
 
 		// SVM
-		
+		cout << "hallo 1" << endl;
 		// file list
 		vector<string> trainingDataList, trainingMaskList;
 		readImageList("data/training_data/list.txt", trainingDataList, trainingMaskList);
@@ -587,7 +749,7 @@ int main(int argc, char *argv[])
 		svmParams.cvParams = cvSvmParameter;
 		svmParams.scale = training_scale;
 		svmParams.sizeOfSet = training_set_size;
-	
+      cout << "hallo 2" << endl;
 		TrainingData EyeTraining;
 		EyeTraining.patch = Size(24, 16);
 		EyeTraining.svmModelFile = "trained_eyes.txt";
@@ -601,7 +763,7 @@ int main(int argc, char *argv[])
 		MouthTraining.landmarks.push_back(18);
 		MouthTraining.padding = 10;
 		MouthTraining.step = 3;
-		
+      cout << "hallo 3" << endl;
 		Detection det_eyes;
 		det_eyes.scale = Size(120, 120);
 		det_eyes.scoreNum = num_of_scores;
@@ -612,24 +774,26 @@ int main(int argc, char *argv[])
 		det_mouth.scoreNum = num_of_scores;
 		det_mouth.svmModelFile = MouthTraining.svmModelFile;
 		det_mouth.patch = MouthTraining.patch;
-		
-		
+
+      cout << "hallo 4" << endl;
 		// test DistanceTransf
 		if(test_bonus) {
 			string bonus_test_out_name = cfg->getAttribute<string>("test_bonus_out");
 			Mat dtTest = Mat::zeros(300, 300, CV_8UC1);
 			Rect inRect = Rect(100, 50, 100, 100);
 			rectangle(dtTest, inRect, 255, -1, 1);
-			
+      cout << "hallo 5" << endl;
 			distTransform(dtTest, dtTest);
 			
 			normalize(dtTest, dtTest, 0, 255, NORM_MINMAX, CV_8UC1);
 			if(bonus_test_out_name != "")
 				imwrite(bonus_test_out_name, dtTest);
 		}
-		
+      cout << "hallo 7" << endl;
 		// test HoG
-		if(test_hog) {
+		if( true)// test_hog)
+		{
+      cout << "hallo 8" << endl;
 			string hog_test_out_name = cfg->getAttribute<string>("test_hog_out");
 			string file = trainingDataList[0];
 			Mat im = imread(file);
@@ -637,11 +801,13 @@ int main(int argc, char *argv[])
 			Mat hogMat;
 			Size testWin = Size(40, 24);
 			Rect testRect;
+      cout << "hallo 9" << endl;
 			for(int t = 0; t < 5; t++) {
 				testRect = Rect(t * 5, t * 5, testWin.width, testWin.height);
+        cout << "hallo 10" << endl;
 				testPatches.push_back(im(testRect));
 			}
-
+      cout << "get Hog Features" << endl;
 			getHogFeatures(testPatches, hogMat, testWin);
 
 			if(hogMat.cols > 0 && hogMat.rows > 0) {
