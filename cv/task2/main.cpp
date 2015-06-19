@@ -357,12 +357,12 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
 
     cout << imag.size() << endl;
     cout << center_left_eye << endl;
-    circle(imag, center_left_eye, 3, Scalar(255,255,255));
+    circle(imag, center_left_eye , 3, Scalar(255,255,255));
     circle(imag, center_right_eye, 3, Scalar(255,255,255));
-    circle(imag, center_mouth, 3, Scalar(255,255,255));
+    circle(imag, center_mouth    , 3, Scalar(255,255,255));
     imshow("hallo", imag);
-    waitKey(0);
-
+//    waitKey(0);
+    cout << "hallo fasfdasfasf" << endl;
 //    ROIs sind Rects, die Bereiche deines Bildes definieren sollen das eine Mat ist. Die HOG-Features
 //    sind aus den ROIs der Bilder zu berechnen, also wie du sagst: Bilausschnitte herauskopieren und getHOGFeatures füttern.
 
@@ -397,48 +397,62 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Mouth.labels.push_back(1);
 
     //  - negative: TrainingData::patch sized ROIs
+    Rect intersec;
 
-    //  - negative: extract hog features of patch with step size TrainingData::steps
-//    for(char i; i < (char)imag.cols; Eyes.step++)
-//    {
-//      for (char j = 0; j < (char)imag.rows; Eyes.step++)
-//      {
-//
-//      }
-//    }
-    //  - negative: use mask to only extract features of patches in totally valid areas
-    //   - HINT: use of cv::countNonZero could be very useful
+    for(int i; i < imag.cols; i += Eyes.step)
+    {
+      for (int j = 0; j < imag.rows; j += Eyes.step)
+      {
+        Rect tmp(Point(i,j), Eyes.patch);
+        intersec = tmp & ROI_eyes_left;
+        if(intersec.area() > 0)
+          continue;
 
-    // - make matrix of training features for both eyes and mouth including all collected data
-//    Mat train_feat_eyes;
-//    Mat train_feat_mouth;
+        intersec = tmp & ROI_eyes_right;
+        if(intersec.area() > 0)
+          continue;
 
-    // - make label matrix with value 1 for positive and 2 for negative features
-//    Eyes.features = 1;
-//    Mouth.features = 1;
+        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
+          continue;
 
-    // - create two SVM objects using cv::CvSVM
-//    CvSVM eye;
-//    CvSVM mouth;
+        std::vector<Mat> vec_tmp;
+        vec_tmp.push_back(imag(tmp));
+        getHogFeatures(vec_tmp, Eyes.features, Eyes.patch);
+        Eyes.labels.push_back(2);
+      }
+    }
 
-    // - train both SVMs
-//    eye.train(imag, Eyes.features);
-//    mouth.train(imag, Mouth.features);
+    for(int i; i < imag.cols; i += Mouth.step)
+    {
+      for (int j = 0; j < imag.rows; j += Mouth.step)
+      {
+        Rect tmp(Point(i,j), Mouth.patch);
 
-    // - store both trained models - use TrainingData::svmModelFile as file names
-//    eye.save(Eyes.svmModelFile.c_str());
-//    mouth.save(Mouth.svmModelFile.c_str());
+        intersec = tmp & ROI_mouth;
+        if(intersec.area() > 0)
+          continue;
 
-    // da es 2 voneinander getrennte SVMs geben soll, speichen Sie die Featurevektoren
-    // demnach in getrennte Matrizen.  + 2 vektoren für die klassenlabes  1 für positiv und 2 für negative
-    vector<Point2f> positive;
-    vector<Point2f> negative;
+        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
+          continue;
 
-//    if(countNonZero(train_feat_eyes))
-//      cout << "count non zero eyes" << endl;
-//    if(countNonZero(train_feat_mouth))
-//      cout << "count non zero mouth" << endl;
-   }
+        std::vector<Mat> vec_tmp;
+        vec_tmp.push_back(imag(tmp));
+        getHogFeatures(vec_tmp, Mouth.features, Mouth.patch);
+        Mouth.labels.push_back(2);
+      }
+    }
+  }
+  // - create two SVM objects using cv::CvSVM
+  CvSVM eye;
+  CvSVM mouth;
+
+  // - train both SVMs
+  eye.train(Eyes.features, Eyes.labels);
+  mouth.train(Mouth.features, Mouth.labels);
+
+  // - store both trained models - use TrainingData::svmModelFile as file names
+  eye.save(Eyes.svmModelFile.c_str());
+  mouth.save(Mouth.svmModelFile.c_str());
   cout << " end of svn " << endl;
 }
 
@@ -697,9 +711,7 @@ void createVideo(vector<Mat> frames, int fps, string video_dir, Size size)
 {
   VideoWriter videoWriter(video_dir, CV_FOURCC('P', 'I','M', '1'), fps, size);
   for(const auto& frame : frames)
-  {
     videoWriter.write(frame);
-  }
   videoWriter.release();
 }
 
