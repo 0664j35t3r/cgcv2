@@ -182,9 +182,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
 
       std::sort (vec_score.begin(), vec_score.end(), sorting());
       for (auto item : vec_score)
-      {
         cout << item.first << endl;
-      }
 
       while(vec_score.size() > params.scoreNum)
         vec_score.pop_back();
@@ -212,9 +210,11 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
       intersec.height = intersec.height * new_scale;
       intersec.width  = intersec.width * new_scale;
       cout << "x " << intersec.x << "y " << intersec.y << endl;
-      detected = Point2f(intersec.x, intersec.y); //needed in mask face
+//      detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
     }
   }
+
+  detected = Point2f(6, 7);
 }
 
 bool fExists(const std::string& filename) {
@@ -317,7 +317,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
   {
     Mat imag = imread(imageList.at(i));
 
-    cout << imag.size() << endl;
+//    cout << imag.size() << endl;
     cv::cvtColor(imag, imag, CV_BGR2GRAY);
     resize(imag, imag, Size(svmParams.scale * imag.cols, svmParams.scale * imag.rows));
 
@@ -325,18 +325,18 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Mat mask = imread(maskList.at(i));
     cv::cvtColor(mask, mask, CV_BGR2GRAY);
     resize(mask, mask, Size(svmParams.scale * mask.cols, svmParams.scale * mask.rows));
-    cout << imag.size() << endl;
+//    cout << imag.size() << endl;
     vector<Point2f> landmarks;
     readLandmarks(imageList.at(i), landmarks);
 
-    cout << imag.size() << endl;
+//    cout << imag.size() << endl;
     Point center_mouth           = landmarks.at(Mouth.landmarks.at(0)) * svmParams.scale;
     Point left_eye_left_corner   = landmarks.at(Eyes.landmarks.at(0));
     Point left_eye_right_corner  = landmarks.at(Eyes.landmarks.at(1));
     Point right_eye_left_corner  = landmarks.at(Eyes.landmarks.at(2));
     Point right_eye_right_corner = landmarks.at(Eyes.landmarks.at(3));
 
-    cout << imag.size() << endl;
+//    cout << imag.size() << endl;
     Point center_left_eye  = (left_eye_left_corner + left_eye_right_corner) * 0.5 * svmParams.scale;
     Point center_right_eye = (right_eye_left_corner + right_eye_right_corner) * 0.5 * svmParams.scale;
 
@@ -344,7 +344,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width / 2);
     top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height / 2);
 
-    cout << imag.size() << endl;
+//    cout << imag.size() << endl;
     Point top_left_right_eye;
     top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width / 2);
     top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height / 2);
@@ -359,7 +359,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Rect ROI_eyes_right (top_left_right_eye, Eyes.patch);
     Rect ROI_mouth (top_left_mouth, Mouth.patch);
 
-    cout << imag.size() << endl;
+//    cout << imag.size() << endl;
     cout << center_left_eye << endl;
     circle(imag, center_left_eye , 3, Scalar(255,255,255));
     circle(imag, center_right_eye, 3, Scalar(255,255,255));
@@ -429,10 +429,10 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
         intersec = tmp & ROI_mouth;
         if(intersec.area() > 0)
           continue;
-        cout << "6 loop" << endl;
+//        cout << "6 loop" << endl;
         if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
           continue;
-        cout << "7 loop" << endl;
+//        cout << "7 loop" << endl;
         std::vector<Mat> vec_tmp;
         vec_tmp.push_back(imag(tmp));
         getHogFeatures(vec_tmp, Mouth.features, Mouth.patch);
@@ -538,31 +538,43 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
 void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
 {
+  //todo
+  Point le = left_eye;
+  Point re = right_eye;
+  Point mc = mouth_center;
+  le.x = 1;
+  le.y = 2;
+  re.x = 3;
+  re.y = 4;
+  mc.x = 5;
+  mc.y = 6;
+
+
   // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
   Point mean;
-  mean.x = (left_eye.x + right_eye.x) / 2;
-  mean.y = (left_eye.y + right_eye.y) / 2;
+  mean.x = (le.x + re.x) / 2;
+  mean.y = (le.y + re.y) / 2;
 
   // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
-  float dist_eyes = sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
+  float dist_eyes = sqrt( pow(le.x - re.x, 2) + pow(le.y - re.y,2));
 
   // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
   // hessesche normalform
   Point vec_eye_mean;
-  vec_eye_mean.x = (left_eye.x - right_eye.x) / 2;
-  vec_eye_mean.y = (left_eye.y - right_eye.y) / 2;
+  vec_eye_mean.x = (le.x - re.x) / 2;
+  vec_eye_mean.y = (le.y - re.y) / 2;
 
   float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x, 2) + pow(
-          vec_eye_mean.y - mouth_center.y,2) );
+          vec_eye_mean.y - mc.y,2) );
 
   // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
   Vec2f v_horizontal (1, 0);
 
   Vec2f v_eyes;
-  v_eyes[0] = right_eye.x - left_eye.x;
-  cout << "l_e" << right_eye << endl;
-  cout << "l_e" << left_eye << endl;
-  v_eyes[1] = right_eye.y - left_eye.y;
+  v_eyes[0] = re.x - le.x;
+  cout << "l_e" << re << endl;
+  cout << "l_e" << le << endl;
+  v_eyes[1] = re.y - le.y;
   float norm = sqrt(v_eyes[0] * v_eyes[0] + v_eyes[1] * v_eyes[1]);
 
   normalize(v_horizontal, v_horizontal);
@@ -578,11 +590,11 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   float theta = acos(v_horizontal.dot(v_eyes) / norm) * 180 / PI; // todo radians
   cout << "theta " << theta << endl;
 
-  cout << "mask " << mask.size() << endl;
+//  cout << "mask " << mask.size() << endl;
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   //color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  ellipse(mask, mouth_center, Size(dist_eyes,dist_mouth_eyes), theta, 0, 0, Scalar(255,255,255), -1, 8, 0); // todo
+  ellipse(mask, mc, Size(dist_eyes,dist_mouth_eyes), theta, 0, 0, Scalar(255,255,255), -1, 8, 0); // todo
   imshow("ellipse", mask);
   waitKey(0);
 }
@@ -611,7 +623,14 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
 
 Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_one, Point mouth_one, Point left_eye_two, Point right_eye_two, Point mouth_two, Mat& T)
 {
-    return Mat::zeros(imageToTransform.size(), CV_32F);
+
+  cout << "imageToTransform" << imageToTransform.size() << endl;
+//  Mat tmp = getAffineTransform(left_eye_one, left_eye_two);
+//          getAffineTransform(left_eye_one, right_eye_one, mouth_one, left_eye_one, left_eye_two, right_eye_two, mouth_two);
+
+
+
+  return Mat::zeros(imageToTransform.size(), CV_32F);
 }
 
 //================================================================================
@@ -630,7 +649,7 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
 //================================================================================
 vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 {
-    return vector<Point2f>(4, Point2f(0.0f, 0.0f));
+  return vector<Point2f>(4, Point2f(0.0f, 0.0f));
 }
 
 //================================================================================
