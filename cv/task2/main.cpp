@@ -143,13 +143,13 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
     case 2:
       cvRect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
       break;
-    default: // Mund
-      // lower 40%
+    default: // Mund  // lower 40%
       cvRect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);  // todo width, height
       break;
   }
 
   Mat vec_feature;
+  Rect intersec;
   // - search through whole image using a sliding window with window size params.patch
   for (int y = 0; y < imag.rows - params.patch.height; y = y + params.patch.height)
   {
@@ -191,7 +191,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
       //    - start with first and second, keep resulting ROI
       //    - intersect that ROI with next one and so on
       //    - neglect resulting ROIs having less than 80% area of the previous
-      Rect intersec = vec_score[0].second;
+      intersec = vec_score[0].second;
       Rect a;
       for (int i = 1; i < vec_score.size(); i++)
       {
@@ -213,8 +213,8 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
 //      detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
     }
   }
-
-  detected = Point2f(6, 7); //
+  detected = Point2f(intersec.x, intersec.y);
+//  detected = Point2f(6, 7); //
 }
 
 bool fExists(const std::string& filename) {
@@ -345,7 +345,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width / 2);
     top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height / 2);
 
-    cout << imag.size() << endl;
+//    cout << imag.size() << endl;
     Point top_left_mouth;
     top_left_mouth.x = center_mouth.x - (Mouth.patch.width / 2);
     top_left_mouth.y = center_mouth.y + (Mouth.patch.height / 2);
@@ -490,12 +490,12 @@ void detectFace(const Mat& frame, Rect& faceROI)
 
   face_cascade.detectMultiScale(frame_gray, faces, face_params.scaleFactor, face_params.neighbours, face_params.flag, face_params.minSize); // todo refactor
 
-  for(ulong iter = 0; iter < faces.size(); iter++)
-  {
-    Point center( faces[iter].x + faces[iter].width*0.5, faces[iter].y + faces[iter].height*0.5 );
-    cv::ellipse( (Mat &) frame, center, Size( faces[iter].width*0.5, faces[iter].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-    Mat faceROI = frame_gray( faces[iter] );
-  }
+//  for(ulong iter = 0; iter < faces.size(); iter++)
+//  {
+//    Point center( faces[iter].x + faces[iter].width*0.5, faces[iter].y + faces[iter].height*0.5 );
+//    cv::ellipse( (Mat &) frame, center, Size( faces[iter].width*0.5, faces[iter].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
+//    Mat faceROI = frame_gray( faces[iter] );
+//  }
 }
 
 void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point& right_eye, Point& mouth, const Detection& eyes_data, const Detection& mouth_data) {
@@ -538,13 +538,12 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   Point le = left_eye;
   Point re = right_eye;
   Point mc = mouth_center;
-  le.x = 1;
-  le.y = 2;
-  re.x = 3;
-  re.y = 4;
-  mc.x = 5;
-  mc.y = 6;
-
+//  le.x = 1;
+//  le.y = 2;
+//  re.x = 3;
+//  re.y = 4;
+//  mc.x = 5;
+//  mc.y = 6;
 
   // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
   Point mean;
@@ -579,7 +578,7 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   float theta = acos(v_horizontal.dot(v_eyes) / norm) * 180 / PI; // todo radians
   cout << "theta " << theta << endl;
 
-//  cout << "mask " << mask.size() << endl;
+  //  cout << "mask " << mask.size() << endl;
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
@@ -629,17 +628,14 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
   two[2] = mouth_two;
 
   src = getAffineTransform(one, two);
-
-  cout << " Affine Transformat4" << src.size() << endl;
-  cout << " Affine Transformat4" << imageToTransform.size() << endl;
+//  cout << " Affine Transformat4" << src.size() << endl;
+//  cout << " Affine Transformat4" << imageToTransform.size() << endl;
 
   // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
   warpAffine(imageToTransform, warp_dst, src, warp_dst.size());
-  cout << " Affine Transformat5" << endl;
 
   // 3) write the calculated transformation matrix to T
   T = src;
-
   return warp_dst;
 }
 
@@ -679,10 +675,10 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
   E.at<float>(1,3) =  width;//ex4
   E.at<float>(2,3) =  1;//
 
-  cout << "a  >>>" <<  E.size() << endl;
-  cout << "a  >>>" <<  E.cols << endl;
-  cout << "T  >>>" <<  T.size() << endl;
-  cout << "T  >>>" <<  T.cols << endl;
+  //  cout << "a  >>>" <<  E.size() << endl;
+  //  cout << "a  >>>" <<  E.cols << endl;
+  //  cout << "T  >>>" <<  T.size() << endl;
+  //  cout << "T  >>>" <<  T.cols << endl;
   E.mul(T);
 
   vector<Point2f> tmp;
@@ -691,12 +687,9 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
   tmp.push_back(Point2f(E.at<float>(1,2), E.at<float>(0,2)));
   tmp.push_back(Point2f(E.at<float>(1,3), E.at<float>(0,3)));
 
-  cout << " beer" << endl;
   // 2) return a vector containing the four transformed vertices in the following order:
   //    up/left, up/right, bottom/left, bottom/right
-
-//  return vector<Point2f>(4, Point(1,2));
-  return       tmp;
+  return tmp; // return vector<Point2f>(4, Point(1,2));
 }
 
 //================================================================================
@@ -744,7 +737,8 @@ void distTransform(const Mat& src, Mat& dest) {
 
   cout << " distransform" << endl;
 	// comment out or delete the next line if you want to do the bonus:
-	cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
+//	cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
+	cv::distanceTransform(src, dest, CV_DIST_C, 3);
 	// --- your BONUS code here:
 }
 
@@ -755,12 +749,12 @@ void distTransform(const Mat& src, Mat& dest) {
 // 1) calculate imageCount and alpha
 // 2) calculate the alpha blended mask and transition image
 // 3) do a distance transformation with openCV
-//		- set distanceType = CV_DIST_C
-//		- set maskSize = 3
+//    - set distanceType = CV_DIST_C
+//    - set maskSize = 3
 // 4) calculate alpha-blended mask with gauss weighting (format: CV_32FC1)
-//		- sigma = 11
+//    - sigma = 11
 // 5) blure the calculated image
-// 6) calculate the final image using the transition image, the blured image 
+// 6) calculate the final image using the transition image, the blured image
 //    and the alpha-blended mask
 //
 // parameters:
@@ -774,7 +768,53 @@ void distTransform(const Mat& src, Mat& dest) {
 vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int fps)
 {
   cout << " blendFaceSequence" << endl;
+
+ // 1) calculate imageCount and alpha
+  int imagecount = (transitionTime/1000) * fps;
+
+//  cout << faces[0]->face << endl;
+//  cout << faces[0]->face_trans << endl;
+//  cout << faces[0]->face_trimmed << endl;
+
   vector<Mat> r;
+  Mat final = Mat(faces[1]->face.rows,faces[1]->face.cols, CV_32FC1);
+  // 2) calculate the alpha blended mask and transition image
+  for (int i = 0; i < faces.size() - 1; i++)
+  {
+    // 2) calculate the alpha blended mask and transition image
+    for (int j = 1; j <= 4; j++)
+    {
+      float alpha = j / imagecount;
+      faces[i]->face_trans = (1 - alpha) * faces[i]->face + alpha * faces[i + 1]->face;
+
+      // 3) do a distance transformation with openCV
+      //		- set distanceType = CV_DIST_C
+      //		- set maskSize = 3
+      distTransform(faces[i]->mask, faces[i]->mask);
+
+      // 4) calculate alpha-blended mask with gauss weighting (format: CV_32FC1)
+      //		- sigma = 11
+      for (int k = 0; k < faces[i]->mask.cols; k++) {
+        for (int l = 0; l < faces[i]->mask.rows; l++) {
+          faces[i]->mask.at<int>(k,l) = 1.f - exp(-(pow(faces[i]->mask.at<int>(k,l),2) / (2 * 11^2)));
+        }
+      }
+
+      Mat blur;
+      GaussianBlur(faces[i]->face_trans, blur,Size(11, 11), 11, 11);
+      // Mat blur = GaussianBlur(faces[i]->face_trans.at<int>(k,l), faces[i]->face_trans.at<int>(k,l),Size(11, 11), 11, 11);
+      for (int k = 0; k < faces[i]->mask.cols; k++) {
+        for (int l = 0; l < faces[i]->mask.rows; l++) {
+          final.at<int>(k, l) = faces[i]->mask.at<int>(k, l) * faces[i]->face_trans.at<int>(k,l) + (1 - faces[i]->mask.at<int>(k, l)) * blur.at<int>(k,l);
+        }
+      }
+    }
+    r.push_back(final);
+  }
+
+  // 6) calculate the final image using the transition image, the blured image
+  //    and the alpha-blended mask
+
   return r;
 }
 
