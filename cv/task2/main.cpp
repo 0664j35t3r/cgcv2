@@ -361,33 +361,32 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     circle(imag, center_right_eye, 3, Scalar(255,255,255));
     circle(imag, center_mouth    , 3, Scalar(255,255,255));
     imshow("hallo", imag);
-//    waitKey(0);
-    cout << "hallo fasfdasfasf" << endl;
-//    ROIs sind Rects, die Bereiche deines Bildes definieren sollen das eine Mat ist. Die HOG-Features
-//    sind aus den ROIs der Bilder zu berechnen, also wie du sagst: Bilausschnitte herauskopieren und getHOGFeatures füttern.
+    //    waitKey(0);
+    //    ROIs sind Rects, die Bereiche deines Bildes definieren sollen das eine Mat ist. Die HOG-Features
+    //    sind aus den ROIs der Bilder zu berechnen, also wie du sagst: Bilausschnitte herauskopieren und getHOGFeatures füttern.
 
-//    Die positiven Trainingsdaten sind die HOG-Features jener Bereiche von denen du weißt das sie
-//    die gewünschten Informationen enthalten. Beim Auge also beispielsweise jene Bereiche die Augen enthalten
-//    (welche das sind kannst du ja aus dem text file auslesen). Selbes gilt für den Mund.
-//    Damit kannst du zwei separate SVM
-//    's trainieren die zwischen Auge und nicht Auge, bzw. Mund und nicht Mund unterscheiden können (basierend auf den
-//    HOG-Features).
-//    Zu den wenigen positiven Beispielen generierst du noch viele Negativbeispiele, die ALLE übrigen sich überlappenden
-//    Bereiche des Bildes darstellen. Dabei sind Bereiche in jeweils step_size Abstand (sowohl vertikal, als auch horizontal)
-//    zu nehmen. Also einfach mit einem Fenster über das gesamte Bild sweepen (wobei sich der Bereich immer nur um
-//    step_size in eine Richtung weiterbewegt), und nimmst alle Bereiche DIE WEDER DAS GESUCHTE OBJEKT beinhalten
-//    NOCH AUSSERHALB DES BILDBEREICHES liegen (definiert durch die Maske). ZUSAETZLICH ist noch der Bereich um die
-//    Augen um padding erweitert, sowie um den Mund um padding vermindert Tabu. Wenn dein Fenster beim sweepen
-//    irgendwie in so einen Bereich kommt, ist er zu ignorieren. Von den damit übrigen negativen Beispielen berechnest
-//    du dir ebenfalls die HOG-Features um deine negativen Beispiele zu erhalten.
-//    Damit die SVM beim trainieren weiß was positiv und was negativ ist, gibst du ihre diese Information
-//    noch mit den Labels mit. Das ist einfach ein Vektor der 1 für positive und 2 für negative Beispiele enthaltet.
-//    Habe auch ewig und drei Tage gebraucht um zu verstehen was genau zu tun ist...
+    //    Die positiven Trainingsdaten sind die HOG-Features jener Bereiche von denen du weißt das sie
+    //    die gewünschten Informationen enthalten. Beim Auge also beispielsweise jene Bereiche die Augen enthalten
+    //    (welche das sind kannst du ja aus dem text file auslesen). Selbes gilt für den Mund.
+    //    Damit kannst du zwei separate SVM
+    //    's trainieren die zwischen Auge und nicht Auge, bzw. Mund und nicht Mund unterscheiden können (basierend auf den
+    //    HOG-Features).
+    //    Zu den wenigen positiven Beispielen generierst du noch viele Negativbeispiele, die ALLE übrigen sich überlappenden
+    //    Bereiche des Bildes darstellen. Dabei sind Bereiche in jeweils step_size Abstand (sowohl vertikal, als auch horizontal)
+    //    zu nehmen. Also einfach mit einem Fenster über das gesamte Bild sweepen (wobei sich der Bereich immer nur um
+    //    step_size in eine Richtung weiterbewegt), und nimmst alle Bereiche DIE WEDER DAS GESUCHTE OBJEKT beinhalten
+    //    NOCH AUSSERHALB DES BILDBEREICHES liegen (definiert durch die Maske). ZUSAETZLICH ist noch der Bereich um die
+    //    Augen um padding erweitert, sowie um den Mund um padding vermindert Tabu. Wenn dein Fenster beim sweepen
+    //    irgendwie in so einen Bereich kommt, ist er zu ignorieren. Von den damit übrigen negativen Beispielen berechnest
+    //    du dir ebenfalls die HOG-Features um deine negativen Beispiele zu erhalten.
+    //    Damit die SVM beim trainieren weiß was positiv und was negativ ist, gibst du ihre diese Information
+    //    noch mit den Labels mit. Das ist einfach ein Vektor der 1 für positive und 2 für negative Beispiele enthaltet.
+    //    Habe auch ewig und drei Tage gebraucht um zu verstehen was genau zu tun ist...
 
     //  - positive: eye and mouth ROIs using getHogFeatures()
     vector<Mat> eye;
     vector<Mat> mouth;
-    eye.push_back(imag(ROI_eyes_left)); //subpic
+    eye.push_back(imag(ROI_eyes_left)); // subpic
     eye.push_back(imag(ROI_eyes_right));
     mouth.push_back(imag(ROI_mouth));
     getHogFeatures(eye, Eyes.features, Eyes.patch);
@@ -398,43 +397,38 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
 
     //  - negative: TrainingData::patch sized ROIs
     Rect intersec;
-
-    for(int i; i < imag.cols; i += Eyes.step)
+    for(int i; i < imag.cols - Eyes.patch.width; i += Eyes.step)
     {
-      for (int j = 0; j < imag.rows; j += Eyes.step)
+      for (int j = 0; j < imag.rows - Eyes.patch.height; j += Eyes.step)
       {
         Rect tmp(Point(i,j), Eyes.patch);
         intersec = tmp & ROI_eyes_left;
         if(intersec.area() > 0)
           continue;
-
         intersec = tmp & ROI_eyes_right;
         if(intersec.area() > 0)
           continue;
 
         if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
           continue;
-
         std::vector<Mat> vec_tmp;
         vec_tmp.push_back(imag(tmp));
         getHogFeatures(vec_tmp, Eyes.features, Eyes.patch);
         Eyes.labels.push_back(2);
       }
     }
-
-    for(int i; i < imag.cols; i += Mouth.step)
+    for(int i; i < imag.cols - Mouth.patch.width; i += Mouth.step)
     {
-      for (int j = 0; j < imag.rows; j += Mouth.step)
+      for (int j = 0; j < imag.rows - Mouth.patch.height; j += Mouth.step)
       {
         Rect tmp(Point(i,j), Mouth.patch);
-
         intersec = tmp & ROI_mouth;
         if(intersec.area() > 0)
           continue;
-
+        cout << "6 loop" << endl;
         if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
           continue;
-
+        cout << "7 loop" << endl;
         std::vector<Mat> vec_tmp;
         vec_tmp.push_back(imag(tmp));
         getHogFeatures(vec_tmp, Mouth.features, Mouth.patch);
@@ -442,6 +436,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
       }
     }
   }
+
   // - create two SVM objects using cv::CvSVM
   CvSVM eye;
   CvSVM mouth;
@@ -453,7 +448,6 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
   // - store both trained models - use TrainingData::svmModelFile as file names
   eye.save(Eyes.svmModelFile.c_str());
   mouth.save(Mouth.svmModelFile.c_str());
-  cout << " end of svn " << endl;
 }
 
 //================================================================================
@@ -509,23 +503,14 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
   Mat frameClone = frame.clone();
 
-  Point2f eye1, eye2, mouth1;
-	detect(frame(face), eye2, 2, eyes_data); // right eye
-	detect(frame(face), mouth1, 0, mouth_data); // mouth
-	detect(frame(face), eye1, 1, eyes_data); // left eye
-
-	left_eye = Point(face.x + floor(eye1.x), face.y + floor(eye1.y));
-	right_eye = Point(face.x + floor(eye2.x), face.y + floor(eye2.y));
-	mouth = Point(face.x + floor(mouth1.x),  face.y + floor(mouth1.y));
-	
-
-//	circle(frameClone, left_eye, 3, Scalar(0, 0, 255), 2, 1);
-//	circle(frameClone, right_eye, 3, Scalar(0, 255, 0), 2, 1);
-//	circle(frameClone, mouth, 3, Scalar(255, 0, 0), 2, 1);
-//	imwrite("detect2.png", frameClone);
-//	imshow("", frameClone);
-//	waitKey(0);
-
+//  Point2f eye1, eye2, mouth1;
+//	detect(frame(face), eye2, 2, eyes_data); // right eye
+//	detect(frame(face), mouth1, 0, mouth_data); // mouth
+//	detect(frame(face), eye1, 1, eyes_data); // left eye
+//
+//	left_eye = Point(face.x + floor(eye1.x), face.y + floor(eye1.y));
+//	right_eye = Point(face.x + floor(eye2.x), face.y + floor(eye2.y));
+//	mouth = Point(face.x + floor(mouth1.x),  face.y + floor(mouth1.y));
 }
 
 
@@ -549,24 +534,50 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
 void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
 {
+  // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
   Point mean;
   mean.x = (left_eye.x + right_eye.x) / 2;
   mean.y = (left_eye.y + right_eye.y) / 2;
 
+  // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
   float dist_eyes = sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
 
+  // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
   // hessesche normalform
-  Vec2f vec_eye;
-  vec_eye[0] = (left_eye.x - right_eye.x) / 2;
-  vec_eye[1] = (left_eye.y + right_eye.y) / 2;
+  Point vec_eye_mean;
+  vec_eye_mean.x = (left_eye.x - right_eye.x) / 2;
+  vec_eye_mean.y = (left_eye.y - right_eye.y) / 2;
 
-  float dist_mouth_eyes = sqrt( pow(vec_eye[0] - mouth_center.x, 2) + pow(vec_eye[1] - mouth_center.y,2));
+  float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x, 2) + pow(
+          vec_eye_mean.y - mouth_center.y,2) );
 
-// todo
+  // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
+  Vec2f v_horizontal;
+  v_horizontal[0] = ((left_eye.x + 5) - left_eye.x);
+  v_horizontal[1] = (left_eye.y - left_eye.y);
 
+  cout << v_horizontal << endl;
 
+  Vec2f v_eyes;
+  v_eyes[0] = right_eye.x - left_eye.x;
+  v_eyes[1] = right_eye.y - left_eye.y;
+  float norm = sqrt(v_eyes[0] * v_eyes[0] + v_eyes[1] * v_eyes[1]);
+  cout << v_eyes << endl;
 
+  // normalize(v_horizontal, v_horizontal);
+  // normalize(v_eyes, v_eyes);
 
+  // acos(norm(right_eye - left_eye) / norm(v_horizontal)) * PI / 180.0;
+  int theta = acos(v_eyes[0] * v_horizontal[0] + v_eyes[1] * v_horizontal[1] / norm) * 180 / PI;
+  cout << "theta " << theta << endl;
+
+  cout << "mask " << mask.size() << endl;
+
+  // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
+  //color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
+  ellipse(mask, mouth_center, Size(1,0), theta, 0, 0, Scalar(255,255,255), -1, 8, 0);
+  imshow("ellipse", mask);
+  waitKey(0);
 }
 
 
