@@ -500,6 +500,7 @@ void detectFace(const Mat& frame, Rect& faceROI)
 
 void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point& right_eye, Point& mouth, const Detection& eyes_data, const Detection& mouth_data) {
 
+  cout << "detect Eyes Mouth " << endl;
   Mat frameClone = frame.clone();
 
   Point2f eye1, eye2, mouth1;
@@ -634,14 +635,13 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
 
 
   // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
-//   warpAffine(imageToTransform, src, warp_dst, imageToTransform.size());
+  // warpAffine(imageToTransform, src, warp_dst, imageToTransform.size());
 
   cout << " Affine Transformat5" << endl;
 
 
-
   // 3) write the calculated transformation matrix to T
-  T = imageToTransform;
+  T = src;
 
 //  for (int i = 0; i < warp_dst.cols; i++)
 //  {
@@ -672,7 +672,44 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
 //================================================================================
 vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 {
-  return vector<Point2f>(4, Point2f(0.0f, 0.0f));
+  // 1) transform the four vertices of the given image by using the previously calculated transformation matrix T.
+   T.convertTo(T, CV_32FC1);
+   int width = image.cols;
+   int height = image.rows;
+
+  Mat E(3,4, DataType<float>::type);
+
+  E.at<float>(0,0) =  0;//ey1
+  E.at<float>(1,0) =  0;//ex1
+  E.at<float>(2,0) =  1;//
+  E.at<float>(0,1) =  0;//ey2
+  E.at<float>(1,1) =  width;//ex2
+  E.at<float>(2,1) =  1;//
+  E.at<float>(0,2) =  height;//ey3
+  E.at<float>(1,2) =  0;//ex3
+  E.at<float>(2,2) =  1;//
+  E.at<float>(0,3) =  height;//ey4
+  E.at<float>(1,3) =  width;//ex4
+  E.at<float>(2,3) =  1;//
+
+  cout << "a  >>>" <<  E.size() << endl;
+  cout << "a  >>>" <<  E.cols << endl;
+  cout << "T  >>>" <<  T.size() << endl;
+  cout << "T  >>>" <<  T.cols << endl;
+  E.mul(T);
+
+  vector<Point2f> tmp;
+  tmp.push_back(Point2f(E.at<float>(0,0), E.at<float>(1,0)));
+  tmp.push_back(Point2f(E.at<float>(0,1), E.at<float>(1,1)));
+  tmp.push_back(Point2f(E.at<float>(0,2), E.at<float>(1,2)));
+  tmp.push_back(Point2f(E.at<float>(0,3), E.at<float>(1,3)));
+
+  cout << " beer" << endl;
+  // 2) return a vector containing the four transformed vertices in the following order:
+  //    up/left, up/right, bottom/left, bottom/right
+
+//  return vector<Point2f>(4, Point(1,2));
+  return       tmp;
 }
 
 //================================================================================
@@ -682,6 +719,7 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 //================================================================================
 vector<Point2f> calculateRect(vector<Point2f> points)
 {
+  cout << " calculate Rect" << endl;
     float left_border = max(points[0].x, points[2].x);
     float right_border = min(points[1].x, points[3].x);
     float top_border = max(points[0].y, points[1].y);
@@ -716,6 +754,8 @@ vector<Point2f> calculateRect(vector<Point2f> points)
 //================================================================================
 
 void distTransform(const Mat& src, Mat& dest) {
+
+  cout << " distransform" << endl;
 	// comment out or delete the next line if you want to do the bonus:
 	cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
 	// --- your BONUS code here:
@@ -746,6 +786,7 @@ void distTransform(const Mat& src, Mat& dest) {
 //================================================================================
 vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int fps)
 {
+  cout << " blendFaceSequence" << endl;
   vector<Mat> r;
   return r;
 }
@@ -768,6 +809,7 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
 //================================================================================
 void createVideo(vector<Mat> frames, int fps, string video_dir, Size size)
 {
+  cout << " create video " << endl;
   VideoWriter videoWriter(video_dir, CV_FOURCC('P', 'I','M', '1'), fps, size);
   for(const auto& frame : frames)
     videoWriter.write(frame);
