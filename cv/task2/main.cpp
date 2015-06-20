@@ -778,6 +778,7 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
 
   vector<Mat> r;
   Mat final = Mat(faces[1]->face.rows,faces[1]->face.cols, CV_32FC1);
+  Mat blur = Mat(faces[1]->face.rows,faces[1]->face.cols, CV_32FC1);
   // 2) calculate the alpha blended mask and transition image
   for (int i = 0; i < faces.size() - 1; i++)
   {
@@ -785,26 +786,33 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
     for (int j = 1; j <= 4; j++)
     {
       float alpha = j / imagecount;
-      faces[i]->face_trans = (1 - alpha) * faces[i]->face + alpha * faces[i + 1]->face;
+      //  faces[i]->face_trans = (1 - alpha) * faces[i]->face + alpha * faces[i + 1]->face;
 
       // 3) do a distance transformation with openCV
-      //		- set distanceType = CV_DIST_C
-      //		- set maskSize = 3
+      //    - set distanceType = CV_DIST_C
+      //    - set maskSize = 3
+      cout << "before" << endl;
       distTransform(faces[i]->mask, faces[i]->mask);
+      cout << "after" << endl;
 
       // 4) calculate alpha-blended mask with gauss weighting (format: CV_32FC1)
-      //		- sigma = 11
-      for (int k = 0; k < faces[i]->mask.cols; k++) {
-        for (int l = 0; l < faces[i]->mask.rows; l++) {
-          faces[i]->mask.at<int>(k,l) = 1.f - exp(-(pow(faces[i]->mask.at<int>(k,l),2) / (2 * 11^2)));
+      //    - sigma = 11
+      for (int k = 0; k < faces[i]->mask.cols; k++)
+      {
+        for (int l = 0; l < faces[i]->mask.rows; l++)
+        {
+          faces[i]->mask.at<int>(k,l) = 1.f - exp(-((faces[i]->mask.at<int>(k,l),2) / (2 * (11 * 11))));
         }
       }
-
-      Mat blur;
+      cout << " aaaaaaaaaaaaaaaaaaaa" << endl;
+      // 6) calculate the final image using the transition image, the blured image
+      //    and the alpha-blended mask
       GaussianBlur(faces[i]->face_trans, blur,Size(11, 11), 11, 11);
       // Mat blur = GaussianBlur(faces[i]->face_trans.at<int>(k,l), faces[i]->face_trans.at<int>(k,l),Size(11, 11), 11, 11);
-      for (int k = 0; k < faces[i]->mask.cols; k++) {
-        for (int l = 0; l < faces[i]->mask.rows; l++) {
+      for (int k = 0; k < faces[i]->mask.cols; k++)
+      {
+        for (int l = 0; l < faces[i]->mask.rows; l++)
+        { //cout << " ber" << endl;
           final.at<int>(k, l) = faces[i]->mask.at<int>(k, l) * faces[i]->face_trans.at<int>(k,l) + (1 - faces[i]->mask.at<int>(k, l)) * blur.at<int>(k,l);
         }
       }
@@ -812,8 +820,7 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
     r.push_back(final);
   }
 
-  // 6) calculate the final image using the transition image, the blured image
-  //    and the alpha-blended mask
+
 
   return r;
 }
