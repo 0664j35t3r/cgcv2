@@ -126,7 +126,6 @@ void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win)
 
 void detect(const Mat& face, Point2f& detected, char search, const Detection& params)
 {
-  detected = Point2f(0.0f, 0.0f);
   Mat imag = face;
   CvSVM cvsvm;
   cvsvm.load(params.svmModelFile.c_str());
@@ -172,15 +171,18 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
       vector<pair<float, Rect>> vec_score;
       vec_score.push_back(pair<float, Rect>(dist, Rect(x, y, params.patch.width, params.patch.height)));
 
+      // - collect a certain number of your best scored ROIs (params.scoreNum)
       struct sorting : public binary_function<pair<float,Rect>, pair<float,Rect>, bool>
       {
         bool operator()(const pair<float,Rect>& __x, const pair<float,Rect>& __y) const
-        { return __x.first > __y.first; }
+        {
+          return __x.first > __y.first;
+        }
       };
 
-      // - collect a certain number of your best scored ROIs (params.scoreNum)
       std::sort (vec_score.begin(), vec_score.end(), sorting());
-      for (auto item : vec_score) {
+      for (auto item : vec_score)
+      {
         cout << item.first << endl;
       }
 
@@ -209,6 +211,8 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
 
       intersec.height = intersec.height * new_scale;
       intersec.width  = intersec.width * new_scale;
+      cout << "x " << intersec.x << "y " << intersec.y << endl;
+      detected = Point2f(intersec.x, intersec.y); //needed in mask face
     }
   }
 }
@@ -552,34 +556,36 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
           vec_eye_mean.y - mouth_center.y,2) );
 
   // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
-  Vec2f v_horizontal;
-  v_horizontal[0] = ((left_eye.x + 5) - left_eye.x);
-  v_horizontal[1] = (left_eye.y - left_eye.y);
-
-  cout << v_horizontal << endl;
+  Vec2f v_horizontal (1, 0);
 
   Vec2f v_eyes;
   v_eyes[0] = right_eye.x - left_eye.x;
+  cout << "l_e" << right_eye << endl;
+  cout << "l_e" << left_eye << endl;
   v_eyes[1] = right_eye.y - left_eye.y;
   float norm = sqrt(v_eyes[0] * v_eyes[0] + v_eyes[1] * v_eyes[1]);
+
+  normalize(v_horizontal, v_horizontal);
+  normalize(v_eyes, v_eyes);
+
+  cout << v_horizontal << endl;
   cout << v_eyes << endl;
 
-  // normalize(v_horizontal, v_horizontal);
-  // normalize(v_eyes, v_eyes);
-
   // acos(norm(right_eye - left_eye) / norm(v_horizontal)) * PI / 180.0;
-  int theta = acos(v_eyes[0] * v_horizontal[0] + v_eyes[1] * v_horizontal[1] / norm) * 180 / PI;
+
+  cout << v_horizontal.dot(v_eyes) << endl;
+
+  float theta = acos(v_horizontal.dot(v_eyes) / norm) * 180 / PI; // todo radians
   cout << "theta " << theta << endl;
 
   cout << "mask " << mask.size() << endl;
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   //color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  ellipse(mask, mouth_center, Size(1,0), theta, 0, 0, Scalar(255,255,255), -1, 8, 0);
+  ellipse(mask, mouth_center, Size(dist_eyes,dist_mouth_eyes), theta, 0, 0, Scalar(255,255,255), -1, 8, 0); // todo
   imshow("ellipse", mask);
   waitKey(0);
 }
-
 
 
 //================================================================================
