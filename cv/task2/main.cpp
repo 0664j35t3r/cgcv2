@@ -507,14 +507,14 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
   Mat frameClone = frame.clone();
 
-//  Point2f eye1, eye2, mouth1;
-//	detect(frame(face), eye2, 2, eyes_data); // right eye
-//	detect(frame(face), mouth1, 0, mouth_data); // mouth
-//	detect(frame(face), eye1, 1, eyes_data); // left eye
-//
-//	left_eye = Point(face.x + floor(eye1.x), face.y + floor(eye1.y));
-//	right_eye = Point(face.x + floor(eye2.x), face.y + floor(eye2.y));
-//	mouth = Point(face.x + floor(mouth1.x),  face.y + floor(mouth1.y));
+  Point2f eye1, eye2, mouth1;
+	detect(frame(face), eye2, 2, eyes_data); // right eye
+	detect(frame(face), mouth1, 0, mouth_data); // mouth
+	detect(frame(face), eye1, 1, eyes_data); // left eye
+
+	left_eye = Point(face.x + floor(eye1.x), face.y + floor(eye1.y));
+	right_eye = Point(face.x + floor(eye2.x), face.y + floor(eye2.y));
+	mouth = Point(face.x + floor(mouth1.x),  face.y + floor(mouth1.y));
 }
 
 
@@ -580,13 +580,6 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   normalize(v_horizontal, v_horizontal);
   normalize(v_eyes, v_eyes);
 
-  cout << v_horizontal << endl;
-  cout << v_eyes << endl;
-
-  // acos(norm(right_eye - left_eye) / norm(v_horizontal)) * PI / 180.0;
-
-  cout << v_horizontal.dot(v_eyes) << endl;
-
   float theta = acos(v_horizontal.dot(v_eyes) / norm) * 180 / PI; // todo radians
   cout << "theta " << theta << endl;
 
@@ -596,7 +589,7 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   //color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   ellipse(mask, mc, Size(dist_eyes,dist_mouth_eyes), theta, 0, 0, Scalar(255,255,255), -1, 8, 0); // todo
   imshow("ellipse", mask);
-  waitKey(0);
+//  waitKey(0);
 }
 
 
@@ -623,14 +616,32 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
 
 Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_one, Point mouth_one, Point left_eye_two, Point right_eye_two, Point mouth_two, Mat& T)
 {
+  // 1) use opencv to calculate a transformation matrix that maps the three given points from one image into another image
+  // http://docs.opencv.org/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html
+  Mat src, warp_dst, warp_rotate_dst;
 
-  cout << "imageToTransform" << imageToTransform.size() << endl;
-//  Mat tmp = getAffineTransform(left_eye_one, left_eye_two);
-//          getAffineTransform(left_eye_one, right_eye_one, mouth_one, left_eye_one, left_eye_two, right_eye_two, mouth_two);
+  Point2f one[3];
+  one[0] = left_eye_one;
+  one[1] = right_eye_one;
+  one[2] = mouth_one;
+
+  Point2f two[3];
+  two[0] = left_eye_two;
+  two[1] = right_eye_two;
+  two[2] = mouth_two;
+
+  src = getAffineTransform(one, two);
+//  cout << "imageToTransform" << warp.size() << endl;
+
+  // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
+  warpAffine(src, warp_dst, imageToTransform, imageToTransform.size());
 
 
+  // 3) write the calculated transformation matrix to T
+  T = warp_dst;
 
-  return Mat::zeros(imageToTransform.size(), CV_32F);
+
+  return T;
 }
 
 //================================================================================
@@ -1111,12 +1122,11 @@ int main(int argc, char *argv[])
   
 
     }
-    catch (std::exception &ex)
-    {
-        cout << ex.what() << endl;
-        cout << "Program exited with errors!" << endl;
-        return -1;
-    }
+    catch (std::exception &ex) {
+      cout << ex.what() << endl;
+      cout << "Program exited with errors!" << endl;
+      return -1;
 
-    cout << "Program exited normally!" << endl;
+      cout << "Program exited normally!" << endl;
+    }
 }
