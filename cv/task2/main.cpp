@@ -617,43 +617,30 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
   // 1) use opencv to calculate a transformation matrix that maps the three given points from one image into another image
   // http://docs.opencv.org/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html
   Mat src, warp_dst;
-  cout << " Affine Transformat1" << endl;
+
   Point2f one[3];
   one[0] = left_eye_one;
   one[1] = right_eye_one;
   one[2] = mouth_one;
-  cout << " Affine Transformat2" << endl;
+
   Point2f two[3];
   two[0] = left_eye_two;
   two[1] = right_eye_two;
   two[2] = mouth_two;
-  cout << " Affine Transformat3" << endl;
+
   src = getAffineTransform(one, two);
 
   cout << " Affine Transformat4" << src.size() << endl;
   cout << " Affine Transformat4" << imageToTransform.size() << endl;
 
-
   // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
-  // warpAffine(imageToTransform, src, warp_dst, imageToTransform.size());
-
+  warpAffine(imageToTransform, warp_dst, src, warp_dst.size());
   cout << " Affine Transformat5" << endl;
-
 
   // 3) write the calculated transformation matrix to T
   T = src;
 
-//  for (int i = 0; i < warp_dst.cols; i++)
-//  {
-//    for (int j = 0; j < warp_dst.rows; j++)
-//    {
-//      cout <<  warp_dst.col(i).row(j) << endl;
-//    }
-//  }
-  cout << " Affine Transformat6" << endl;
-
-
-  return T;
+  return warp_dst;
 }
 
 //================================================================================
@@ -673,9 +660,9 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
 vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 {
   // 1) transform the four vertices of the given image by using the previously calculated transformation matrix T.
-   T.convertTo(T, CV_32FC1);
-   int width = image.cols;
-   int height = image.rows;
+  T.convertTo(T, CV_32FC1);
+  int width = image.cols;
+  int height = image.rows;
 
   Mat E(3,4, DataType<float>::type);
 
@@ -699,10 +686,10 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
   E.mul(T);
 
   vector<Point2f> tmp;
-  tmp.push_back(Point2f(E.at<float>(0,0), E.at<float>(1,0)));
-  tmp.push_back(Point2f(E.at<float>(0,1), E.at<float>(1,1)));
-  tmp.push_back(Point2f(E.at<float>(0,2), E.at<float>(1,2)));
-  tmp.push_back(Point2f(E.at<float>(0,3), E.at<float>(1,3)));
+  tmp.push_back(Point2f(E.at<float>(1,0), E.at<float>(0,0)));
+  tmp.push_back(Point2f(E.at<float>(1,1), E.at<float>(0,1)));
+  tmp.push_back(Point2f(E.at<float>(1,2), E.at<float>(0,2)));
+  tmp.push_back(Point2f(E.at<float>(1,3), E.at<float>(0,3)));
 
   cout << " beer" << endl;
   // 2) return a vector containing the four transformed vertices in the following order:
