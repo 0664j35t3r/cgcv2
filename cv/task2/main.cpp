@@ -137,7 +137,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   // - if 0: search in mouth region, if 1: left eye, if 2: right eye
   switch(search)
   {
-    case 1:
+    case 1: // eyes
       cvRect(0, 0, imag.cols * 0.5, imag.rows * 0.6);  // todo width, height
       break;
     case 2:
@@ -214,7 +214,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
     }
   }
 
-  detected = Point2f(6, 7);
+  detected = Point2f(6, 7); //
 }
 
 bool fExists(const std::string& filename) {
@@ -317,7 +317,6 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
   {
     Mat imag = imread(imageList.at(i));
 
-//    cout << imag.size() << endl;
     cv::cvtColor(imag, imag, CV_BGR2GRAY);
     resize(imag, imag, Size(svmParams.scale * imag.cols, svmParams.scale * imag.rows));
 
@@ -325,18 +324,16 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Mat mask = imread(maskList.at(i));
     cv::cvtColor(mask, mask, CV_BGR2GRAY);
     resize(mask, mask, Size(svmParams.scale * mask.cols, svmParams.scale * mask.rows));
-//    cout << imag.size() << endl;
+
     vector<Point2f> landmarks;
     readLandmarks(imageList.at(i), landmarks);
 
-//    cout << imag.size() << endl;
     Point center_mouth           = landmarks.at(Mouth.landmarks.at(0)) * svmParams.scale;
     Point left_eye_left_corner   = landmarks.at(Eyes.landmarks.at(0));
     Point left_eye_right_corner  = landmarks.at(Eyes.landmarks.at(1));
     Point right_eye_left_corner  = landmarks.at(Eyes.landmarks.at(2));
     Point right_eye_right_corner = landmarks.at(Eyes.landmarks.at(3));
 
-//    cout << imag.size() << endl;
     Point center_left_eye  = (left_eye_left_corner + left_eye_right_corner) * 0.5 * svmParams.scale;
     Point center_right_eye = (right_eye_left_corner + right_eye_right_corner) * 0.5 * svmParams.scale;
 
@@ -344,7 +341,6 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width / 2);
     top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height / 2);
 
-//    cout << imag.size() << endl;
     Point top_left_right_eye;
     top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width / 2);
     top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height / 2);
@@ -359,7 +355,6 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Rect ROI_eyes_right (top_left_right_eye, Eyes.patch);
     Rect ROI_mouth (top_left_mouth, Mouth.patch);
 
-//    cout << imag.size() << endl;
     cout << center_left_eye << endl;
     circle(imag, center_left_eye , 3, Scalar(255,255,255));
     circle(imag, center_right_eye, 3, Scalar(255,255,255));
@@ -586,10 +581,11 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
 //  cout << "mask " << mask.size() << endl;
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  //color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
+  // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   ellipse(mask, mc, Size(dist_eyes,dist_mouth_eyes), theta, 0, 0, Scalar(255,255,255), -1, 8, 0); // todo
   imshow("ellipse", mask);
 //  waitKey(0);
+  cout << " leave mask" << endl;
 }
 
 
@@ -616,29 +612,45 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
 
 Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_one, Point mouth_one, Point left_eye_two, Point right_eye_two, Point mouth_two, Mat& T)
 {
+  cout << " Affine Transformat" << endl;
   // 1) use opencv to calculate a transformation matrix that maps the three given points from one image into another image
   // http://docs.opencv.org/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html
-  Mat src, warp_dst, warp_rotate_dst;
-
+  Mat src, warp_dst;
+  cout << " Affine Transformat1" << endl;
   Point2f one[3];
   one[0] = left_eye_one;
   one[1] = right_eye_one;
   one[2] = mouth_one;
-
+  cout << " Affine Transformat2" << endl;
   Point2f two[3];
   two[0] = left_eye_two;
   two[1] = right_eye_two;
   two[2] = mouth_two;
-
+  cout << " Affine Transformat3" << endl;
   src = getAffineTransform(one, two);
-//  cout << "imageToTransform" << warp.size() << endl;
+
+  cout << " Affine Transformat4" << src.size() << endl;
+  cout << " Affine Transformat4" << imageToTransform.size() << endl;
+
 
   // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
-  warpAffine(src, warp_dst, imageToTransform, imageToTransform.size());
+//   warpAffine(imageToTransform, src, warp_dst, imageToTransform.size());
+
+  cout << " Affine Transformat5" << endl;
+
 
 
   // 3) write the calculated transformation matrix to T
-  T = warp_dst;
+  T = imageToTransform;
+
+//  for (int i = 0; i < warp_dst.cols; i++)
+//  {
+//    for (int j = 0; j < warp_dst.rows; j++)
+//    {
+//      cout <<  warp_dst.col(i).row(j) << endl;
+//    }
+//  }
+  cout << " Affine Transformat6" << endl;
 
 
   return T;
@@ -1097,7 +1109,6 @@ int main(int argc, char *argv[])
         
         for (std::vector<FaceInfo*>::iterator it = faces.begin(); it != faces.end(); ++it)
         {
-			
             Mat face = (*it)->face_trans;
             if(trimArea.width == 0 && trimArea.height == 0)
 				trimArea = Rect(0, 0, face.cols, face.rows);
@@ -1119,8 +1130,6 @@ int main(int argc, char *argv[])
 		imwrite(imagesequence,frames[fps]);
 		createVideo(frames, fps, video_out, Size(frames.at(1).cols,frames.at(1).rows));
 	}
-  
-
     }
     catch (std::exception &ex) {
       cout << ex.what() << endl;
