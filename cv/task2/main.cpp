@@ -158,7 +158,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
     }
   };
 
-  Mat mat_feature;
+
   Rect intersec;
   vector<pair<float, Rect>> vec_score;
   float dist = 0;
@@ -166,35 +166,25 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (int y = 0; y < imag.rows - params.patch.height; y++)
   {
     //  svm.clear();
-    cout << " next y " << endl;
     cout << "sliding window" << endl;
     for (int x = 0; x < imag.cols - params.patch.width; x++)
     {
-      cout << " next x " << x << endl;
       vector<Mat> sliding_window;
+      Mat mat_feature;
       sliding_window.push_back(imag(Rect(x,y, params.patch.width, params.patch.height)));
-      cout << "sliding_window.size() " << sliding_window.size() << endl;
 
-      cout << " next x a" << endl;
       // - extract hog features of each ROI using getHogFeatures()
       getHogFeatures(sliding_window, mat_feature, params.patch);
 
-      cout << " next x b" << endl;
       // - use SVM object for getting distance to SVM hyperplane (cv::CvSVM::predict())
       dist = svm.predict(mat_feature, true);
 
-      cout << " next x c" << endl;
       // - apply sigmoid function to returned distance
       dist = 1.f/(1.f + exp(-dist)); // todo check if -d
-
-      cout << " next x d" << endl;
-
       cout << "dist " << dist << endl;
 
       // - collect a certain number of your best scored ROIs (params.scoreNum)
       vec_score.push_back(pair<float, Rect>(dist, Rect(x, y, params.patch.width, params.patch.height)));
-      cout << " next x e" << endl;
-
       cout << "vec_score " << vec_score.size() << std::endl;
     }
   }
@@ -224,29 +214,29 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   // - center of last ROI is your detected object's position
   float orig_height = tmp_face.rows;
   float orig_width  = tmp_face.cols;
-  cout << "orig_height " << orig_height << endl;
-  cout << "orig_width  " << orig_width << endl;
+//  cout << "orig_height " << orig_height << endl;
+//  cout << "orig_width  " << orig_width << endl;
 
   float scale_height = imag.rows;
   float scale_width  = imag.cols;
-  cout << "scale_height " << scale_height << endl;
-  cout << "scale_width  " << scale_width  << endl;
+//  cout << "scale_height " << scale_height << endl;
+//  cout << "scale_width  " << scale_width  << endl;
 
   float new_scale_height = (float)orig_height / scale_height;
   float new_scale_width  = (float)orig_width  / scale_width;
 
-  cout << "new_scale_height " << new_scale_height << endl;
-  cout << "new_scale width  " << new_scale_width << endl;
+//  cout << "new_scale_height " << new_scale_height << endl;
+//  cout << "new_scale width  " << new_scale_width << endl;
 
   intersec.x = (float)intersec.x * new_scale_width;
   intersec.y = (float)intersec.y * new_scale_height;
-  cout << "intersec.x  " << intersec.x << endl;
-  cout << "intersec.y " << intersec.y << endl;
+//  cout << "intersec.x  " << intersec.x << endl;
+//  cout << "intersec.y " << intersec.y << endl;
   intersec.height = intersec.height * new_scale_height;
   intersec.width  = intersec.width * new_scale_width;
-  cout << "intersec.height " << intersec.height << endl;
-  cout << "intersec.width" << intersec.width << endl;
-  cout << "x " << intersec.x << "y " << intersec.y << endl;
+//  cout << "intersec.height " << intersec.height << endl;
+//  cout << "intersec.width" << intersec.width << endl;
+//  cout << "x " << intersec.x << "y " << intersec.y << endl;
   // detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
 
   detected = Point2f(intersec.x + intersec.width / 2, intersec.y + intersec.height / 2);
@@ -388,7 +378,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     top_left_mouth.x = center_mouth.x - (Mouth.patch.width / 2);
     top_left_mouth.y = center_mouth.y + (Mouth.patch.height / 2);
 
-    cout << "padding"  << Eyes.padding << endl;
+//    cout << "padding"  << Eyes.padding << endl;
 
     // left corner and size
     Rect ROI_eyes_left (top_left_left_eye, Eyes.patch);
@@ -401,26 +391,6 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
 //    circle(imag, center_mouth    , 3, Scalar(255,255,255));
 //    imshow("hallo", imag);
     //    waitKey(0);
-    //    ROIs sind Rects, die Bereiche deines Bildes definieren sollen das eine Mat ist. Die HOG-Features
-    //    sind aus den ROIs der Bilder zu berechnen, also wie du sagst: Bilausschnitte herauskopieren und getHOGFeatures füttern.
-
-    //    Die positiven Trainingsdaten sind die HOG-Features jener Bereiche von denen du weißt das sie
-    //    die gewünschten Informationen enthalten. Beim Auge also beispielsweise jene Bereiche die Augen enthalten
-    //    (welche das sind kannst du ja aus dem text file auslesen). Selbes gilt für den Mund.
-    //    Damit kannst du zwei separate SVM
-    //    's trainieren die zwischen Auge und nicht Auge, bzw. Mund und nicht Mund unterscheiden können (basierend auf den
-    //    HOG-Features).
-    //    Zu den wenigen positiven Beispielen generierst du noch viele Negativbeispiele, die ALLE übrigen sich überlappenden
-    //    Bereiche des Bildes darstellen. Dabei sind Bereiche in jeweils step_size Abstand (sowohl vertikal, als auch horizontal)
-    //    zu nehmen. Also einfach mit einem Fenster über das gesamte Bild sweepen (wobei sich der Bereich immer nur um
-    //    step_size in eine Richtung weiterbewegt), und nimmst alle Bereiche DIE WEDER DAS GESUCHTE OBJEKT beinhalten
-    //    NOCH AUSSERHALB DES BILDBEREICHES liegen (definiert durch die Maske). ZUSAETZLICH ist noch der Bereich um die
-    //    Augen um padding erweitert, sowie um den Mund um padding vermindert Tabu. Wenn dein Fenster beim sweepen
-    //    irgendwie in so einen Bereich kommt, ist er zu ignorieren. Von den damit übrigen negativen Beispielen berechnest
-    //    du dir ebenfalls die HOG-Features um deine negativen Beispiele zu erhalten.
-    //    Damit die SVM beim trainieren weiß was positiv und was negativ ist, gibst du ihre diese Information
-    //    noch mit den Labels mit. Das ist einfach ein Vektor der 1 für positive und 2 für negative Beispiele enthaltet.
-    //    Habe auch ewig und drei Tage gebraucht um zu verstehen was genau zu tun ist...
 
     //  - positive: eye and mouth ROIs using getHogFeatures()
     vector<Mat> eye;
@@ -597,8 +567,7 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   vec_eye_mean.x = (mouth_center.x + mean.x) / 2;
   vec_eye_mean.y = (mouth_center.y + mean.y) / 2;
 
-  float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x, 2) + pow(
-          vec_eye_mean.y - mc.y,2) );
+  float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x, 2) + pow(vec_eye_mean.y - mc.y,2) );
 
   // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
   Vec2f v_horizontal (1, 0);
@@ -620,10 +589,10 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  ellipse(mask, mean, Size(dist_eyes * S_1, dist_eyes), theta, 0, 360, Scalar(255,255,255), -1, 8, 0); // todo
-  ellipse(mask, mean, Size(dist_mouth_eyes * 2 * S_2,dist_eyes * S_2), theta, 0, 360, Scalar(255,255,255), -1, 8, 0); // todo
-  imshow("ellipse", mask);
-    waitKey(0);
+  ellipse(mask, mean, Size(dist_eyes * S_1, dist_eyes), theta, 180, 360, Scalar(255,255,255), -1, 8, 0); // todo
+  ellipse(mask, mean, Size(dist_mouth_eyes * 2 * S_2,dist_eyes * S_2), theta, 0, 180, Scalar(255,255,255), -1, 8, 0); // todo
+//  imshow("ellipse", mask);
+//    waitKey(0);
 
   cout << " leave mask" << endl;
 }
@@ -668,8 +637,8 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
   two[2] = mouth_two;
 
   src = getAffineTransform(one, two);
-  //  cout << " Affine Transformat4" << src.size() << endl;
-  //  cout << " Affine Transformat4" << imageToTransform.size() << endl;
+  //  cout << " Affine Transformat 4" << src.size() << endl;
+  //  cout << " Affine Transformat 4" << imageToTransform.size() << endl;
 
   // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
   warpAffine(imageToTransform, warp_dst, src, warp_dst.size());
@@ -809,7 +778,7 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
 {
   cout << " blendFaceSequence" << endl;
 
- // 1) calculate imageCount and alpha
+  // 1) calculate imageCount and alpha
   int imagecount = (transitionTime/1000) * fps;
 
   //  cout << faces[0]->face << endl;
@@ -847,14 +816,13 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
           m_trans.at<int>(y,x) = 1.f - exp(-(pow(m_trans.at<int>(y,x),2) / (2 * (11 * 11))));
         }
       }
-      cout << " aaaaaaaaaaaaaaaaaaaa" << endl;
       // 6) calculate the final image using the transition image, the blured image
       //    and the alpha-blended mask
       GaussianBlur(trans, blur,Size(11, 11), 11, 11);
       for (int y = 0; y < m_trans.rows; y++)
       {
         for (int x = 0; x <  m_trans.cols; x++)
-        { //cout << " ber" << endl;
+        {
           final.at<int>(y, x) = m_trans.at<int>(y, x) * trans.at<int>(y, x) + (1 - m_trans.at<int>(y, x)) * blur.at<int>(y,x);
         }
       }
