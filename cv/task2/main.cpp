@@ -85,11 +85,11 @@ void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win)
   hog.cellSize.width   =  8;
   hog.blockStride = Size(8,8);
 
-  vector<float> a;
+  vector<float> descriptor;
   for (const auto& patch : patches)
   {
-    hog.compute(patch, a);
-    Mat matrix(a, true);
+    hog.compute(patch, descriptor);
+    Mat matrix(descriptor, true); //boolean value true is necessary in order to copy data // http://www.aishack.in/tutorials/opencvs-c-interface/
     transpose(matrix, matrix);
     features.push_back(matrix);
   }
@@ -128,8 +128,8 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
 {
   Mat tmp_face = face;
   Mat imag = face;
-  CvSVM cvsvm;
-  cvsvm.load(params.svmModelFile.c_str());
+  CvSVM svm;
+  svm.load(params.svmModelFile.c_str());
 
   cvtColor(imag, imag, CV_BGR2GRAY);
   resize(imag, imag, params.scale);
@@ -158,28 +158,42 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
     }
   };
 
-  Mat vec_feature;
+  Mat mat_feature;
   Rect intersec;
   vector<pair<float, Rect>> vec_score;
+  float dist = 0;
   // - search through whole image using a sliding window with window size params.patch
   for (int y = 0; y < imag.rows - params.patch.height; y++)
   {
+    //  svm.clear();
+    cout << " next y " << endl;
+    cout << "sliding window" << endl;
     for (int x = 0; x < imag.cols - params.patch.width; x++)
     {
-      vector<Mat> temp;
-      temp.push_back(imag(Rect(x,y, params.patch.width, params.patch.height)));
+      cout << " next x " << x << endl;
+      vector<Mat> sliding_window;
+      sliding_window.push_back(imag(Rect(x,y, params.patch.width, params.patch.height)));
+      cout << "sliding_window.size() " << sliding_window.size() << endl;
 
+      cout << " next x a" << endl;
       // - extract hog features of each ROI using getHogFeatures()
-      getHogFeatures(temp, vec_feature, params.patch);
+      getHogFeatures(sliding_window, mat_feature, params.patch);
 
+      cout << " next x b" << endl;
       // - use SVM object for getting distance to SVM hyperplane (cv::CvSVM::predict())
-      float dist = cvsvm.predict(vec_feature, true);
+      dist = svm.predict(mat_feature, true);
 
+      cout << " next x c" << endl;
       // - apply sigmoid function to returned distance
-      dist = 1/(1 + exp(-dist)); // todo check if -d
+      dist = 1.f/(1.f + exp(-dist)); // todo check if -d
+
+      cout << " next x d" << endl;
+
+      cout << "dist " << dist << endl;
 
       // - collect a certain number of your best scored ROIs (params.scoreNum)
       vec_score.push_back(pair<float, Rect>(dist, Rect(x, y, params.patch.width, params.patch.height)));
+      cout << " next x e" << endl;
 
       cout << "vec_score " << vec_score.size() << std::endl;
     }
@@ -202,7 +216,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (int i = 1; i < vec_score.size(); i++)
   {
     rec_tmp = intersec & vec_score[i].second;
-    if(a.area() >= intersec.area() * 0.8) // s12 80 prozent
+    if(a.area() >= intersec.area() * 0.8) // s12 80%
       rec_tmp = intersec;
   }
 
@@ -211,14 +225,15 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   float orig_height = tmp_face.rows;
   float orig_width  = tmp_face.cols;
   cout << "orig_height " << orig_height << endl;
-  cout << "orig_width " << orig_width << endl;
+  cout << "orig_width  " << orig_width << endl;
+
   float scale_height = imag.rows;
-  float scale_width = imag.cols;
+  float scale_width  = imag.cols;
   cout << "scale_height " << scale_height << endl;
-  cout << "scale_width " << scale_width << endl;
+  cout << "scale_width  " << scale_width  << endl;
 
   float new_scale_height = (float)orig_height / scale_height;
-  float new_scale_width = (float)orig_width / scale_width;
+  float new_scale_width  = (float)orig_width  / scale_width;
 
   cout << "new_scale_height " << new_scale_height << endl;
   cout << "new_scale width  " << new_scale_width << endl;
@@ -232,12 +247,12 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   cout << "intersec.height " << intersec.height << endl;
   cout << "intersec.width" << intersec.width << endl;
   cout << "x " << intersec.x << "y " << intersec.y << endl;
-//      detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
+  // detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
 
   detected = Point2f(intersec.x + intersec.width / 2, intersec.y + intersec.height / 2);
-  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
-  imshow("detect", face);
-  waitKey(0);
+//  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
+//  imshow("detect", face);
+//  waitKey(0);
 }
 
 bool fExists(const std::string& filename) {
@@ -264,9 +279,9 @@ void readLandmarks(string fileName, vector<Point2f>& landmarks) {
 	string xStr, yStr;
 	Point2f pt;
 	
-	while(getline(file, line)) {
-		
-		size_t pos = line.find(' ');
+	while(getline(file, line))
+  {
+	  size_t pos = line.find(' ');
 		line.erase(0, pos+1);
 		
 		pos = line.find(' ');
@@ -368,10 +383,12 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width / 2);
     top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height / 2);
 
-//    cout << imag.size() << endl;
+    // cout << imag.size() << endl;
     Point top_left_mouth;
     top_left_mouth.x = center_mouth.x - (Mouth.patch.width / 2);
     top_left_mouth.y = center_mouth.y + (Mouth.patch.height / 2);
+
+    cout << "padding"  << Eyes.padding << endl;
 
     // left corner and size
     Rect ROI_eyes_left (top_left_left_eye, Eyes.patch);
@@ -411,7 +428,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     eye.push_back(imag(ROI_eyes_left)); // subpic
     eye.push_back(imag(ROI_eyes_right));
     mouth.push_back(imag(ROI_mouth));
-    getHogFeatures(eye, Eyes.features, Eyes.patch);
+    getHogFeatures(eye, Eyes.features, Eyes.patch); // todo padding
     Eyes.labels.push_back(1);
     Eyes.labels.push_back(1);
     getHogFeatures(mouth, Mouth.features, Mouth.patch);
@@ -603,9 +620,11 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  ellipse(mask, mean, Size(dist_eyes,dist_mouth_eyes), theta, 0, 0, Scalar(255,255,255), -1, 8, 0); // todo
+  ellipse(mask, mean, Size(dist_eyes * S_1, dist_eyes), theta, 0, 360, Scalar(255,255,255), -1, 8, 0); // todo
+  ellipse(mask, mean, Size(dist_mouth_eyes * 2 * S_2,dist_eyes * S_2), theta, 0, 360, Scalar(255,255,255), -1, 8, 0); // todo
   imshow("ellipse", mask);
     waitKey(0);
+
   cout << " leave mask" << endl;
 }
 
@@ -1028,7 +1047,7 @@ int main(int argc, char *argv[])
 		// test HoG
 		if( true)// test_hog)
 		{
-      cout << "hallo 8" << endl;
+//      cout << "hallo 8" << endl;
 			string hog_test_out_name = cfg->getAttribute<string>("test_hog_out");
 			string file = trainingDataList[0];
 			Mat im = imread(file);
