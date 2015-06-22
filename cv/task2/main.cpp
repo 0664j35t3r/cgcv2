@@ -1,17 +1,8 @@
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
 
 #include "FaceInfo.h"
-#include "cfg_config.h"
-#include "opencv2/opencv.hpp"
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/objdetect/objdetect.hpp"
 
-#include <iostream>
 #include <fstream>
-#include <iomanip>
-#include <unistd.h>
 #include <sys/stat.h>
 
 using namespace std;
@@ -134,18 +125,22 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   cvtColor(imag, imag, CV_BGR2GRAY);
   resize(imag, imag, params.scale);
 
-  Rect a;
+  Rect search_area;
   // - if 0: search in mouth region, if 1: left eye, if 2: right eye
   switch(search)
   {
+    case 0: // Mund  // lower 40%
+      search_area = Rect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);  // todo width, height
+//      search_area = Rect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);  // todo width, height
+      break;
     case 1: // eyes
-       a = Rect(0, 0, imag.cols * 0.5, imag.rows * 0.6);  // todo width, height
+       search_area = Rect(0, 0, imag.cols * 0.5, imag.rows * 0.6);  // todo width, height
       break;
     case 2:
-       a = Rect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
+       search_area = Rect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
+//       search_area = Rect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
       break;
-    default: // Mund  // lower 40%
-       a = Rect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);  // todo width, height
+    default:
       break;
   }
 
@@ -158,16 +153,15 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
     }
   };
 
-
   Rect intersec;
   vector<pair<float, Rect>> vec_score;
   float dist = 0;
   // - search through whole image using a sliding window with window size params.patch
-  for (int y = 0; y < imag.rows - params.patch.height; y++)
+  for (int y = search_area.y; y < search_area.y + search_area.height - params.patch.height; y++)
   {
     //  svm.clear();
     cout << "sliding window" << endl;
-    for (int x = 0; x < imag.cols - params.patch.width; x++)
+    for (int x = search_area.x; x < search_area.x + search_area.width - params.patch.width; x++)
     {
       vector<Mat> sliding_window;
       Mat mat_feature;
@@ -192,7 +186,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (auto item : vec_score)
     cout << item.first << " distance " << item.second << endl;
 
-  while(vec_score.size() > params.scoreNum) // todo delete
+  while(vec_score.size() > params.scoreNum)
     vec_score.pop_back();
 
   cout << "vec_score " << vec_score.size() << endl;
@@ -206,14 +200,14 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (int i = 1; i < vec_score.size(); i++)
   {
     rec_tmp = intersec & vec_score[i].second;
-    if(a.area() >= intersec.area() * 0.8) // s12 80%
-      rec_tmp = intersec;
+    if(search_area.area() >= intersec.area() * 0.8) // s12 80%
+      intersec = rec_tmp;
   }
 
   // - scale back that ROI to fit with original image size
   // - center of last ROI is your detected object's position
-  float orig_height = tmp_face.rows;
-  float orig_width  = tmp_face.cols;
+  float orig_height = face.rows;
+  float orig_width  = face.cols;
 //  cout << "orig_height " << orig_height << endl;
 //  cout << "orig_width  " << orig_width << endl;
 
@@ -222,27 +216,27 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
 //  cout << "scale_height " << scale_height << endl;
 //  cout << "scale_width  " << scale_width  << endl;
 
-  float new_scale_height = (float)orig_height / scale_height;
-  float new_scale_width  = (float)orig_width  / scale_width;
+  float new_scale_height = orig_height / scale_height;
+  float new_scale_width  = orig_width  / scale_width;
 
 //  cout << "new_scale_height " << new_scale_height << endl;
 //  cout << "new_scale width  " << new_scale_width << endl;
 
-  intersec.x = (float)intersec.x * new_scale_width;
   intersec.y = (float)intersec.y * new_scale_height;
+  intersec.x = (float)intersec.x * new_scale_width;
 //  cout << "intersec.x  " << intersec.x << endl;
 //  cout << "intersec.y " << intersec.y << endl;
   intersec.height = intersec.height * new_scale_height;
-  intersec.width  = intersec.width * new_scale_width;
+  intersec.width  = intersec.width  * new_scale_width;
 //  cout << "intersec.height " << intersec.height << endl;
 //  cout << "intersec.width" << intersec.width << endl;
 //  cout << "x " << intersec.x << "y " << intersec.y << endl;
   // detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
 
-  detected = Point2f(intersec.x + intersec.width / 2, intersec.y + intersec.height / 2);
-//  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
-//  imshow("detect", face);
-//  waitKey(0);
+  detected = Point2f(intersec.x + intersec.width * 0.5, intersec.y + intersec.height * 0.5);
+  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
+  imshow("detect", face);
+  waitKey(0);
 }
 
 bool fExists(const std::string& filename) {
@@ -341,7 +335,7 @@ void readImageList(string fileName, vector<string>& fileList, vector<string>& ma
 
 void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, vector<string>& maskList, const SvmParameter svmParams) {
   cout << "trainSVM" << endl;
-  for (int i = 0; i < svmParams.sizeOfSet; i++)
+  for (unsigned i = 0; i < svmParams.sizeOfSet; i++)
   {
     Mat imag = imread(imageList.at(i));
 
@@ -366,17 +360,17 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Point center_right_eye = (right_eye_left_corner + right_eye_right_corner) * 0.5 * svmParams.scale;
 
     Point top_left_left_eye;
-    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width / 2);
-    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height / 2);
+    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5);
+    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5);
 
     Point top_left_right_eye;
-    top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width / 2);
-    top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height / 2);
+    top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width * 0.5);
+    top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height * 0.5);
 
     // cout << imag.size() << endl;
     Point top_left_mouth;
-    top_left_mouth.x = center_mouth.x - (Mouth.patch.width / 2);
-    top_left_mouth.y = center_mouth.y + (Mouth.patch.height / 2);
+    top_left_mouth.x = center_mouth.x - (Mouth.patch.width * 0.5);
+    top_left_mouth.y = center_mouth.y + (Mouth.patch.height * 0.5);
 
 //    cout << "padding"  << Eyes.padding << endl;
 
@@ -390,7 +384,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
 //    circle(imag, center_right_eye, 3, Scalar(255,255,255));
 //    circle(imag, center_mouth    , 3, Scalar(255,255,255));
 //    imshow("hallo", imag);
-    //    waitKey(0);
+//        waitKey(0);
 
     //  - positive: eye and mouth ROIs using getHogFeatures()
     vector<Mat> eye;
@@ -398,19 +392,19 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     eye.push_back(imag(ROI_eyes_left)); // subpic
     eye.push_back(imag(ROI_eyes_right));
     mouth.push_back(imag(ROI_mouth));
-    getHogFeatures(eye, Eyes.features, Eyes.patch); // todo padding
+    getHogFeatures(eye, Eyes.features, Eyes.patch);
     Eyes.labels.push_back(1);
     Eyes.labels.push_back(1);
     getHogFeatures(mouth, Mouth.features, Mouth.patch);
     Mouth.labels.push_back(1);
 
-    //  - negative: TrainingData::patch sized ROIs
+    //  - negative: TrainingData::patch sized ROIs // todo padding
     Rect intersec;
-    for(int i = 0; i < imag.cols - Eyes.patch.width; i += Eyes.step)
+    for(int x = 0; x < imag.cols - Eyes.patch.width; x += Eyes.step)
     {
-      for (int j = 0; j < imag.rows - Eyes.patch.height; j += Eyes.step)
+      for (int y = 0; y < imag.rows - Eyes.patch.height; y += Eyes.step)
       {
-        Rect tmp(Point(i,j), Eyes.patch);
+        Rect tmp(Point(x, y), Eyes.patch);
         intersec = tmp & ROI_eyes_left;
         if(intersec.area() > 0)
           continue;
@@ -424,6 +418,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
         vec_tmp.push_back(imag(tmp));
         getHogFeatures(vec_tmp, Eyes.features, Eyes.patch);
         Eyes.labels.push_back(2);
+//        Eyes.labels.push_back(2); // todo if right
       }
     }
     for(int i = 0; i < imag.cols - Mouth.patch.width; i += Mouth.step)
@@ -434,10 +429,8 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
         intersec = tmp & ROI_mouth;
         if(intersec.area() > 0)
           continue;
-//        cout << "6 loop" << endl;
-        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
+        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiss ist
           continue;
-//        cout << "7 loop" << endl;
         std::vector<Mat> vec_tmp;
         vec_tmp.push_back(imag(tmp));
         getHogFeatures(vec_tmp, Mouth.features, Mouth.patch);
@@ -480,12 +473,11 @@ void detectFace(const Mat& frame, Rect& faceROI)
 {
   if (frame.empty())
   {
-    cout << "No frame_grayture!" << endl;
+    cout << "No frame_creature!" << endl;
     return;
   }
 
   CascadeClassifier face_cascade;
-  Mat frame_gray;
   faceROI = Rect(0, 0, 15, 15);
   String face_cascade_name = "haarcascade_frontalface_alt.xml";
 
@@ -496,6 +488,7 @@ void detectFace(const Mat& frame, Rect& faceROI)
   }
 
   std::vector<Rect> faces;
+  Mat frame_gray;
   cv::cvtColor(frame, frame_gray, CV_RGB2GRAY);
   cv::equalizeHist(frame_gray, frame_gray);
 
@@ -555,8 +548,8 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
 
   // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
   Point mean;
-  mean.x = (le.x + re.x) / 2;
-  mean.y = (le.y + re.y) / 2;
+  mean.x = (le.x + re.x) * .5;
+  mean.y = (le.y + re.y) * .5;
 
   // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
   float dist_eyes = sqrt( pow(le.x - re.x, 2) + pow(le.y - re.y,2));
@@ -564,19 +557,19 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
   // hessesche normalform
   Point vec_eye_mean;
-  vec_eye_mean.x = (mouth_center.x + mean.x) / 2;
-  vec_eye_mean.y = (mouth_center.y + mean.y) / 2;
+  vec_eye_mean.x = (mouth_center.x + mean.x) * 0.5;
+  vec_eye_mean.y = (mouth_center.y + mean.y) * 0.5;
 
-  float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x, 2) + pow(vec_eye_mean.y - mc.y,2) );
+  float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x,2) + pow(vec_eye_mean.y - mouth_center.y,2) );
 
   // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
   Vec2f v_horizontal (1, 0);
 
   Vec2f v_eyes;
   v_eyes[0] = re.x - le.x;
+  v_eyes[1] = re.y - le.y;
   cout << "l_e" << re << endl;
   cout << "l_e" << le << endl;
-  v_eyes[1] = re.y - le.y;
 //  float norm = sqrt(v_eyes[0] * v_eyes[0] + v_eyes[1] * v_eyes[1]);
 
   normalize(v_horizontal, v_horizontal);
@@ -637,8 +630,6 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
   two[2] = mouth_two;
 
   src = getAffineTransform(one, two);
-  //  cout << " Affine Transformat 4" << src.size() << endl;
-  //  cout << " Affine Transformat 4" << imageToTransform.size() << endl;
 
   // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
   warpAffine(imageToTransform, warp_dst, src, warp_dst.size());
@@ -666,35 +657,91 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 {
   // 1) transform the four vertices of the given image by using the previously calculated transformation matrix T.
   T.convertTo(T, CV_32FC1);
-  int width = image.cols;
-  int height = image.rows;
-
   Mat E(3,4, DataType<float>::type);
 
   E.at<float>(0,0) =  0;//ey1
   E.at<float>(1,0) =  0;//ex1
   E.at<float>(2,0) =  1;//
   E.at<float>(0,1) =  0;//ey2
-  E.at<float>(1,1) =  width;//ex2
+  E.at<float>(1,1) =  image.cols;//ex2
   E.at<float>(2,1) =  1;//
-  E.at<float>(0,2) =  height;//ey3
+  E.at<float>(0,2) =  image.rows;//ey3
   E.at<float>(1,2) =  0;//ex3
   E.at<float>(2,2) =  1;//
-  E.at<float>(0,3) =  height;//ey4
-  E.at<float>(1,3) =  width;//ex4
+  E.at<float>(0,3) =  image.rows;//ey4
+  E.at<float>(1,3) =  image.cols;//ex4
   E.at<float>(2,3) =  1;//
 
   //  cout << "a  >>>" <<  E.size() << endl;
-  //  cout << "a  >>>" <<  E.cols << endl;
+  //  cout << "a  >>>" <<  E.cols   << endl;
   //  cout << "T  >>>" <<  T.size() << endl;
-  //  cout << "T  >>>" <<  T.cols << endl;
-  E.mul(T);
+  //  cout << "T  >>>" <<  T.cols   << endl;
+  E = T * E;
 
   vector<Point2f> tmp;
-  tmp.push_back(Point2f(E.at<float>(1,0), E.at<float>(0,0)));
-  tmp.push_back(Point2f(E.at<float>(1,1), E.at<float>(0,1)));
-  tmp.push_back(Point2f(E.at<float>(1,2), E.at<float>(0,2)));
-  tmp.push_back(Point2f(E.at<float>(1,3), E.at<float>(0,3)));
+
+  Point2f ul(E.at<float>(1,0), E.at<float>(0,0));
+  Point2f ur(E.at<float>(1,1), E.at<float>(0,1));
+  Point2f bl(E.at<float>(1,2), E.at<float>(0,2));
+  Point2f br(E.at<float>(1,3), E.at<float>(0,3));
+
+  Point2f im_ul(0         , 0         );
+  Point2f im_ur(image.cols, 0         );
+  Point2f im_bl(0         , image.rows);
+  Point2f im_br(image.cols, image.rows);
+
+  Point2f imagcenter(image.rows * 0.5, image.cols * 0.5);
+
+  // up/left
+  if( norm(ul - imagcenter) < norm(im_ul - imagcenter) )
+    tmp.push_back(Point2f(E.at<float>(1,0), E.at<float>(0,0)));
+  else
+    tmp.push_back( im_ul );
+
+  // up/right
+  if( norm(ur - imagcenter) < norm(im_ur - imagcenter))
+    tmp.push_back(Point2f(E.at<float>(1,1), E.at<float>(0,1)));
+  else
+    tmp.push_back( im_ur );
+
+  // bottom/left
+  if( norm(bl - imagcenter) < norm(im_bl - imagcenter) )
+    tmp.push_back( Point2f(image.at<float>(1), image.at<float>(image.rows)) );
+  else
+    tmp.push_back(im_bl);
+
+  // bottom/right
+  if( norm(br - imagcenter) < norm(im_br - imagcenter) )
+    tmp.push_back( Point2f(E.at<float>(1,3), E.at<float>(0,3)) );
+  else
+    tmp.push_back( im_br );
+
+  // ul bl
+  if(tmp.at(0).x != tmp.at(2).x)
+  {
+    float max_x = MAX(tmp.at(0).x, tmp.at(2).x);
+    tmp.at(0).x = max_x;
+    tmp.at(2).x = max_x;
+  }
+  if(tmp.at(1).x != tmp.at(3).x)
+  {
+    float min_x = MIN(tmp.at(1).x, tmp.at(3).x);
+    tmp.at(1).x = min_x;
+    tmp.at(3).x = min_x;
+  }
+
+  if(tmp.at(0).y != tmp.at(1).y)
+  {
+    float max_y = MAX(tmp.at(0).y, tmp.at(1).y);
+    tmp.at(0).y = max_y;
+    tmp.at(1).y = max_y;
+  }
+  if(tmp.at(2).y != tmp.at(3).y)
+  {
+    float min_y = MIN(tmp.at(2).y, tmp.at(3).y);
+    tmp.at(2).y = min_y;
+    tmp.at(3).y = min_y;
+  }
 
   // 2) return a vector containing the four transformed vertices in the following order:
   //    up/left, up/right, bottom/left, bottom/right
@@ -743,8 +790,14 @@ vector<Point2f> calculateRect(vector<Point2f> points)
 //================================================================================
 
 void distTransform(const Mat& src, Mat& dest) {
+// - create a structuring element of size 3x3; openCV constant: MORPH_ELLIPSE
+  Mat element = getStructuringElement(MORPH_ELLIPSE,Size(3,3));
+  dilate(src, src,element, Point(0,0), 5, 1, Scalar(255,255,255));
 
-  cout << " distransform" << endl;
+  for (int i = 0; i < src.size(); ++i)
+  {
+    if()
+  }
 	// comment out or delete the next line if you want to do the bonus:
 //	cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
 	cv::distanceTransform(src, dest, CV_DIST_C, 3);
@@ -781,31 +834,26 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
   // 1) calculate imageCount and alpha
   int imagecount = (transitionTime/1000) * fps;
 
-  //  cout << faces[0]->face << endl;
-  //  cout << faces[0]->face_trans << endl;
-  //  cout << faces[0]->face_trimmed << endl;
-
   vector<Mat> r;
   Mat final = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
-  Mat blur;
-  Mat trans;
-  Mat m_trans;
+  Mat blur  = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
+  Mat trans = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
+  Mat m_trans = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
+
   // 2) calculate the alpha blended mask and transition image
   for (int i = 0; i < faces.size() - 1; i++)
   {
-    // 2) calculate the alpha blended mask and transition image
     for (int j = 0; j < imagecount; j++)
     {
+//      cout << "blended mask i j " << i << j << endl;
       float alpha = (float)j / imagecount;
       trans = (1 - alpha) * faces[i]->face_trimmed + alpha * faces[i + 1]->face_trimmed;
+//      cout << " trans " << endl;
 
       // 3) do a distance transformation with openCV
       //    - set distanceType = CV_DIST_C
       //    - set maskSize = 3
-      cout << "before" << endl;
-
       distTransform(faces[i]->mask, m_trans);
-      cout << "after" << endl;
 
       // 4) calculate alpha-blended mask with gauss weighting (format: CV_32FC1)
       //    - sigma = 11
@@ -813,6 +861,7 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
       {
         for (int x = 0; x <  m_trans.cols; x++)
         {
+//          cout << "sigma x y " << x << " " << y << endl;
           m_trans.at<int>(y,x) = 1.f - exp(-(pow(m_trans.at<int>(y,x),2) / (2 * (11 * 11))));
         }
       }
@@ -821,14 +870,16 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
       GaussianBlur(trans, blur,Size(11, 11), 11, 11);
       for (int y = 0; y < m_trans.rows; y++)
       {
-        for (int x = 0; x <  m_trans.cols; x++)
+        for (int x = 0; x < m_trans.cols; x++)
         {
-          final.at<int>(y, x) = m_trans.at<int>(y, x) * trans.at<int>(y, x) + (1 - m_trans.at<int>(y, x)) * blur.at<int>(y,x);
+//          cout << "final x y " << x << " " << y << endl;
+          final.at<int>(y,x) = m_trans.at<int>(y,x) * trans.at<int>(y,x) + (1 - m_trans.at<int>(y,x)) * blur.at<int>(y,x);
         }
       }
     }
     r.push_back(final);
   }
+//  return r;
   return r;
 }
 
@@ -985,7 +1036,6 @@ int main(int argc, char *argv[])
 		MouthTraining.landmarks.push_back(18);
 		MouthTraining.padding = 10;
 		MouthTraining.step = 3;
-//      cout << "hallo 3" << endl;
 		Detection det_eyes;
 		det_eyes.scale = Size(120, 120);
 		det_eyes.scoreNum = num_of_scores;
@@ -997,25 +1047,19 @@ int main(int argc, char *argv[])
 		det_mouth.svmModelFile = MouthTraining.svmModelFile;
 		det_mouth.patch = MouthTraining.patch;
 
-//      cout << "hallo 4" << endl;
-		// test DistanceTransf
 		if(test_bonus) {
 			string bonus_test_out_name = cfg->getAttribute<string>("test_bonus_out");
 			Mat dtTest = Mat::zeros(300, 300, CV_8UC1);
 			Rect inRect = Rect(100, 50, 100, 100);
 			rectangle(dtTest, inRect, 255, -1, 1);
-//      cout << "hallo 5" << endl;
+
 			distTransform(dtTest, dtTest);
-			
 			normalize(dtTest, dtTest, 0, 255, NORM_MINMAX, CV_8UC1);
 			if(bonus_test_out_name != "")
 				imwrite(bonus_test_out_name, dtTest);
 		}
-//      cout << "hallo 7" << endl;
-		// test HoG
 		if( true)// test_hog)
 		{
-//      cout << "hallo 8" << endl;
 			string hog_test_out_name = cfg->getAttribute<string>("test_hog_out");
 			string file = trainingDataList[0];
 			Mat im = imread(file);
@@ -1023,10 +1067,8 @@ int main(int argc, char *argv[])
 			Mat hogMat;
 			Size testWin = Size(40, 24);
 			Rect testRect;
-//      cout << "hallo 9" << endl;
 			for(int t = 0; t < 5; t++) {
 				testRect = Rect(t * 5, t * 5, testWin.width, testWin.height);
-//        cout << "hallo 10" << endl;
 				testPatches.push_back(im(testRect));
 			}
       cout << "get Hog Features" << endl;
@@ -1211,6 +1253,7 @@ int main(int argc, char *argv[])
 	if(!frames.empty()){
 		
 		imwrite(imagesequence,frames[fps]);
+    cout << "create Video" << endl;
 		createVideo(frames, fps, video_out, Size(frames.at(1).cols,frames.at(1).rows));
 	}
     }
