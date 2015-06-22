@@ -22,15 +22,7 @@
 
 using std::endl;
 using std::cout;
-
-
-float global_time = 0;
-
-
-void printMatrix()
-{
-
-}
+using namespace glm;
 
 
 void interpolateJoints(float time,
@@ -62,47 +54,52 @@ void interpolateJoints(float time,
   //  construct a translation matrix from a vector, and glm::mat4_cast
   //  to cast a quaternion into a transformation matrix.
 
-  //  std::cout << joints.at(5).getBasePoseMatrix()<< std::endl;
-
   //  Keyframe::getTranslation(joint)
   //  Keyframe::getRotation(joint)
   //  glm::slerp
   //  glm::translate
   //  glm::mat4_cast
 
-  //  std::cout << "joints " << joints.size() << std::endl;
-  //  std::cout << "keyfra " << keyframes.size() << std::endl;
-  //  std::cout << "keyfra " << keyframes[3].getTime() << std::endl;
-
-  //  if(global_time < time)
-  //    global_time = time;
-
-  //  std::cout << global_time << std::endl;
-
   glm::mat4 relative_trans;
-  glm::mat4 relative_rot;
+  glm::mat4 relative_rotat;
+
+  // interpolate between those
+  Keyframe kf1;
+  Keyframe kf2;
 
   for (int i = 0; i < keyframes.size() - 1; i++)
   {
-    if(i <  keyframes.size() - 2)
-      if(keyframes[i].getTime() >= time && keyframes[i+1].getTime() < time)
-      {
-        glm::translate(relative_trans, keyframes[i].relativeTo(keyframes[i+1]).getTranslation(joints[i].getID()));
-        relative_rot = glm::mat4_cast(glm::slerp(keyframes[i].getRotation(joints[i].getID()), keyframes[i+1].getRotation(joints[i].getID()), (time - keyframes[i].getTime()) / (keyframes[i+1].getTime() - keyframes[i].getTime())));
-        if (joints[i].getParent() < 0) // root
-          joint_transformations[i] = relative_rot * relative_trans;
-        else // childs
-          joint_transformations[i] = joint_transformations[joints[i].getParent()] * relative_rot * relative_trans;
-
-        for (auto joint : joints)
-        {
-          cout << "joints " << joint.getParent() << endl;
-        }
-      }
+    if(keyframes[i].getTime() <= time && time <= keyframes[i + 1].getTime())
+    {
+      kf1 = keyframes[i];
+      kf2 = keyframes[i + 1];
+    }
   }
 
+  float ratio_time = ((time - kf1.getTime()) / (kf2.getTime() - kf1.getTime()));
 
+  // iterate over sorted tree structure, define pose position
+  for (int i = 0; i < joints.size(); i++)
+  {
+    vec3 t1 = kf1.getTranslation(i);
+    // vec3 t2 = kf2.getTranslation(joints[i].getID());
+    vec3 t2 = kf2.getTranslation(i);
 
+    quat kf1_r1 = kf1.getRotation(i);
+    quat kf2_r2 = kf2.getRotation(i);
+
+    vec3 translation_interpolation = t1 * (1 - ratio_time) + t2 * ratio_time;
+    mat4 rotation_interpolation = mat4_cast(slerp(kf1_r1, kf2_r2, ratio_time));
+
+    mat4 identity_matrix(1); // fill diagonal 1;
+    mat4 translattion_m = translate(identity_matrix, translation_interpolation);
+    mat4 transformation = translattion_m * rotation_interpolation;
+
+    if(joints[i].getParent() < 0)
+      joint_transformations[i] = transformation;//translattion_m * rotation_interpolation;
+    else
+      joint_transformations[i] = joint_transformations[joints[i].getParent()] * transformation;
+  }
 }
 
 void calculateVertices(const std::vector<glm::vec3>& bindpose_vertices,
@@ -131,6 +128,20 @@ void calculateVertices(const std::vector<glm::vec3>& bindpose_vertices,
   //    joint member function Joint::getInverseBindPoseMatrix().
   //    Store the transformed vertices in animated_vertices.
   //
+
+  for (int vj_iter = 0; vj_iter < vertex_joints.size(); vj_iter++)
+  {
+    std::vector<size_t> v_joints = vertex_joints[vj_iter];
+    std::vector<float> v_weight = vertex_weights[vj_iter];
+
+    vec4 homogen_transformation(bindpose_vertices[vj_iter], 1); //(x,y,z,1)
+
+    vec4 tmp(0);
+    for (int v_iter = 0; v_iter < v_joints.size(); v_iter++)
+      tmp += joint_transformations[v_joints[v_iter]] * joints[v_joints[v_iter]].getInverseBindPoseMatrix() * homogen_transformation * v_weight[v_iter]; // s7: J J^-1 x * weight
+
+    animated_vertices[vj_iter] = vec3(tmp[0], tmp[1], tmp[2]); // save vec vertices
+  }
 }
 
 void calculateNormals(const std::vector<glm::vec3>& vertices,
@@ -143,11 +154,20 @@ void calculateNormals(const std::vector<glm::vec3>& vertices,
   //  vertices under the assumption that this is a smooth mesh.
   //  Store the result in normals
   //
+  for (int triangle_iter = 0; triangle_iter < triangles.size(); triangle_iter++)
+  {
+    //                 triangle i mit ecke
+    vec3 v1 = vertices[triangles[triangle_iter][0]];
+    vec3 v2 = vertices[triangles[triangle_iter][1]];
+    vec3 v3 = vertices[triangles[triangle_iter][2]];
 
-  std::fill(normals.begin(), normals.begin() + vertices.size(),
-      glm::vec3(0.0f));
+    vec3 normal_v_triangle = normalize(cross(v2 - v1, v2 - v3));
+
+    normals[triangles[triangle_iter][0]] += normal_v_triangle;
+    normals[triangles[triangle_iter][1]] += normal_v_triangle;
+    normals[triangles[triangle_iter][2]] += normal_v_triangle;
+  }
 }
-
 
 void interpolateJointsForAnimationModulation(float time_1,
   float time_2,
@@ -168,8 +188,73 @@ void interpolateJointsForAnimationModulation(float time_1,
   //  computing the transformation for its children.
   //
 
-}
+  glm::mat4 relative_trans;
+  glm::mat4 relative_rotat;
 
+  // interpolate between those
+  Keyframe kf1;
+  Keyframe kf2;
+
+  for (int i = 0; i < keyframes_1.size() - 1; i++)
+  {
+    if(keyframes_1[i].getTime() <= time_1 && time_1 <= keyframes_1[i + 1].getTime())
+    {
+      kf1 = keyframes_1[i];
+      kf2 = keyframes_1[i + 1];
+    }
+  }
+
+  float ratio_time = ((time_1 - kf1.getTime()) / (kf2.getTime() - kf1.getTime()));
+
+  // 2 scenario
+
+  Keyframe kf1_2;
+  Keyframe kf2_2;
+
+  for (int i = 0; i < keyframes_2.size() - 1; i++)
+  {
+    if(keyframes_2[i].getTime() <= time_2 && time_2 <= keyframes_2[i + 1].getTime())
+    {
+      kf1_2 = keyframes_2[i];
+      kf2_2 = keyframes_2[i + 1];
+    }
+  }
+
+  float ratio_time_2 = ((time_2 - kf1_2.getTime()) / (kf2_2.getTime() - kf1_2.getTime()));
+
+  // iterate over sorted tree structure, define pose position
+  for (int i = 0; i < joints.size(); i++)
+  {
+    // scenario 1
+    vec3 t1 = kf1.getTranslation(i);
+    vec3 t2 = kf2.getTranslation(i);
+
+    quat kf1_r1 = kf1.getRotation(i);
+    quat kf2_r2 = kf2.getRotation(i);
+
+
+    // scenario 2
+    vec3 t1_2 = kf1_2.getTranslation(i);
+    vec3 t2_2 = kf2_2.getTranslation(i);
+
+    quat kf1_r1_2 = kf1_2.getRotation(i);
+    quat kf2_r2_2 = kf2_2.getRotation(i);
+
+    vec3 translation_interpolation = t1_2 * (1 - ratio_time_2) + t2_2 * ratio_time_2 + t1 * (1 - ratio_time) + t2 * ratio_time;
+    mat4 rotation_interpolation = mat4_cast(slerp(kf1_r1, kf2_r2, ratio_time));
+    mat4 rotation_interpolation_2 = mat4_cast(slerp(kf1_r1_2, kf2_r2_2, ratio_time_2));
+
+    mat4 identity_matrix(1); // fill diagonal 1;
+    mat4 translattion_m = translate(identity_matrix, translation_interpolation);
+    mat4 transformation = translattion_m * rotation_interpolation * rotation_interpolation_2;
+
+    if (joints[i].getParent() < 0)
+      joint_transformations[i] = transformation; //translattion_m * rotation_interpolation;
+    else
+      joint_transformations[i] =
+              joint_transformations[joints[i].getParent()] * transformation;
+  }
+}
 
 void interpolateSpline(float time,
   const SplinePoint* points,
@@ -186,10 +271,9 @@ void interpolateSpline(float time,
   //  In case the requested time is before the first point or 
   //  after the last point, return the first or last point, respectively. 
   //
+  const SplinePoint &first = points[0];
+  const SplinePoint &last = points[num_points - 1];
 
-  const SplinePoint& first = points[0];
-  const SplinePoint& last = points[num_points - 1];
-  
   if (time > last.getTime())
   {
     position = last.getPoint();
@@ -204,6 +288,23 @@ void interpolateSpline(float time,
     return;
   }
 
-  position = glm::vec3(0);
-  tangent = glm::vec3(0);
+  for (int i = 0; i < num_points - 1; i++)
+  {
+    if (points[i].getTime() <= time && time <= points[i + 1].getTime())
+    {
+      float ui =
+              (time - points[i].getTime()) / (points[i+1].getTime() - points[i].getTime());
+      tangent = vec3(points[i].getTangent() * (1 - ui) +
+                     points[i + 1].getTangent() * ui);
+      position = vec3(
+              (2 * ui * ui * ui - 3 * ui * ui + 1) * points[i].getPoint() +
+              (ui * ui * ui - 2 * ui * ui + ui) * points[i].getTangent()
+              + (-2 * ui * ui * ui + 3 * ui * ui) * points[i + 1].getPoint() +
+              (ui * ui * ui - ui * ui) * points[i + 1].getTangent());
+
+//      position= vec3((2 *ui*ui*ui - 3f * glm::pow(ui,2) + 1) * points[i].getPoint() + (glm::pow(ui,3) - 2f * glm::pow(ui,2) + ui) * points[i].getTangent()
+//                     + (-2 * glm::pow(ui,3) + 3f * glm::pow(ui,2)) * points[i + 1].getPoint() + (glm::pow(ui,3) - glm::pow(ui,2)) * points[i + 1].getTangent());
+    }
+  }
+
 }
