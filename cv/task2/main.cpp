@@ -831,7 +831,6 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
   Mat final = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
   for (int i = 0; i < faces.size() - 1; i++)
   {
-    cout << "imagecount " << imagecount << endl;
     for (int j = 0; j <= imagecount; j++)
     {
       cout << " j " << j << endl;
@@ -859,8 +858,9 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
       for (int y = 0; y < m_trans.rows; y++)
         for (int x = 0; x < m_trans.cols; x++)
           final.at<Vec3b>(y,x) = m_trans.at<float>(y,x) * i_trans.at<Vec3b>(y,x) + (1 - m_trans.at<float>(y,x)) * blur.at<Vec3b>(y,x);
+
+      r.push_back(final);
     }
-    r.push_back(final);
   }
   return r;
 }
