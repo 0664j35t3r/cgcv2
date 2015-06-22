@@ -171,17 +171,17 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
       dist = svm.predict(mat_feature, true);
 
       // - apply sigmoid function to returned distance
-      dist = 1.f/(1.f + exp(-dist)); // todo check if -d
+      dist = 1.f / (1.f + exp(-dist));
       cout << "dist " << dist << endl;
 
       // - collect a certain number of your best scored ROIs (params.scoreNum)
       vec_score.push_back(pair<float, Rect>(dist, Rect(x, y, params.patch.width, params.patch.height)));
-      cout << "vec_score " << vec_score.size() << std::endl;
+      // cout << "vec_score " << vec_score.size() << std::endl;
     }
   }
   std::sort (vec_score.begin(), vec_score.end(), sorting());
-  for (auto item : vec_score)
-    cout << item.first << " distance " << item.second << endl;
+//  for (auto item : vec_score)
+//    cout << item.first << " distance " << item.second << endl;
 
   while(vec_score.size() > params.scoreNum)
     vec_score.pop_back();
@@ -197,38 +197,24 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (int i = 1; i < vec_score.size(); i++)
   {
     rec_tmp = intersec & vec_score[i].second;
-    if(search_area.area() >= intersec.area() * 0.8) // s12 80%
+    if(rec_tmp.area() >= intersec.area() * 0.8) // s12 80%
       intersec = rec_tmp;
   }
 
   // - scale back that ROI to fit with original image size
   // - center of last ROI is your detected object's position
-  float orig_height = face.rows;
-  float orig_width  = face.cols;
-//  cout << "orig_height " << orig_height << endl;
-//  cout << "orig_width  " << orig_width << endl;
-
+  float orig_height  = face.rows;
+  float orig_width   = face.cols;
   float scale_height = imag.rows;
   float scale_width  = imag.cols;
-//  cout << "scale_height " << scale_height << endl;
-//  cout << "scale_width  " << scale_width  << endl;
 
   float new_scale_height = orig_height / scale_height;
   float new_scale_width  = orig_width  / scale_width;
 
-//  cout << "new_scale_height " << new_scale_height << endl;
-//  cout << "new_scale width  " << new_scale_width << endl;
-
   intersec.y = (float)intersec.y * new_scale_height;
   intersec.x = (float)intersec.x * new_scale_width;
-//  cout << "intersec.x  " << intersec.x << endl;
-//  cout << "intersec.y " << intersec.y << endl;
   intersec.height = intersec.height * new_scale_height;
   intersec.width  = intersec.width  * new_scale_width;
-//  cout << "intersec.height " << intersec.height << endl;
-//  cout << "intersec.width" << intersec.width << endl;
-//  cout << "x " << intersec.x << "y " << intersec.y << endl;
-  // detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
 
   detected = Point2f(intersec.x + intersec.width * 0.5, intersec.y + intersec.height * 0.5);
 //  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
@@ -264,14 +250,14 @@ void readLandmarks(string fileName, vector<Point2f>& landmarks) {
   {
 	  size_t pos = line.find(' ');
 		line.erase(0, pos+1);
-		
+
 		pos = line.find(' ');
 		xStr = line.substr(0, pos);
-		
+
 		line.erase(0, pos+1);
 		yStr = line;
-		
-		pt = Point2f(atof(xStr.c_str()), atof(yStr.c_str()));
+
+    pt = Point2f(atof(xStr.c_str()), atof(yStr.c_str()));
 		landmarks.push_back(pt);
 	}
 }
@@ -491,12 +477,7 @@ void detectFace(const Mat& frame, Rect& faceROI)
 
   face_cascade.detectMultiScale(frame_gray, faces, face_params.scaleFactor, face_params.neighbours, face_params.flag, face_params.minSize); // todo refactor
 
-//  for(ulong iter = 0; iter < faces.size(); iter++)
-//  {
-//    Point center( faces[iter].x + faces[iter].width*0.5, faces[iter].y + faces[iter].height*0.5 );
-//    cv::ellipse( (Mat &) frame, center, Size( faces[iter].width*0.5, faces[iter].height*0.5), 0, 0, 360, Scalar( 255, 0, 255 ), 4, 8, 0 );
-//    Mat faceROI = frame_gray( faces[iter] );
-//  }
+  faceROI = faces.at(0);
 }
 
 void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point& right_eye, Point& mouth, const Detection& eyes_data, const Detection& mouth_data) {
@@ -546,8 +527,8 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
   // hessesche normalform
   Point vec_eye_mean;
-  vec_eye_mean.x = (mouth_center.x + mean.x) * 0.5;
-  vec_eye_mean.y = (mouth_center.y + mean.y) * 0.5;
+  vec_eye_mean.x = (mouth_center.x + mean.x) * .5;
+  vec_eye_mean.y = (mouth_center.y + mean.y) * .5;
 
   float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x,2) + pow(vec_eye_mean.y - mouth_center.y,2) );
 
@@ -561,12 +542,11 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   normalize(v_horizontal, v_horizontal);
   normalize(v_eyes, v_eyes);
 
-  float theta = acos(v_horizontal.dot(v_eyes)) * 180 / PI; // todo radians
-//  cout << "theta " << theta << endl;
+  float theta = acos(v_horizontal.dot(v_eyes)) * 180 / PI;
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  ellipse(mask, mean, Size(dist_eyes * S_1, dist_eyes), theta, 180, 360, Scalar(255,255,255), -1, 8, 0); // todo
+  ellipse(mask, mean, Size(dist_eyes * S_1, dist_eyes), theta, 180, 360, Scalar(255,255,255), -1, 8, 0);
   ellipse(mask, mean, Size(dist_mouth_eyes * 2 * S_2,dist_eyes * S_2), theta, 0, 180, Scalar(255,255,255), -1, 8, 0); // todo
 //  imshow("ellipse", mask);
 //    waitKey(0);
@@ -675,7 +655,7 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 
   vector<Point2f> tmp;
 
-  //                   x            y
+  //                      x                 y
   Point2f ul( E.at<float>(0,0), E.at<float>(0,1) );
   Point2f ur( E.at<float>(1,0), E.at<float>(1,1) );
   Point2f bl( E.at<float>(2,0), E.at<float>(2,1) );
@@ -696,7 +676,7 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
     tmp.push_back( im_ul );
 
   // up/right
-  if( norm(ur - imagecenter) < norm(im_ur - imagecenter))
+  if( norm(ur - imagecenter) < norm(im_ur - imagecenter) )
     tmp.push_back(ur);
   else
     tmp.push_back( im_ur );
@@ -851,9 +831,11 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
   Mat final = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
   for (int i = 0; i < faces.size() - 1; i++)
   {
-    for (int j = 0; j < imagecount; j++)
+    cout << "imagecount " << imagecount << endl;
+    for (int j = 0; j <= imagecount; j++)
     {
-      Mat blur;
+      cout << " j " << j << endl;
+      Mat blur = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
       Mat i_trans;
       Mat m_trans;
       //  cout << "blended mask i j " << i << j << endl;
