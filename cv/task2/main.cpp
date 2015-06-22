@@ -131,14 +131,12 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   {
     case 0: // Mund  // lower 40%
       search_area = Rect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);  // todo width, height
-//      search_area = Rect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);  // todo width, height
       break;
     case 1: // eyes
        search_area = Rect(0, 0, imag.cols * 0.5, imag.rows * 0.6);  // todo width, height
       break;
     case 2:
        search_area = Rect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
-//       search_area = Rect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
       break;
     default:
       break;
@@ -159,7 +157,6 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   // - search through whole image using a sliding window with window size params.patch
   for (int y = search_area.y; y < search_area.y + search_area.height - params.patch.height; y++)
   {
-    //  svm.clear();
     cout << "sliding window" << endl;
     for (int x = search_area.x; x < search_area.x + search_area.width - params.patch.width; x++)
     {
@@ -234,9 +231,9 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   // detected = Point2f(intersec.x, intersec.y); // needed in function maskFace()
 
   detected = Point2f(intersec.x + intersec.width * 0.5, intersec.y + intersec.height * 0.5);
-  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
-  imshow("detect", face);
-  waitKey(0);
+//  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
+//  imshow("detect", face);
+//  waitKey(0);
 }
 
 bool fExists(const std::string& filename) {
@@ -379,7 +376,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Rect ROI_eyes_right (top_left_right_eye, Eyes.patch);
     Rect ROI_mouth (top_left_mouth, Mouth.patch);
 
-    cout << center_left_eye << endl;
+//    cout << center_left_eye << endl;
 //    circle(imag, center_left_eye , 3, Scalar(255,255,255));
 //    circle(imag, center_right_eye, 3, Scalar(255,255,255));
 //    circle(imag, center_mouth    , 3, Scalar(255,255,255));
@@ -538,21 +535,13 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
 void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
 {
-  Point le = left_eye;
-  Point re = right_eye;
-  Point mc = mouth_center;
-
-  cout << "le" << le << endl;
-  cout << "re" << re << endl;
-  cout << "mc" << mc << endl;
-
   // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
   Point mean;
-  mean.x = (le.x + re.x) * .5;
-  mean.y = (le.y + re.y) * .5;
+  mean.x = (left_eye.x + right_eye.x) * .5;
+  mean.y = (left_eye.y + right_eye.y) * .5;
 
   // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
-  float dist_eyes = sqrt( pow(le.x - re.x, 2) + pow(le.y - re.y,2));
+  float dist_eyes = sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
 
   // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
   // hessesche normalform
@@ -566,19 +555,14 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   Vec2f v_horizontal (1, 0);
 
   Vec2f v_eyes;
-  v_eyes[0] = re.x - le.x;
-  v_eyes[1] = re.y - le.y;
-  cout << "l_e" << re << endl;
-  cout << "l_e" << le << endl;
-//  float norm = sqrt(v_eyes[0] * v_eyes[0] + v_eyes[1] * v_eyes[1]);
+  v_eyes[0] = right_eye.x - left_eye.x;
+  v_eyes[1] = right_eye.y - left_eye.y;
 
   normalize(v_horizontal, v_horizontal);
   normalize(v_eyes, v_eyes);
 
   float theta = acos(v_horizontal.dot(v_eyes)) * 180 / PI; // todo radians
-  cout << "theta " << theta << endl;
-
-  //  cout << "mask " << mask.size() << endl;
+//  cout << "theta " << theta << endl;
 
   // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
   // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
@@ -656,63 +640,76 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
 vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 {
   // 1) transform the four vertices of the given image by using the previously calculated transformation matrix T.
-  T.convertTo(T, CV_32FC1);
-  Mat E(3,4, DataType<float>::type);
+  normalize(T, T, 0, 1, CV_MINMAX);
+  cout << "T " << T << endl;
 
-  E.at<float>(0,0) =  0;//ey1
-  E.at<float>(1,0) =  0;//ex1
-  E.at<float>(2,0) =  1;//
-  E.at<float>(0,1) =  0;//ey2
+  T.convertTo(T, CV_32FC1);
+  cout << "T " << T << endl;
+  cout << "image.cols" << image.cols << endl;
+  cout << "image.rows" << image.rows << endl;
+
+  int cols = image.cols;
+  int rows = image.rows;
+
+  Mat E(3, 4, CV_32FC1);
+  cout << "E init " << E << endl;
+
+  E.at<float>(0,0) =  0;         //ey1
+  E.at<float>(1,0) =  0;         //ex1
+  E.at<float>(2,0) =  1;
+  E.at<float>(0,1) =  0;         //ey2
   E.at<float>(1,1) =  image.cols;//ex2
-  E.at<float>(2,1) =  1;//
+  E.at<float>(2,1) =  1;
   E.at<float>(0,2) =  image.rows;//ey3
-  E.at<float>(1,2) =  0;//ex3
-  E.at<float>(2,2) =  1;//
+  E.at<float>(1,2) =  0;         //ex3
+  E.at<float>(2,2) =  1;
   E.at<float>(0,3) =  image.rows;//ey4
   E.at<float>(1,3) =  image.cols;//ex4
-  E.at<float>(2,3) =  1;//
+  E.at<float>(2,3) =  1;
 
-  //  cout << "a  >>>" <<  E.size() << endl;
-  //  cout << "a  >>>" <<  E.cols   << endl;
-  //  cout << "T  >>>" <<  T.size() << endl;
-  //  cout << "T  >>>" <<  T.cols   << endl;
+  cout << "ef" << E << endl;
   E = T * E;
+
+  cout << "ef" << E << endl;
+  cout << "ef" << E.size() << endl;
 
   vector<Point2f> tmp;
 
-  Point2f ul(E.at<float>(1,0), E.at<float>(0,0));
-  Point2f ur(E.at<float>(1,1), E.at<float>(0,1));
-  Point2f bl(E.at<float>(1,2), E.at<float>(0,2));
-  Point2f br(E.at<float>(1,3), E.at<float>(0,3));
+  //                   x            y
+  Point2f ul( E.at<float>(0,0), E.at<float>(0,1) );
+  Point2f ur( E.at<float>(1,0), E.at<float>(1,1) );
+  Point2f bl( E.at<float>(2,0), E.at<float>(2,1) );
+  Point2f br( E.at<float>(3,0), E.at<float>(3,1) );
 
+  // original          x           y
   Point2f im_ul(0         , 0         );
   Point2f im_ur(image.cols, 0         );
   Point2f im_bl(0         , image.rows);
   Point2f im_br(image.cols, image.rows);
 
-  Point2f imagcenter(image.rows * 0.5, image.cols * 0.5);
+  Point2f imagecenter(image.rows * 0.5, image.cols * 0.5);
 
   // up/left
-  if( norm(ul - imagcenter) < norm(im_ul - imagcenter) )
-    tmp.push_back(Point2f(E.at<float>(1,0), E.at<float>(0,0)));
+  if( norm(ul - imagecenter) < norm(im_ul - imagecenter) )
+    tmp.push_back(ul);
   else
     tmp.push_back( im_ul );
 
   // up/right
-  if( norm(ur - imagcenter) < norm(im_ur - imagcenter))
-    tmp.push_back(Point2f(E.at<float>(1,1), E.at<float>(0,1)));
+  if( norm(ur - imagecenter) < norm(im_ur - imagecenter))
+    tmp.push_back(ur);
   else
     tmp.push_back( im_ur );
 
   // bottom/left
-  if( norm(bl - imagcenter) < norm(im_bl - imagcenter) )
-    tmp.push_back( Point2f(image.at<float>(1), image.at<float>(image.rows)) );
+  if( norm(bl - imagecenter) < norm(im_bl - imagecenter) )
+    tmp.push_back(bl);
   else
     tmp.push_back(im_bl);
 
   // bottom/right
-  if( norm(br - imagcenter) < norm(im_br - imagcenter) )
-    tmp.push_back( Point2f(E.at<float>(1,3), E.at<float>(0,3)) );
+  if( norm(br - imagecenter) < norm(im_br - imagecenter) )
+    tmp.push_back(br);
   else
     tmp.push_back( im_br );
 
@@ -745,6 +742,7 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 
   // 2) return a vector containing the four transformed vertices in the following order:
   //    up/left, up/right, bottom/left, bottom/right
+//  return finish; // return vector<Point2f>(4, Point(1,2));
   return tmp; // return vector<Point2f>(4, Point(1,2));
 }
 
@@ -789,19 +787,33 @@ vector<Point2f> calculateRect(vector<Point2f> points)
 // return: void
 //================================================================================
 
-void distTransform(const Mat& src, Mat& dest) {
-// - create a structuring element of size 3x3; openCV constant: MORPH_ELLIPSE
-  Mat element = getStructuringElement(MORPH_ELLIPSE,Size(3,3));
-  dilate(src, src,element, Point(0,0), 5, 1, Scalar(255,255,255));
+void distTransform(const Mat& src, Mat& dest)
+{
+  // comment out or delete the next line if you want to do the bonus:
+  // cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
+  cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
+  // --- your BONUS code here:
 
-  for (int i = 0; i < src.size(); ++i)
-  {
-//    if()
-  }
-	// comment out or delete the next line if you want to do the bonus:
-//	cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
-	cv::distanceTransform(src, dest, CV_DIST_C, 3);
-	// --- your BONUS code here:
+  // - create a structuring element of size 3x3; openCV constant: MORPH_ELLIPSE
+//  Mat element = getStructuringElement(MORPH_ELLIPSE, Size(3, 3));
+//
+//  bitwise_not(src, src); // invert
+//  dilate(src, src, element, Point(0, 0), 5, 1, Scalar(255, 255, 255));
+//
+//  while (!countNonZero(src))
+//  {
+//    erode(src, src, element, Point(0, 0), 1, 1, Scalar(0, 0, 0));
+//  }
+//
+//  normalize(src, src);
+//  bitwise_not(src, src); // invert
+//
+//// - calculate squared pixel values
+
+//  src.mul(src, )
+
+// - normalize again
+//  normalize(src, dest);
 }
 
 //================================================================================
@@ -833,22 +845,20 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
 
   // 1) calculate imageCount and alpha
   int imagecount = (transitionTime/1000) * fps;
-
   vector<Mat> r;
-  Mat final = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
-  Mat blur  = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
-  Mat trans = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
-  Mat m_trans = Mat(faces[1]->face_trimmed.rows,faces[1]->face_trimmed.cols, CV_8UC3);
 
   // 2) calculate the alpha blended mask and transition image
+  Mat final = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
   for (int i = 0; i < faces.size() - 1; i++)
   {
     for (int j = 0; j < imagecount; j++)
     {
-//      cout << "blended mask i j " << i << j << endl;
+      Mat blur;
+      Mat i_trans;
+      Mat m_trans;
+      //  cout << "blended mask i j " << i << j << endl;
       float alpha = (float)j / imagecount;
-      trans = (1 - alpha) * faces[i]->face_trimmed + alpha * faces[i + 1]->face_trimmed;
-//      cout << " trans " << endl;
+      i_trans = (1 - alpha) * faces[i]->face_trimmed + alpha * faces[i + 1]->face_trimmed;
 
       // 3) do a distance transformation with openCV
       //    - set distanceType = CV_DIST_C
@@ -858,28 +868,18 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
       // 4) calculate alpha-blended mask with gauss weighting (format: CV_32FC1)
       //    - sigma = 11
       for (int y = 0; y <  m_trans.rows; y++)
-      {
         for (int x = 0; x <  m_trans.cols; x++)
-        {
-//          cout << "sigma x y " << x << " " << y << endl;
-          m_trans.at<int>(y,x) = 1.f - exp(-(pow(m_trans.at<int>(y,x),2) / (2 * (11 * 11))));
-        }
-      }
+          m_trans.at<float>(y,x) = 1.f - exp(-(pow(m_trans.at<float>(y,x),2) / (2 * (11 * 11))));
+
       // 6) calculate the final image using the transition image, the blured image
       //    and the alpha-blended mask
-      GaussianBlur(trans, blur,Size(11, 11), 11, 11);
+      GaussianBlur(i_trans, blur,Size(11, 11), 11, 11);
       for (int y = 0; y < m_trans.rows; y++)
-      {
         for (int x = 0; x < m_trans.cols; x++)
-        {
-//          cout << "final x y " << x << " " << y << endl;
-          final.at<int>(y,x) = m_trans.at<int>(y,x) * trans.at<int>(y,x) + (1 - m_trans.at<int>(y,x)) * blur.at<int>(y,x);
-        }
-      }
+          final.at<Vec3b>(y,x) = m_trans.at<float>(y,x) * i_trans.at<Vec3b>(y,x) + (1 - m_trans.at<float>(y,x)) * blur.at<Vec3b>(y,x);
     }
     r.push_back(final);
   }
-//  return r;
   return r;
 }
 
@@ -1247,8 +1247,6 @@ int main(int argc, char *argv[])
             imwrite((*it)->out_face_trimmed_filename, (*it)->face_trimmed);
             imwrite((*it)->out_face_mask_filename, (*it)->mask);
         }
-
-
         vector<Mat> frames = blendFaceSequence(faces, transform_time, fps);
 	if(!frames.empty()){
 		
