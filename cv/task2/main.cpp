@@ -796,7 +796,7 @@ void distTransform(const Mat& src, Mat& dest) {
 
   for (int i = 0; i < src.size(); ++i)
   {
-    if()
+//    if()
   }
 	// comment out or delete the next line if you want to do the bonus:
 //	cv::distanceTransform(src, dest, CV_DIST_C, CV_DIST_MASK_PRECISE);
