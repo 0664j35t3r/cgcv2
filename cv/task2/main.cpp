@@ -172,8 +172,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
     {
       vector<Mat> sliding_window;
       Mat mat_feature;
-      sliding_window.push_back(
-              imag(Rect(x, y, params.patch.width, params.patch.height)));
+      sliding_window.push_back(imag(Rect(x, y, params.patch.width, params.patch.height)));
 
       // - extract hog features of each ROI using getHogFeatures()
       getHogFeatures(sliding_window, mat_feature, params.patch);
@@ -283,7 +282,6 @@ void readImageList(string fileName, vector<string>& fileList, vector<string>& ma
 		maskList.push_back("data/training_data/masks/" + line);
 	}
 }
-
 
 //================================================================================
 // trainSVM()
@@ -533,82 +531,36 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
 void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
 {
-  float hauptachse_oben;
-  float nebenachse_oben;
-  float hauptachse_unten;
-  float nebenachse_unten;
+  // 1) get eyes_center point by calculating the mean_eye value of left/right eye's x/y coordinates
+  Point mean_eye = (left_eye + right_eye) * .5;
 
-  Point eye_center = (right_eye + left_eye) * 0.5;
-  float eyes_distance = norm(right_eye - left_eye);
-  float eyescenter_mouth_distance = norm(mouth_center - eye_center);
+  // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
+  float dist_eyes = norm(right_eye - left_eye); //sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
 
-  nebenachse_oben = eyes_distance *0.5;
-  hauptachse_oben = (eyes_distance * S_1) * 0.5;
+  // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center // hessesche normalform
+  float dist_mouth_eyes = norm(mouth_center - mean_eye);
 
-  hauptachse_unten = (2 * eyescenter_mouth_distance * S_2) * 0.5;
-  nebenachse_unten = (eyes_distance * S_1) * 0.5;
+  // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
+  Vec2f v_horizontal (1, 0);
 
-  float left_eye_ln = sqrt((right_eye.x * right_eye.x) + (right_eye.y * right_eye.y));
-  float right_eye_ln =  sqrt((left_eye.x* left_eye.x) + (left_eye.y * left_eye.y));
+  Vec2f v_eyes;
+  v_eyes[0] = right_eye.x - left_eye.x;
+  v_eyes[1] = right_eye.y - left_eye.y;
 
-  float dot_ = (right_eye.x * left_eye.x) + (right_eye.y * left_eye.y);
-  float winkel = (float)dot_/abs(left_eye_ln * right_eye_ln);
-  winkel = acos(winkel);
-  winkel = (float)(winkel * (-180))/ PI;
+  normalize(v_horizontal, v_horizontal);
+  normalize(v_eyes, v_eyes);
 
-  cout << "mask " << mask.size() << endl;
+  float theta = acos(v_horizontal.dot(v_eyes)) * 180 / PI;
 
-  ellipse(mask, eye_center, Size(hauptachse_oben,nebenachse_oben), winkel, 180, 360, Scalar(255, 255, 255),-1, 8, 0);
-  ellipse(mask, eye_center, Size(nebenachse_unten, hauptachse_unten), winkel, 0, 180, Scalar(255, 255, 255),-1, 8, 0);
-
-//  imwrite("mask.png", mask);
-//  waitKey(0);
-
-
-//  imshow("ellipse", mask);
-//  waitKey(0);
-
-
-}
-
-
-//void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
-//{
-//  // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
-//  Point mean;
-//  mean = (left_eye + right_eye) * .5;
-//
-//  // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
-//  float dist_eyes = norm(right_eye - left_eye);//sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
-//
-//  // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
-//  // hessesche normalform
-//  Point vec_eye_mean = (mouth_center + mean) * .5;
-//
-//  float dist_mouth_eyes = norm(mouth_center - vec_eye_mean);
-//          //sqrt( pow(vec_eye_mean.x - mouth_center.x,2) + pow(vec_eye_mean.y - mouth_center.y,2) );
-//
-//  // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
-//  Vec2f v_horizontal (1, 0);
-//
-//  Vec2f v_eyes;
-//  v_eyes[0] = right_eye.x - left_eye.x;
-//  v_eyes[1] = right_eye.y - left_eye.y;
-//
-//  normalize(v_horizontal, v_horizontal);
-//  normalize(v_eyes, v_eyes);
-//
-//  float theta = acos(v_horizontal.dot(v_eyes)) * 180 / PI;
-//
-//  // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-//  // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-//  ellipse(mask, mean, Size(dist_eyes * S_1 * 0.5, dist_eyes * 0.5), theta, 180, 360, Scalar(255,255,255), -1, 8, 0);
-//  ellipse(mask, mean, Size(dist_eyes * S_1 * 0.5 , dist_mouth_eyes * 2 * S_2  * 0.5), theta, 0, 180, Scalar(255,255,255), -1, 8, 0);
+  // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
+  // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
+  ellipse(mask, mean_eye, Size((dist_eyes * S_1) * .5, dist_eyes * .5), theta, 180, 360, Scalar(255,255,255), -1, 8, 0);
+  ellipse(mask, mean_eye, Size((dist_eyes * S_1) * .5 , (dist_mouth_eyes * 2 * S_2)  * .5), theta, 0, 180, Scalar(255,255,255), -1, 8, 0);
 //  imshow("ellipse", mask);
 //    waitKey(0);
-//
-//  cout << " leave mask" << endl;
-//}
+
+  cout << " leave mask" << endl;
+}
 
 
 //================================================================================
@@ -637,8 +589,6 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
   cout << " Affine Transformat" << endl;
   // 1) use opencv to calculate a transformation matrix that maps the three given points from one image into another image
   // http://docs.opencv.org/doc/tutorials/imgproc/imgtrans/warp_affine/warp_affine.html
-  Mat src, warp_dst;
-
   Point2f one[3];
   one[0] = left_eye_one;
   one[1] = right_eye_one;
@@ -680,7 +630,6 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 
   Mat corners(3,4, CV_32FC1);
   Mat E_t(2,4, CV_32FC1);
-  Mat E(3, 4, CV_32FC1);
 
   corners.at<float>(0,0) =  0;         //ey1
   corners.at<float>(1,0) =  0;         //ex1
@@ -710,69 +659,9 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
   tmp.push_back(bl);
   tmp.push_back(br);
 
-  // original          x           y
-//  Point2f im_ul(0         , 0         );
-//  Point2f im_ur(image.cols, 0         );
-//  Point2f im_bl(0         , image.rows);
-//  Point2f im_br(image.cols, image.rows);
-
-//  Point2f imagecenter(image.rows * 0.5, image.cols * 0.5);
-
-//  // up/left
-//  if( norm(ul - imagecenter) < norm(im_ul - imagecenter) )
-//    tmp.push_back(ul);
-//  else
-//    tmp.push_back( im_ul );
-//
-//  // up/right
-//  if( norm(ur - imagecenter) < norm(im_ur - imagecenter) )
-//    tmp.push_back(ur);
-//  else
-//    tmp.push_back( im_ur );
-//
-//  // bottom/left
-//  if( norm(bl - imagecenter) < norm(im_bl - imagecenter) )
-//    tmp.push_back(bl);
-//  else
-//    tmp.push_back(im_bl);
-//
-//  // bottom/right
-//  if( norm(br - imagecenter) < norm(im_br - imagecenter) )
-//    tmp.push_back(br);
-//  else
-//    tmp.push_back( im_br );
-//
-//  // ul bl
-//  if(tmp.at(0).x != tmp.at(2).x)
-//  {
-//    float max_x = MAX(tmp.at(0).x, tmp.at(2).x);
-//    tmp.at(0).x = max_x;
-//    tmp.at(2).x = max_x;
-//  }
-//  if(tmp.at(1).x != tmp.at(3).x)
-//  {
-//    float min_x = MIN(tmp.at(1).x, tmp.at(3).x);
-//    tmp.at(1).x = min_x;
-//    tmp.at(3).x = min_x;
-//  }
-//
-//  if(tmp.at(0).y != tmp.at(1).y)
-//  {
-//    float max_y = MAX(tmp.at(0).y, tmp.at(1).y);
-//    tmp.at(0).y = max_y;
-//    tmp.at(1).y = max_y;
-//  }
-//  if(tmp.at(2).y != tmp.at(3).y)
-//  {
-//    float min_y = MIN(tmp.at(2).y, tmp.at(3).y);
-//    tmp.at(2).y = min_y;
-//    tmp.at(3).y = min_y;
-//  }
-
   // 2) return a vector containing the four transformed vertices in the following order:
   //    up/left, up/right, bottom/left, bottom/right
-//  return finish; // return vector<Point2f>(4, Point(1,2));
-  return tmp; // return vector<Point2f>(4, Point(1,2));
+  return tmp;
 }
 
 //================================================================================
