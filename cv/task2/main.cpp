@@ -127,25 +127,27 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
 
   Rect search_area;
   // - if 0: search in mouth region, if 1: left eye, if 2: right eye
-  switch(search)
+  switch (search)
   {
     case 0: // Mund  // lower 40%
-      search_area = Rect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);  // todo width, height
+      search_area = Rect(0, imag.rows * 0.6, imag.cols, imag.rows * 0.4);
       break;
     case 1: // eyes
-       search_area = Rect(0, 0, imag.cols * 0.5, imag.rows * 0.6);  // todo width, height
+      search_area = Rect(0, 0, imag.cols * 0.5, imag.rows * 0.6);
       break;
     case 2:
-       search_area = Rect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
+      search_area = Rect(imag.cols * 0.5, 0, imag.cols * 0.5, imag.rows * 0.6);
       break;
     default:
       break;
   }
 
   // - collect a certain number of your best scored ROIs (params.scoreNum)
-  struct sorting : public binary_function<pair<float,Rect>, pair<float,Rect>, bool>
+  struct sorting
+          : public binary_function<pair<float, Rect>, pair<float, Rect>, bool>
   {
-    bool operator()(const pair<float,Rect>& __x, const pair<float,Rect>& __y) const
+    bool operator()(const pair<float, Rect> &__x,
+                    const pair<float, Rect> &__y) const
     {
       return __x.first > __y.first;
     }
@@ -155,14 +157,17 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   vector<pair<float, Rect>> vec_score;
   float dist = 0;
   // - search through whole image using a sliding window with window size params.patch
-  for (int y = search_area.y; y < search_area.y + search_area.height - params.patch.height; y++)
+  for (int y = search_area.y;
+       y < search_area.y + search_area.height - params.patch.height; y++)
   {
     cout << "sliding window" << endl;
-    for (int x = search_area.x; x < search_area.x + search_area.width - params.patch.width; x++)
+    for (int x = search_area.x;
+         x < search_area.x + search_area.width - params.patch.width; x++)
     {
       vector<Mat> sliding_window;
       Mat mat_feature;
-      sliding_window.push_back(imag(Rect(x,y, params.patch.width, params.patch.height)));
+      sliding_window.push_back(
+              imag(Rect(x, y, params.patch.width, params.patch.height)));
 
       // - extract hog features of each ROI using getHogFeatures()
       getHogFeatures(sliding_window, mat_feature, params.patch);
@@ -175,15 +180,13 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
       cout << "dist " << dist << endl;
 
       // - collect a certain number of your best scored ROIs (params.scoreNum)
-      vec_score.push_back(pair<float, Rect>(dist, Rect(x, y, params.patch.width, params.patch.height)));
-      // cout << "vec_score " << vec_score.size() << std::endl;
+      vec_score.push_back(pair<float, Rect>(dist, Rect(x, y, params.patch.width,
+                                                       params.patch.height)));
     }
   }
-  std::sort (vec_score.begin(), vec_score.end(), sorting());
-//  for (auto item : vec_score)
-//    cout << item.first << " distance " << item.second << endl;
+  std::sort(vec_score.begin(), vec_score.end(), sorting());
 
-  while(vec_score.size() > params.scoreNum)
+  while (vec_score.size() > params.scoreNum)
     vec_score.pop_back();
 
   cout << "vec_score " << vec_score.size() << endl;
@@ -197,31 +200,32 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (int i = 1; i < vec_score.size(); i++)
   {
     rec_tmp = intersec & vec_score[i].second;
-    if(rec_tmp.area() >= intersec.area() * 0.8) // s12 80%
+    if (rec_tmp.area() >= intersec.area() * 0.8) // s12 80%
       intersec = rec_tmp;
   }
 
   // - scale back that ROI to fit with original image size
   // - center of last ROI is your detected object's position
-  float orig_height  = face.rows;
-  float orig_width   = face.cols;
+  float orig_height = face.rows;
+  float orig_width = face.cols;
   float scale_height = imag.rows;
-  float scale_width  = imag.cols;
+  float scale_width = imag.cols;
 
   float new_scale_height = orig_height / scale_height;
-  float new_scale_width  = orig_width  / scale_width;
+  float new_scale_width = orig_width / scale_width;
 
-  intersec.y = (float)intersec.y * new_scale_height;
-  intersec.x = (float)intersec.x * new_scale_width;
+  intersec.y = (float) intersec.y * new_scale_height;
+  intersec.x = (float) intersec.x * new_scale_width;
   intersec.height = intersec.height * new_scale_height;
-  intersec.width  = intersec.width  * new_scale_width;
+  intersec.width = intersec.width * new_scale_width;
 
-  detected = Point2f(intersec.x + intersec.width * 0.5, intersec.y + intersec.height * 0.5);
-//  circle(tmp_face, detected, 3, Scalar(255,255,255), 3, 2);
+  detected = Point2f(intersec.x + intersec.width * 0.5,
+                     intersec.y + intersec.height * 0.5);
+  circle(tmp_face, detected, 3, Scalar(255, 255, 255), 3, 2);
 //  imshow("detect", face);
 //  waitKey(0);
+//}
 }
-
 bool fExists(const std::string& filename) {
   ifstream ifile(filename.c_str());
   return ifile;
@@ -316,7 +320,8 @@ void readImageList(string fileName, vector<string>& fileList, vector<string>& ma
 // return: void
 //================================================================================
 
-void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, vector<string>& maskList, const SvmParameter svmParams) {
+void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, vector<string>& maskList,
+    const SvmParameter svmParams) {
   cout << "trainSVM" << endl;
   for (unsigned i = 0; i < svmParams.sizeOfSet; i++)
   {
@@ -333,7 +338,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     vector<Point2f> landmarks;
     readLandmarks(imageList.at(i), landmarks);
 
-    Point center_mouth           = landmarks.at(Mouth.landmarks.at(0)) * svmParams.scale;
+    Point center_mouth           = landmarks.at(Mouth.landmarks.at(0)* svmParams.scale);
     Point left_eye_left_corner   = landmarks.at(Eyes.landmarks.at(0));
     Point left_eye_right_corner  = landmarks.at(Eyes.landmarks.at(1));
     Point right_eye_left_corner  = landmarks.at(Eyes.landmarks.at(2));
@@ -343,8 +348,10 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     Point center_right_eye = (right_eye_left_corner + right_eye_right_corner) * 0.5 * svmParams.scale;
 
     Point top_left_left_eye;
-    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5);
-    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5);
+    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5 );
+    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5 ) ;
+//    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5 + 2 * Eyes.padding) - Eyes.padding;
+//    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5 + 2 * Eyes.padding) - Eyes.padding;
 
     Point top_left_right_eye;
     top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width * 0.5);
@@ -352,6 +359,8 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
 
     // cout << imag.size() << endl;
     Point top_left_mouth;
+    //  top_left_mouth.x = center_mouth.x - (Mouth.patch.width - 2 * Mouth.padding)  -  Mouth.padding;
+    //  top_left_mouth.y = center_mouth.y + (Mouth.patch.height + 2 * Mouth.padding) + Mouth.padding;
     top_left_mouth.x = center_mouth.x - (Mouth.patch.width * 0.5);
     top_left_mouth.y = center_mouth.y + (Mouth.patch.height * 0.5);
 
@@ -360,6 +369,7 @@ void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, 
     // left corner and size
     Rect ROI_eyes_left (top_left_left_eye, Eyes.patch);
     Rect ROI_eyes_right (top_left_right_eye, Eyes.patch);
+//    Rect ROI_mouth (top_left_mouth, Mouth.patch
     Rect ROI_mouth (top_left_mouth, Mouth.patch);
 
 //    cout << center_left_eye << endl;
@@ -516,43 +526,80 @@ void detectEyesMouth(const Mat& frame, const Rect& face, Point& left_eye, Point&
 
 void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
 {
-  // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
-  Point mean;
-  mean.x = (left_eye.x + right_eye.x) * .5;
-  mean.y = (left_eye.y + right_eye.y) * .5;
+  float hauptachse_oben;
+  float nebenachse_oben;
+  float hauptachse_unten;
+  float nebenachse_unten;
 
-  // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
-  float dist_eyes = sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
+  Point eye_center = (right_eye + left_eye) * 0.5;
+  float eyes_distance = norm(right_eye - left_eye);
+  float eyescenter_mouth_distance = norm(mouth_center - eye_center);
 
-  // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
-  // hessesche normalform
-  Point vec_eye_mean;
-  vec_eye_mean.x = (mouth_center.x + mean.x) * .5;
-  vec_eye_mean.y = (mouth_center.y + mean.y) * .5;
+  nebenachse_oben = eyes_distance *0.5;
+  hauptachse_oben = (eyes_distance * S_1) * 0.5;
 
-  float dist_mouth_eyes = sqrt( pow(vec_eye_mean.x - mouth_center.x,2) + pow(vec_eye_mean.y - mouth_center.y,2) );
+  hauptachse_unten = (2 * eyescenter_mouth_distance * S_2) * 0.5;
+  nebenachse_unten = (eyes_distance * S_1) * 0.5;
 
-  // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
-  Vec2f v_horizontal (1, 0);
+  float left_eye_ln = sqrt((right_eye.x * right_eye.x) + (right_eye.y * right_eye.y));
+  float right_eye_ln =  sqrt((left_eye.x* left_eye.x) + (left_eye.y * left_eye.y));
 
-  Vec2f v_eyes;
-  v_eyes[0] = right_eye.x - left_eye.x;
-  v_eyes[1] = right_eye.y - left_eye.y;
+  float dot_ = (right_eye.x * left_eye.x) + (right_eye.y * left_eye.y);
+  float winkel = (float)dot_/abs(left_eye_ln * right_eye_ln);
+  winkel = acos(winkel);
+  winkel = (float)(winkel * (-180))/ PI;
 
-  normalize(v_horizontal, v_horizontal);
-  normalize(v_eyes, v_eyes);
+  ellipse(mask, eye_center, Size(hauptachse_oben,nebenachse_oben), winkel, 180, 360, Scalar(255, 255, 255),-1, 8, 0);
+  ellipse(mask, eye_center, Size(nebenachse_unten, hauptachse_unten), winkel, 0, 180, Scalar(255, 255, 255),-1, 8, 0);
 
-  float theta = acos(v_horizontal.dot(v_eyes)) * 180 / PI;
+//  imwrite("mask.png", mask);
+//  waitKey(0);
 
-  // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
-  ellipse(mask, mean, Size(dist_eyes * S_1, dist_eyes), theta, 180, 360, Scalar(255,255,255), -1, 8, 0);
-  ellipse(mask, mean, Size(dist_mouth_eyes * 2 * S_2,dist_eyes * S_2), theta, 0, 180, Scalar(255,255,255), -1, 8, 0); // todo
+
+//  imshow("ellipse", mask);
+//  waitKey(0);
+
+
+}
+
+
+//void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Point mouth_center, float S_1, float S_2)
+//{
+//  // 1) get eyes_center point by calculating the mean value of left/right eye's x/y coordinates
+//  Point mean;
+//  mean = (left_eye + right_eye) * .5;
+//
+//  // 2) get eyes_distance by calculating the norm of a vector pointing from left eye to right eye
+//  float dist_eyes = norm(right_eye - left_eye);//sqrt( pow(left_eye.x - right_eye.x, 2) + pow(left_eye.y - right_eye.y,2));
+//
+//  // 3) get eyescenter_mouth_distance by calculating the norm of a vector pointing from mouth to eyes_center
+//  // hessesche normalform
+//  Point vec_eye_mean = (mouth_center + mean) * .5;
+//
+//  float dist_mouth_eyes = norm(mouth_center - vec_eye_mean);
+//          //sqrt( pow(vec_eye_mean.x - mouth_center.x,2) + pow(vec_eye_mean.y - mouth_center.y,2) );
+//
+//  // 4) get rotation of face by calculating angle between vector pointing from left eye to right eye and v_horizontal line
+//  Vec2f v_horizontal (1, 0);
+//
+//  Vec2f v_eyes;
+//  v_eyes[0] = right_eye.x - left_eye.x;
+//  v_eyes[1] = right_eye.y - left_eye.y;
+//
+//  normalize(v_horizontal, v_horizontal);
+//  normalize(v_eyes, v_eyes);
+//
+//  float theta = acos(v_horizontal.dot(v_eyes)) * 180 / PI;
+//
+//  // 5) draw ellipses with opencv and set these parameters accordingly: color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
+//  // color=Scalar(255, 255, 255), thickness=-1, lineType=8, shift=0
+//  ellipse(mask, mean, Size(dist_eyes * S_1 * 0.5, dist_eyes * 0.5), theta, 180, 360, Scalar(255,255,255), -1, 8, 0);
+//  ellipse(mask, mean, Size(dist_eyes * S_1 * 0.5 , dist_mouth_eyes * 2 * S_2  * 0.5), theta, 0, 180, Scalar(255,255,255), -1, 8, 0);
 //  imshow("ellipse", mask);
 //    waitKey(0);
-
-  cout << " leave mask" << endl;
-}
+//
+//  cout << " leave mask" << endl;
+//}
 
 
 //================================================================================
@@ -593,14 +640,13 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
   two[1] = right_eye_two;
   two[2] = mouth_two;
 
-  src = getAffineTransform(one, two);
+  T = getAffineTransform(one, two);
 
   // 2) apply the calculated transformation on imageToTransform. The size of the image must not change
-  warpAffine(imageToTransform, warp_dst, src, warp_dst.size());
+  warpAffine(imageToTransform, imageToTransform, T, imageToTransform.size());
 
   // 3) write the calculated transformation matrix to T
-  T = src;
-  return warp_dst;
+  return imageToTransform;
 }
 
 //================================================================================
