@@ -117,6 +117,13 @@ void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win)
 
 void detect(const Mat& face, Point2f& detected, char search, const Detection& params)
 {
+
+  cout << "face size "  << face.size() << endl;
+  cout << "detected"    << detected.y << endl;
+  cout << "detected "   << detected.x << endl;
+  cout << "search "  << search << endl;
+  cout << "params "  << params.patch.height << endl;
+  cout << "params "  << params.patch.width << endl;
   Mat tmp_face = face.clone();
   Mat imag = face.clone();
   CvSVM svm;
@@ -160,7 +167,6 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (int y = search_area.y;
        y < search_area.y + search_area.height - params.patch.height; y++)
   {
-    //  cout << "sliding window" << endl;
     for (int x = search_area.x;
          x < search_area.x + search_area.width - params.patch.width; x++)
     {
@@ -669,19 +675,12 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
 vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 {
   // 1) transform the four vertices of the given image by using the previously calculated transformation matrix T.
-//  normalize(T, T, 0, 1, CV_MINMAX);
-  cout << "T " << T << endl;
   Mat T_f;
   T.convertTo(T_f, CV_32FC1);
+
   Mat corners(3,4, CV_32FC1);
   Mat E_t(2,4, CV_32FC1);
-
-  cout << "T " << T << endl;
-  cout << "image.cols" << image.cols << endl;
-  cout << "image.rows" << image.rows << endl;
-
   Mat E(3, 4, CV_32FC1);
-  cout << "E init " << E << endl;
 
   corners.at<float>(0,0) =  0;         //ey1
   corners.at<float>(1,0) =  0;         //ex1
@@ -696,22 +695,16 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
   corners.at<float>(1,3) =  image.rows -1;//ex4
   corners.at<float>(2,3) =  1;
 
-  cout << "size of e" << E << endl;
-  cout << "size of t" << T << endl;
   E_t = T_f * corners;
 
-  cout << "ef" << E << endl;
-  cout << "ef" << E.size() << endl;
-
   vector<Point2f> tmp;
+  //                         x                   y
+  Point2f ul( E_t.at<float>(0,0), E_t.at<float>(1,0) );
+  Point2f ur( E_t.at<float>(0,1), E_t.at<float>(1,1) );
+  Point2f bl( E_t.at<float>(0,2), E_t.at<float>(1,2) );
+  Point2f br( E_t.at<float>(0,3), E_t.at<float>(1,3) );
 
-  //                      x                 y
-  Point2f ul( corners.at<float>(0,0), corners.at<float>(1,0) );
-  Point2f ur( corners.at<float>(0,1), corners.at<float>(1,1) );
-  Point2f bl( corners.at<float>(0,2), corners.at<float>(1,2) );
-  Point2f br( corners.at<float>(0,3), corners.at<float>(1,3) );
-
-//  tmp.clear();
+  //  tmp.clear();
   tmp.push_back(ul);
   tmp.push_back(ur);
   tmp.push_back(bl);
@@ -831,25 +824,25 @@ void distTransform(const Mat& src, Mat& dest)
   // --- your BONUS code here:
 
   // - create a structuring element of size 3x3; openCV constant: MORPH_ELLIPSE
-//  Mat element = getStructuringElement(MORPH_ELLIPSE, Size(3, 3));
-//
-//  bitwise_not(src, src); // invert
-//  dilate(src, src, element, Point(0, 0), 5, 1, Scalar(255, 255, 255));
-//
-//  while (!countNonZero(src))
-//  {
-//    erode(src, src, element, Point(0, 0), 1, 1, Scalar(0, 0, 0));
-//  }
-//
-//  normalize(src, src);
-//  bitwise_not(src, src); // invert
-//
-//// - calculate squared pixel values
+  //  Mat element = getStructuringElement(MORPH_ELLIPSE, Size(3, 3));
+  //
+  //  bitwise_not(src, src); // invert
+  //  dilate(src, src, element, Point(0, 0), 5, 1, Scalar(255, 255, 255));
+  //
+  //  while (!countNonZero(src))
+  //  {
+  //    erode(src, src, element, Point(0, 0), 1, 1, Scalar(0, 0, 0));
+  //  }
+  //
+  //  normalize(src, src);
+  //  bitwise_not(src, src); // invert
+  //
+  //// - calculate squared pixel values
 
-//  src.mul(src, )
+  //  src.mul(src, )
 
-// - normalize again
-//  normalize(src, dest);
+  // - normalize again
+  //  normalize(src, dest);
 }
 
 //================================================================================
@@ -883,18 +876,19 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
   vector<Mat> r;
 
   // 2) calculate the alpha blended mask and transition image
-  Mat final = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
   for (int i = 0; i < faces.size() - 1; i++)
   {
     for (int j = 0; j <= imagecount; j++)
     {
-      cout << " j " << j << endl;
+//      Mat final = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
+//      cout << " j " << j << endl;
       Mat blur = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
       Mat i_trans;
       Mat m_trans;
       //  cout << "blended mask i j " << i << j << endl;
       float alpha = (float)j / imagecount;
       i_trans = (1 - alpha) * faces[i]->face_trimmed + alpha * faces[i + 1]->face_trimmed;
+      m_trans = (1 - alpha) * faces[i]->mask + alpha * faces[i + 1]->mask;
 
       // 3) do a distance transformation with openCV
       //    - set distanceType = CV_DIST_C
@@ -909,10 +903,12 @@ vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int f
 
       // 6) calculate the final image using the transition image, the blured image
       //    and the alpha-blended mask
+      Mat final = Mat::zeros(faces[0]->face_trimmed.size(), CV_8UC3);
       GaussianBlur(i_trans, blur,Size(11, 11), 11, 11);
-      for (int y = 0; y < m_trans.rows; y++)
-        for (int x = 0; x < m_trans.cols; x++)
-          final.at<Vec3b>(y,x) = m_trans.at<float>(y,x) * i_trans.at<Vec3b>(y,x) + (1 - m_trans.at<float>(y,x)) * blur.at<Vec3b>(y,x);
+      for(int c = 0; c < 3; c++)
+        for (int y = 0; y < m_trans.rows; y++)
+          for (int x = 0; x < m_trans.cols; x++)
+            final.at<Vec3b>(y,x)[c] = m_trans.at<float>(y,x) * i_trans.at<Vec3b>(y,x)[c] + (1 - m_trans.at<float>(y,x)) * blur.at<Vec3b>(y,x)[c];
 
       r.push_back(final);
     }
