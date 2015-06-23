@@ -117,8 +117,8 @@ void getHogFeatures(const vector<Mat>& patches, Mat& features, Size win)
 
 void detect(const Mat& face, Point2f& detected, char search, const Detection& params)
 {
-  Mat tmp_face = face;
-  Mat imag = face;
+  Mat tmp_face = face.clone();
+  Mat imag = face.clone();
   CvSVM svm;
   svm.load(params.svmModelFile.c_str());
 
@@ -160,7 +160,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
   for (int y = search_area.y;
        y < search_area.y + search_area.height - params.patch.height; y++)
   {
-    cout << "sliding window" << endl;
+    //  cout << "sliding window" << endl;
     for (int x = search_area.x;
          x < search_area.x + search_area.width - params.patch.width; x++)
     {
@@ -177,7 +177,7 @@ void detect(const Mat& face, Point2f& detected, char search, const Detection& pa
 
       // - apply sigmoid function to returned distance
       dist = 1.f / (1.f + exp(-dist));
-      cout << "dist " << dist << endl;
+      //  cout << "dist " << dist << endl;
 
       // - collect a certain number of your best scored ROIs (params.scoreNum)
       vec_score.push_back(pair<float, Rect>(dist, Rect(x, y, params.patch.width,
@@ -322,128 +322,129 @@ void readImageList(string fileName, vector<string>& fileList, vector<string>& ma
 
 void trainSVM(TrainingData Eyes, TrainingData Mouth, vector<string>& imageList, vector<string>& maskList,
     const SvmParameter svmParams) {
-  cout << "trainSVM" << endl;
-  for (unsigned i = 0; i < svmParams.sizeOfSet; i++)
-  {
-    Mat imag = imread(imageList.at(i));
-
-    cv::cvtColor(imag, imag, CV_BGR2GRAY);
-    resize(imag, imag, Size(svmParams.scale * imag.cols, svmParams.scale * imag.rows));
-
-    //  readLandmarks()
-    Mat mask = imread(maskList.at(i));
-    cv::cvtColor(mask, mask, CV_BGR2GRAY);
-    resize(mask, mask, Size(svmParams.scale * mask.cols, svmParams.scale * mask.rows));
-
-    vector<Point2f> landmarks;
-    readLandmarks(imageList.at(i), landmarks);
-
-    Point center_mouth           = landmarks.at(Mouth.landmarks.at(0)* svmParams.scale);
-    Point left_eye_left_corner   = landmarks.at(Eyes.landmarks.at(0));
-    Point left_eye_right_corner  = landmarks.at(Eyes.landmarks.at(1));
-    Point right_eye_left_corner  = landmarks.at(Eyes.landmarks.at(2));
-    Point right_eye_right_corner = landmarks.at(Eyes.landmarks.at(3));
-
-    Point center_left_eye  = (left_eye_left_corner + left_eye_right_corner) * 0.5 * svmParams.scale;
-    Point center_right_eye = (right_eye_left_corner + right_eye_right_corner) * 0.5 * svmParams.scale;
-
-    Point top_left_left_eye;
-    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5 );
-    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5 ) ;
-//    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5 + 2 * Eyes.padding) - Eyes.padding;
-//    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5 + 2 * Eyes.padding) - Eyes.padding;
-
-    Point top_left_right_eye;
-    top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width * 0.5);
-    top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height * 0.5);
-
-    // cout << imag.size() << endl;
-    Point top_left_mouth;
-    //  top_left_mouth.x = center_mouth.x - (Mouth.patch.width - 2 * Mouth.padding)  -  Mouth.padding;
-    //  top_left_mouth.y = center_mouth.y + (Mouth.patch.height + 2 * Mouth.padding) + Mouth.padding;
-    top_left_mouth.x = center_mouth.x - (Mouth.patch.width * 0.5);
-    top_left_mouth.y = center_mouth.y + (Mouth.patch.height * 0.5);
-
-//    cout << "padding"  << Eyes.padding << endl;
-
-    // left corner and size
-    Rect ROI_eyes_left (top_left_left_eye, Eyes.patch);
-    Rect ROI_eyes_right (top_left_right_eye, Eyes.patch);
-//    Rect ROI_mouth (top_left_mouth, Mouth.patch
-    Rect ROI_mouth (top_left_mouth, Mouth.patch);
-
-//    cout << center_left_eye << endl;
-//    circle(imag, center_left_eye , 3, Scalar(255,255,255));
-//    circle(imag, center_right_eye, 3, Scalar(255,255,255));
-//    circle(imag, center_mouth    , 3, Scalar(255,255,255));
-//    imshow("hallo", imag);
-//        waitKey(0);
-
-    //  - positive: eye and mouth ROIs using getHogFeatures()
-    vector<Mat> eye;
-    vector<Mat> mouth;
-    eye.push_back(imag(ROI_eyes_left)); // subpic
-    eye.push_back(imag(ROI_eyes_right));
-    mouth.push_back(imag(ROI_mouth));
-    getHogFeatures(eye, Eyes.features, Eyes.patch);
-    Eyes.labels.push_back(1);
-    Eyes.labels.push_back(1);
-    getHogFeatures(mouth, Mouth.features, Mouth.patch);
-    Mouth.labels.push_back(1);
-
-    //  - negative: TrainingData::patch sized ROIs // todo padding
-    Rect intersec;
-    for(int x = 0; x < imag.cols - Eyes.patch.width; x += Eyes.step)
-    {
-      for (int y = 0; y < imag.rows - Eyes.patch.height; y += Eyes.step)
-      {
-        Rect tmp(Point(x, y), Eyes.patch);
-        intersec = tmp & ROI_eyes_left;
-        if(intersec.area() > 0)
-          continue;
-        intersec = tmp & ROI_eyes_right;
-        if(intersec.area() > 0)
-          continue;
-
-        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
-          continue;
-        std::vector<Mat> vec_tmp;
-        vec_tmp.push_back(imag(tmp));
-        getHogFeatures(vec_tmp, Eyes.features, Eyes.patch);
-        Eyes.labels.push_back(2);
-//        Eyes.labels.push_back(2); // todo if right
-      }
-    }
-    for(int i = 0; i < imag.cols - Mouth.patch.width; i += Mouth.step)
-    {
-      for (int j = 0; j < imag.rows - Mouth.patch.height; j += Mouth.step)
-      {
-        Rect tmp(Point(i,j), Mouth.patch);
-        intersec = tmp & ROI_mouth;
-        if(intersec.area() > 0)
-          continue;
-        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiss ist
-          continue;
-        std::vector<Mat> vec_tmp;
-        vec_tmp.push_back(imag(tmp));
-        getHogFeatures(vec_tmp, Mouth.features, Mouth.patch);
-        Mouth.labels.push_back(2);
-      }
-    }
-  }
-
-  // - create two SVM objects using cv::CvSVM
-  CvSVM eye;
-  CvSVM mouth;
-
-  // - train both SVMs
-  eye.train(Eyes.features, Eyes.labels);
-  mouth.train(Mouth.features, Mouth.labels);
-
-  // - store both trained models - use TrainingData::svmModelFile as file names
-  eye.save(Eyes.svmModelFile.c_str());
-  mouth.save(Mouth.svmModelFile.c_str());
-  cout << "leave train svm" << endl;
+//  cout << "trainSVM" << endl;
+//  for (unsigned i = 0; i < svmParams.sizeOfSet; i++)
+//  {
+//    Mat imag = imread(imageList.at(i));
+//
+//    cv::cvtColor(imag, imag, CV_BGR2GRAY);
+//    resize(imag, imag, Size(svmParams.scale * imag.cols, svmParams.scale * imag.rows));
+//
+//    //  readLandmarks()
+//    Mat mask = imread(maskList.at(i));
+//    cv::cvtColor(mask, mask, CV_BGR2GRAY);
+//    resize(mask, mask, Size(svmParams.scale * mask.cols, svmParams.scale * mask.rows));
+//
+//    vector<Point2f> landmarks;
+//    readLandmarks(imageList.at(i), landmarks);
+//
+//    Point center_mouth           = landmarks.at(Mouth.landmarks.at(0));
+//    center_mouth *= svmParams.scale;
+//    Point left_eye_left_corner   = landmarks.at(Eyes.landmarks.at(0));
+//    Point left_eye_right_corner  = landmarks.at(Eyes.landmarks.at(1));
+//    Point right_eye_left_corner  = landmarks.at(Eyes.landmarks.at(2));
+//    Point right_eye_right_corner = landmarks.at(Eyes.landmarks.at(3));
+//
+//    Point center_left_eye  = (left_eye_left_corner + left_eye_right_corner) * 0.5 * svmParams.scale;
+//    Point center_right_eye = (right_eye_left_corner + right_eye_right_corner) * 0.5 * svmParams.scale;
+//
+//    Point top_left_left_eye;
+//    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5 );
+//    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5 );
+////    top_left_left_eye.x = center_left_eye.x - (Eyes.patch.width * 0.5 + 2 * Eyes.padding) - Eyes.padding;
+////    top_left_left_eye.y = center_left_eye.y - (Eyes.patch.height * 0.5 + 2 * Eyes.padding) - Eyes.padding;
+//
+//    Point top_left_right_eye;
+//    top_left_right_eye.x = center_right_eye.x - (Eyes.patch.width * 0.5);
+//    top_left_right_eye.y = center_right_eye.y - (Eyes.patch.height * 0.5);
+//
+//    // cout << imag.size() << endl;
+//    Point top_left_mouth;
+//    //  top_left_mouth.x = center_mouth.x - (Mouth.patch.width - 2 * Mouth.padding)  -  Mouth.padding;
+//    //  top_left_mouth.y = center_mouth.y + (Mouth.patch.height + 2 * Mouth.padding) + Mouth.padding;
+//    top_left_mouth.x = center_mouth.x - (Mouth.patch.width * 0.5);
+//    top_left_mouth.y = center_mouth.y + (Mouth.patch.height * 0.5);
+//
+////    cout << "padding"  << Eyes.padding << endl;
+//
+//    // left corner and size
+//    Rect ROI_eyes_left (top_left_left_eye, Eyes.patch);
+//    Rect ROI_eyes_right (top_left_right_eye, Eyes.patch);
+////    Rect ROI_mouth (top_left_mouth, Mouth.patch
+//    Rect ROI_mouth (top_left_mouth, Mouth.patch);
+//
+////    cout << center_left_eye << endl;
+////    circle(imag, center_left_eye , 3, Scalar(255,255,255));
+////    circle(imag, center_right_eye, 3, Scalar(255,255,255));
+////    circle(imag, center_mouth    , 3, Scalar(255,255,255));
+////    imshow("hallo", imag);
+////        waitKey(0);
+//
+//    //  - positive: eye and mouth ROIs using getHogFeatures()
+//    vector<Mat> eye;
+//    vector<Mat> mouth;
+//    eye.push_back(imag(ROI_eyes_left)); // subpic
+//    eye.push_back(imag(ROI_eyes_right));
+//    mouth.push_back(imag(ROI_mouth));
+//    getHogFeatures(eye, Eyes.features, Eyes.patch);
+//    Eyes.labels.push_back(1);
+//    Eyes.labels.push_back(1);
+//    getHogFeatures(mouth, Mouth.features, Mouth.patch);
+//    Mouth.labels.push_back(1);
+//
+//    //  - negative: TrainingData::patch sized ROIs // todo padding
+//    Rect intersec;
+//    for(int x = 0; x < imag.cols - Eyes.patch.width; x += Eyes.step)
+//    {
+//      for (int y = 0; y < imag.rows - Eyes.patch.height; y += Eyes.step)
+//      {
+//        Rect tmp(Point(x, y), Eyes.patch);
+//        intersec = tmp & ROI_eyes_left;
+//        if(intersec.area() > 0)
+//          continue;
+//        intersec = tmp & ROI_eyes_right;
+//        if(intersec.area() > 0)
+//          continue;
+//
+//        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiß ist
+//          continue;
+//        std::vector<Mat> vec_tmp;
+//        vec_tmp.push_back(imag(tmp));
+//        getHogFeatures(vec_tmp, Eyes.features, Eyes.patch);
+//        Eyes.labels.push_back(2);
+////        Eyes.labels.push_back(2); // todo if right
+//      }
+//    }
+//    for(int i = 0; i < imag.cols - Mouth.patch.width; i += Mouth.step)
+//    {
+//      for (int j = 0; j < imag.rows - Mouth.patch.height; j += Mouth.step)
+//      {
+//        Rect tmp(Point(i,j), Mouth.patch);
+//        intersec = tmp & ROI_mouth;
+//        if(intersec.area() > 0)
+//          continue;
+//        if(countNonZero(mask(tmp)) != tmp.area()) // ob die maske weiss ist
+//          continue;
+//        std::vector<Mat> vec_tmp;
+//        vec_tmp.push_back(imag(tmp));
+//        getHogFeatures(vec_tmp, Mouth.features, Mouth.patch);
+//        Mouth.labels.push_back(2);
+//      }
+//    }
+//  }
+//
+//  // - create two SVM objects using cv::CvSVM
+//  CvSVM eye;
+//  CvSVM mouth;
+//
+//  // - train both SVMs
+//  eye.train(Eyes.features, Eyes.labels);
+//  mouth.train(Mouth.features, Mouth.labels);
+//
+//  // - store both trained models - use TrainingData::svmModelFile as file names
+//  eye.save(Eyes.svmModelFile.c_str());
+//  mouth.save(Mouth.svmModelFile.c_str());
+//  cout << "leave train svm" << endl;
 }
 
 //================================================================================
@@ -548,6 +549,8 @@ void maskFace(Mat& mask, const Point left_eye, const Point right_eye, const Poin
   float winkel = (float)dot_/abs(left_eye_ln * right_eye_ln);
   winkel = acos(winkel);
   winkel = (float)(winkel * (-180))/ PI;
+
+  cout << "mask " << mask.size() << endl;
 
   ellipse(mask, eye_center, Size(hauptachse_oben,nebenachse_oben), winkel, 180, 360, Scalar(255, 255, 255),-1, 8, 0);
   ellipse(mask, eye_center, Size(nebenachse_unten, hauptachse_unten), winkel, 0, 180, Scalar(255, 255, 255),-1, 8, 0);
@@ -666,35 +669,36 @@ Mat affineTransform(Mat imageToTransform, Point left_eye_one, Point right_eye_on
 vector<Point2f> affineTransformVertices(Mat image, Mat& T)
 {
   // 1) transform the four vertices of the given image by using the previously calculated transformation matrix T.
-  normalize(T, T, 0, 1, CV_MINMAX);
+//  normalize(T, T, 0, 1, CV_MINMAX);
   cout << "T " << T << endl;
+  Mat T_f;
+  T.convertTo(T_f, CV_32FC1);
+  Mat corners(3,4, CV_32FC1);
+  Mat E_t(2,4, CV_32FC1);
 
-  T.convertTo(T, CV_32FC1);
   cout << "T " << T << endl;
   cout << "image.cols" << image.cols << endl;
   cout << "image.rows" << image.rows << endl;
 
-  int cols = image.cols;
-  int rows = image.rows;
-
   Mat E(3, 4, CV_32FC1);
   cout << "E init " << E << endl;
 
-  E.at<float>(0,0) =  0;         //ey1
-  E.at<float>(1,0) =  0;         //ex1
-  E.at<float>(2,0) =  1;
-  E.at<float>(0,1) =  0;         //ey2
-  E.at<float>(1,1) =  image.cols;//ex2
-  E.at<float>(2,1) =  1;
-  E.at<float>(0,2) =  image.rows;//ey3
-  E.at<float>(1,2) =  0;         //ex3
-  E.at<float>(2,2) =  1;
-  E.at<float>(0,3) =  image.rows;//ey4
-  E.at<float>(1,3) =  image.cols;//ex4
-  E.at<float>(2,3) =  1;
+  corners.at<float>(0,0) =  0;         //ey1
+  corners.at<float>(1,0) =  0;         //ex1
+  corners.at<float>(2,0) =  1;
+  corners.at<float>(0,1) =  image.cols -1;         //ey2
+  corners.at<float>(1,1) =  0;//ex2
+  corners.at<float>(2,1) =  1;
+  corners.at<float>(0,2) =  0;//ey3
+  corners.at<float>(1,2) =  image.rows -1;         //ex3
+  corners.at<float>(2,2) =  1;
+  corners.at<float>(0,3) =  image.cols -1;//ey4
+  corners.at<float>(1,3) =  image.rows -1;//ex4
+  corners.at<float>(2,3) =  1;
 
-  cout << "ef" << E << endl;
-  E = T * E;
+  cout << "size of e" << E << endl;
+  cout << "size of t" << T << endl;
+  E_t = T_f * corners;
 
   cout << "ef" << E << endl;
   cout << "ef" << E.size() << endl;
@@ -702,69 +706,75 @@ vector<Point2f> affineTransformVertices(Mat image, Mat& T)
   vector<Point2f> tmp;
 
   //                      x                 y
-  Point2f ul( E.at<float>(0,0), E.at<float>(0,1) );
-  Point2f ur( E.at<float>(1,0), E.at<float>(1,1) );
-  Point2f bl( E.at<float>(2,0), E.at<float>(2,1) );
-  Point2f br( E.at<float>(3,0), E.at<float>(3,1) );
+  Point2f ul( corners.at<float>(0,0), corners.at<float>(1,0) );
+  Point2f ur( corners.at<float>(0,1), corners.at<float>(1,1) );
+  Point2f bl( corners.at<float>(0,2), corners.at<float>(1,2) );
+  Point2f br( corners.at<float>(0,3), corners.at<float>(1,3) );
+
+//  tmp.clear();
+  tmp.push_back(ul);
+  tmp.push_back(ur);
+  tmp.push_back(bl);
+  tmp.push_back(br);
 
   // original          x           y
-  Point2f im_ul(0         , 0         );
-  Point2f im_ur(image.cols, 0         );
-  Point2f im_bl(0         , image.rows);
-  Point2f im_br(image.cols, image.rows);
+//  Point2f im_ul(0         , 0         );
+//  Point2f im_ur(image.cols, 0         );
+//  Point2f im_bl(0         , image.rows);
+//  Point2f im_br(image.cols, image.rows);
 
-  Point2f imagecenter(image.rows * 0.5, image.cols * 0.5);
+//  Point2f imagecenter(image.rows * 0.5, image.cols * 0.5);
 
-  // up/left
-  if( norm(ul - imagecenter) < norm(im_ul - imagecenter) )
-    tmp.push_back(ul);
-  else
-    tmp.push_back( im_ul );
-
-  // up/right
-  if( norm(ur - imagecenter) < norm(im_ur - imagecenter) )
-    tmp.push_back(ur);
-  else
-    tmp.push_back( im_ur );
-
-  // bottom/left
-  if( norm(bl - imagecenter) < norm(im_bl - imagecenter) )
-    tmp.push_back(bl);
-  else
-    tmp.push_back(im_bl);
-
-  // bottom/right
-  if( norm(br - imagecenter) < norm(im_br - imagecenter) )
-    tmp.push_back(br);
-  else
-    tmp.push_back( im_br );
-
-  // ul bl
-  if(tmp.at(0).x != tmp.at(2).x)
-  {
-    float max_x = MAX(tmp.at(0).x, tmp.at(2).x);
-    tmp.at(0).x = max_x;
-    tmp.at(2).x = max_x;
-  }
-  if(tmp.at(1).x != tmp.at(3).x)
-  {
-    float min_x = MIN(tmp.at(1).x, tmp.at(3).x);
-    tmp.at(1).x = min_x;
-    tmp.at(3).x = min_x;
-  }
-
-  if(tmp.at(0).y != tmp.at(1).y)
-  {
-    float max_y = MAX(tmp.at(0).y, tmp.at(1).y);
-    tmp.at(0).y = max_y;
-    tmp.at(1).y = max_y;
-  }
-  if(tmp.at(2).y != tmp.at(3).y)
-  {
-    float min_y = MIN(tmp.at(2).y, tmp.at(3).y);
-    tmp.at(2).y = min_y;
-    tmp.at(3).y = min_y;
-  }
+//  // up/left
+//  if( norm(ul - imagecenter) < norm(im_ul - imagecenter) )
+//    tmp.push_back(ul);
+//  else
+//    tmp.push_back( im_ul );
+//
+//  // up/right
+//  if( norm(ur - imagecenter) < norm(im_ur - imagecenter) )
+//    tmp.push_back(ur);
+//  else
+//    tmp.push_back( im_ur );
+//
+//  // bottom/left
+//  if( norm(bl - imagecenter) < norm(im_bl - imagecenter) )
+//    tmp.push_back(bl);
+//  else
+//    tmp.push_back(im_bl);
+//
+//  // bottom/right
+//  if( norm(br - imagecenter) < norm(im_br - imagecenter) )
+//    tmp.push_back(br);
+//  else
+//    tmp.push_back( im_br );
+//
+//  // ul bl
+//  if(tmp.at(0).x != tmp.at(2).x)
+//  {
+//    float max_x = MAX(tmp.at(0).x, tmp.at(2).x);
+//    tmp.at(0).x = max_x;
+//    tmp.at(2).x = max_x;
+//  }
+//  if(tmp.at(1).x != tmp.at(3).x)
+//  {
+//    float min_x = MIN(tmp.at(1).x, tmp.at(3).x);
+//    tmp.at(1).x = min_x;
+//    tmp.at(3).x = min_x;
+//  }
+//
+//  if(tmp.at(0).y != tmp.at(1).y)
+//  {
+//    float max_y = MAX(tmp.at(0).y, tmp.at(1).y);
+//    tmp.at(0).y = max_y;
+//    tmp.at(1).y = max_y;
+//  }
+//  if(tmp.at(2).y != tmp.at(3).y)
+//  {
+//    float min_y = MIN(tmp.at(2).y, tmp.at(3).y);
+//    tmp.at(2).y = min_y;
+//    tmp.at(3).y = min_y;
+//  }
 
   // 2) return a vector containing the four transformed vertices in the following order:
   //    up/left, up/right, bottom/left, bottom/right
@@ -868,7 +878,6 @@ void distTransform(const Mat& src, Mat& dest)
 vector<Mat> blendFaceSequence(vector<FaceInfo*> faces, int transitionTime, int fps)
 {
   cout << " blendFaceSequence" << endl;
-
   // 1) calculate imageCount and alpha
   int imagecount = (transitionTime/1000) * fps;
   vector<Mat> r;
